@@ -1,15 +1,20 @@
 # incremental data. DO NOT EDIT.
 # format is <lastModified> <length> <SHA-1> <path>
 # Encoding is UTF-8
-1372073933652 122 7028f0dbd53ca3710df9086320d2c4333e2a2dd2 C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\values-en\values.xml
+1372180573164 169 5fcaffb2f4c23a86846dc6e68e87c361d6fcb24a C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\values-en\values.xml
 1372071818169 24654 696bbbc63d2250ef7d3373f2d602e604acd13d8c C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\drawable-xxhdpi\ic_launcher.png
 1372071818162 7721 39b0f5a0570da92f471225402ad0ea6de30bf2be C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\drawable-hdpi\ic_launcher.png
-1372071818156 12329 a8301606e15d4b6dccdd775cc273cfc51a552645 C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\drawable-xhdpi\ic_launcher.png
-1372071818162 224 3bee0d9a6f0efbaf11495ad45fdeb8f71aee62e8 C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\values-v14\values.xml
-1372073933650 967 edb1b75c8851c2af84e0a0fc2d52e1ffde6e1273 C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\values\values.xml
-1372071818167 130 90e37035f35f83953c491e73e930b7aea297a472 C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\values-sw720dp-land\values.xml
-1372071818165 210 c41731f5631a90fa989588ef97e9476fc244b438 C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\values-v11\values.xml
+1372074317023 1033 aba9f0d71f2bc8ef9adac5790bf562299717da2e C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\values\values.xml
+1372180573166 634 7035c2f20d931b9a229ed6e454f002847b6c9ef7 C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\layout\lista_item.xml
 1372073215012 267 e83646236e1e78f968a4e560bf1bc183a7a9f44a C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\menu\main.xml
 1372071818160 3769 eec07752d40e268ed7f4a1730acc77ab1e40aeb0 C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\drawable-mdpi\ic_launcher.png
-1372073933654 122 7028f0dbd53ca3710df9086320d2c4333e2a2dd2 C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\values-es\values.xml
+1372180573166 170 92d16e44f75d9207920a1962c563c43dc9783b9e C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\values-es\values.xml
+1372180573163 872 ba827cdd565a5e4aff32732af147562b80b58842 C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\layout\activity_projects.xml
+1372074317022 244 045ff451db7cd8e61285502b8c9bbf7405f2078d C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\menu\projects.xml
+1372071818156 12329 a8301606e15d4b6dccdd775cc273cfc51a552645 C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\drawable-xhdpi\ic_launcher.png
+1372071818162 224 3bee0d9a6f0efbaf11495ad45fdeb8f71aee62e8 C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\values-v14\values.xml
+1372071818167 130 90e37035f35f83953c491e73e930b7aea297a472 C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\values-sw720dp-land\values.xml
+1372071818165 210 c41731f5631a90fa989588ef97e9476fc244b438 C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\values-v11\values.xml
+1372181620538 173 680ee1fcb14bb4333e95c5301116a7450fcc3a5f C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\drawable-mdpi\drawer_shadow.9.png
 1372072492916 756 6585e31e4d3bf87a60e4253b263105e07e7aafbe C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\layout\activity_main.xml
+1372181620527 2838 aff2046e82373610678f3529a312cdc628663e30 C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\all\release\drawable-mdpi\ic_drawer.png

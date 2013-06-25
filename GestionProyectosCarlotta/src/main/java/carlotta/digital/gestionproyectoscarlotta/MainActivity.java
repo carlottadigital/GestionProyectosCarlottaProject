@@ -2,6 +2,7 @@ package carlotta.digital.gestionproyectoscarlotta;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -19,6 +20,10 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         //Inicializar ActionBar
         initActionBar();
+
+        //Iniciar directamente el listado de proyectos (DEBUG)
+        Intent goToProjects = new Intent(MainActivity.this, Projects.class);
+        startActivity(goToProjects);
     }
 
 

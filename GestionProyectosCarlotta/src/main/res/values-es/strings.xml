@@ -2,5 +2,6 @@
 <resources>
 
     <string name="app_name">Carlotta Labs</string>
+    <string name="projects">Proyectos</string>
 
 </resources>
