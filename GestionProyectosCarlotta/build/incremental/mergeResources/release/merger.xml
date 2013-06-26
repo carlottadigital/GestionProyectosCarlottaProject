@@ -90,6 +90,10 @@
                 qualifiers="en" >
                 <string name="projects" >Projects
                 </string>
+                <string name="fav" >Featured
+                </string>
+                <string name="done" >Done
+                </string>
                 <string name="app_name" >Carlotta Labs
                 </string>
             </file>
@@ -97,6 +101,10 @@
                 path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\values-es\strings.xml"
                 qualifiers="es" >
                 <string name="app_name" >Carlotta Labs
+                </string>
+                <string name="done" >Completados
+                </string>
+                <string name="fav" >Destacados
                 </string>
                 <string name="projects" >Proyectos
                 </string>
@@ -156,6 +164,41 @@
                 name="drawer_shadow"
                 path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-mdpi\drawer_shadow.9.png"
                 qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="lst_prj"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-mdpi\lst_prj.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="lst_fav"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-mdpi\lst_fav.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="lst_done"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-mdpi\lst_done.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="lista_proyectos"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\layout\lista_proyectos.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="lst_done"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\lst_done.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="lst_fav"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\lst_fav.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="lst_prj"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\lst_prj.png"
+                qualifiers="hdpi"
                 type="drawable" />
         </source>
         <source path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\rs\release" />

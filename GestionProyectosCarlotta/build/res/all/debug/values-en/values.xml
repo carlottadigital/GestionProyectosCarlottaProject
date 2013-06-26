@@ -2,6 +2,8 @@
 <resources>
 
     <string name="app_name">Carlotta Labs</string>
+    <string name="done">Done</string>
+    <string name="fav">Featured</string>
     <string name="projects">Projects</string>
 
 </resources>

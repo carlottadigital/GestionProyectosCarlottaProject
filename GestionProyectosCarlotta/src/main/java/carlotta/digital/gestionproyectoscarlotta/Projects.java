@@ -18,6 +18,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import adapters.DrawerProyectosAdapter;
 import models.Proyecto;
 import webservices.ProyectosWS;
 
@@ -97,11 +98,13 @@ public class Projects extends Activity {
             public void handleMessage(Message msg){
                 //Obtener los datos, crear un array de string y printar los proyectos en el drawer
                 ArrayList<String> prjNames = new ArrayList<String>();
+                prjNames.add(getResources().getString(R.string.fav));
+                prjNames.add(getResources().getString(R.string.done));
                 for(int a=0;a<prj.size();a++){
                     prjNames.add(prj.get(a).getNombre());
                 }
                 //Establecer el adaptador
-                drawerList.setAdapter(new ArrayAdapter<String>(getApplicationContext(), R.layout.lista_item, prjNames));
+                drawerList.setAdapter(new DrawerProyectosAdapter(getApplicationContext(),prjNames));
             }
         };
         final ProyectosWS prjDAO = new ProyectosWS(getResources().getString(R.string.server));
