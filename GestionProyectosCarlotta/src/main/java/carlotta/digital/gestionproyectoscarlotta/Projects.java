@@ -6,6 +6,8 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.app.Activity;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
@@ -16,6 +18,9 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import models.Proyecto;
+import webservices.ProyectosWS;
+
 public class Projects extends Activity {
 
     ActionBar actionBar;
@@ -23,6 +28,7 @@ public class Projects extends Activity {
     ListView drawerList;
     DrawerLayout drawer;
     ActionBarDrawerToggle toggle;
+    ArrayList<Proyecto> prj = new ArrayList<Proyecto>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +38,7 @@ public class Projects extends Activity {
         initActionBar();
         //Inicializar el drawerLayout
         drawer = (DrawerLayout)findViewById(R.id.drawer_layout);
+        drawerList = (ListView)findViewById(R.id.drawer);
         toggle = new ActionBarDrawerToggle(this, drawer, R.drawable.ic_drawer, R.string.projects, R.string.projects){
             @Override
             public void onDrawerOpened(View drawerView) {
@@ -46,6 +53,8 @@ public class Projects extends Activity {
         drawer.setDrawerListener(toggle);
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
+        //Obtener los datos del Webservice
+        getProjects();
     }
 
     @Override
@@ -79,16 +88,29 @@ public class Projects extends Activity {
         actionBar = getActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FE0000")));
     }
-    public void generateFakeData(){
-        proyectos = new ArrayList<String>();
-        //añadir dos
-        proyectos.add("Proyecto 1");
-        proyectos.add("Proyecto 2");
-        //añadir dos END//
-        drawerList = (ListView)findViewById(R.id.drawer);
-        //Establecer el adaptador
-        drawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.lista_item, proyectos));
 
+    public void getProjects(){
+        //Declarar el array list como final para poder ser accedido desde una inner class
+
+        final Handler printProjects = new Handler(){
+            @Override
+            public void handleMessage(Message msg){
+                //Obtener los datos, crear un array de string y printar los proyectos en el drawer
+                ArrayList<String> prjNames = new ArrayList<String>();
+                for(int a=0;a<prj.size();a++){
+                    prjNames.add(prj.get(a).getNombre());
+                }
+                //Establecer el adaptador
+                drawerList.setAdapter(new ArrayAdapter<String>(getApplicationContext(), R.layout.lista_item, prjNames));
+            }
+        };
+        final ProyectosWS prjDAO = new ProyectosWS(getResources().getString(R.string.server));
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                prj = prjDAO.getAllProyectos();
+                printProjects.sendEmptyMessage(0);
+            }
+        }).start();
     }
-
 }

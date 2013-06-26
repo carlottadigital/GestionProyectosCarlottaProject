@@ -48,6 +48,8 @@
                 </string>
                 <string name="app_name" >Carlotta Labs
                 </string>
+                <string name="server" >http://10.0.2.2/carlottalabs/api/
+                </string>
                 <string name="hello_world" >Hello world!
                 </string>
                 <string name="title_activity_projects" >MainActivity
