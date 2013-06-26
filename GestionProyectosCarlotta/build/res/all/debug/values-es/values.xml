@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="add">Agregar</string>
     <string name="app_name">Carlotta Labs</string>
     <string name="done">Completados</string>
     <string name="fav">Destacados</string>

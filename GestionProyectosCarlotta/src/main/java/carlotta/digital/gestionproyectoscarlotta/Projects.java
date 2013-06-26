@@ -13,8 +13,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -56,6 +58,8 @@ public class Projects extends Activity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         //Obtener los datos del Webservice
         getProjects();
+        //Establecer el listener de la lista de proyectos
+        addDrawerListener();
     }
 
     @Override
@@ -84,12 +88,16 @@ public class Projects extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
-
+    /*
+    * Inicializar el ActionBar
+    * */
     public void initActionBar(){
         actionBar = getActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FE0000")));
     }
-
+    /*
+    * Este Método adquiere los proyectos y los carga los datos en el navigation drawer
+    * */
     public void getProjects(){
         //Declarar el array list como final para poder ser accedido desde una inner class
 
@@ -115,5 +123,46 @@ public class Projects extends Activity {
                 printProjects.sendEmptyMessage(0);
             }
         }).start();
+    }
+    /*
+    * Este médoto implementa el click listener en el listview
+    * */
+    public void addDrawerListener(){
+        drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch(i){
+                    case 0:
+                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.fav),Toast.LENGTH_SHORT).show();
+                        break;
+                    case 1:
+                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.done),Toast.LENGTH_SHORT).show();
+                        break;
+                    default:
+                        //Ejecutar el código normal para cada una de las selecciones de la lista
+
+                        break;
+                }
+            }
+        });
+        drawerList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                switch(i){
+                    case 0:
+                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.fav)+" Long",Toast.LENGTH_SHORT).show();
+                        break;
+                    case 1:
+                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.done)+" Long",Toast.LENGTH_SHORT).show();
+                        break;
+                    default:
+                        //Ejecutar el código normal para cada una de las selecciones de la lista
+
+                        break;
+                }
+                return false;
+            }
+        });
     }
 }

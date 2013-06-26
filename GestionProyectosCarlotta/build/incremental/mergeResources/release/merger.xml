@@ -71,24 +71,26 @@
                 </style>
 
                 <style
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                </style>
+
+                <style
                     name="MyActionBar"
                     parent="@android:style/Widget.Holo.Light.ActionBar" >
                     <item name="android:background">
 #FE0000
                     </item>
                 </style>
-
-                <style
-                    name="AppTheme"
-                    parent="AppBaseTheme" >
-
-                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-                </style>
             </file>
             <file
                 path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\values-en\strings.xml"
                 qualifiers="en" >
                 <string name="projects" >Projects
+                </string>
+                <string name="add" >Add
                 </string>
                 <string name="fav" >Featured
                 </string>
@@ -107,6 +109,8 @@
                 <string name="fav" >Destacados
                 </string>
                 <string name="projects" >Proyectos
+                </string>
+                <string name="add" >Agregar
                 </string>
             </file>
             <file
@@ -198,6 +202,11 @@
             <file
                 name="lst_prj"
                 path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\lst_prj.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="add"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\add.png"
                 qualifiers="hdpi"
                 type="drawable" />
         </source>
