@@ -5,8 +5,8 @@ package models;
  */
 public class UsuariosProyecto {
     int id;
-    Usuario usuario;
-    Proyecto proyecto;
+    int usuario;
+    int proyecto;
 
     public int getId() {
         return id;
@@ -16,19 +16,19 @@ public class UsuariosProyecto {
         this.id = id;
     }
 
-    public Usuario getUsuario() {
+    public int getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(int usuario) {
         this.usuario = usuario;
     }
 
-    public Proyecto getProyecto() {
+    public int getProyecto() {
         return proyecto;
     }
 
-    public void setProyecto(Proyecto proyecto) {
+    public void setProyecto(int proyecto) {
         this.proyecto = proyecto;
     }
 }

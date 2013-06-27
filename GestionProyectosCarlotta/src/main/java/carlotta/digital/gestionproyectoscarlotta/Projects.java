@@ -1,11 +1,13 @@
 package carlotta.digital.gestionproyectoscarlotta;
 
 import android.app.ActionBar;
+import android.app.Activity;
 import android.content.res.Configuration;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.app.Activity;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -14,7 +16,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,7 +23,12 @@ import java.util.ArrayList;
 
 import adapters.DrawerProyectosAdapter;
 import models.Proyecto;
+import models.Usuario;
+import models.UsuariosProyecto;
+import sqlite.DBManager;
 import webservices.ProyectosWS;
+import webservices.UsuariosProjWS;
+import webservices.UsuariosWS;
 
 public class Projects extends Activity {
 
@@ -32,6 +38,9 @@ public class Projects extends Activity {
     DrawerLayout drawer;
     ActionBarDrawerToggle toggle;
     ArrayList<Proyecto> prj = new ArrayList<Proyecto>();
+    ArrayList<Usuario> users = new ArrayList<Usuario>();
+    ArrayList<UsuariosProyecto> userProj = new ArrayList<UsuariosProyecto>();
+    DBManager dbManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,17 +49,20 @@ public class Projects extends Activity {
         //Inicializar el ActionBar
         initActionBar();
         //Inicializar el drawerLayout
+        dbManager = new DBManager(getApplicationContext(),"database", null, 1);
         drawer = (DrawerLayout)findViewById(R.id.drawer_layout);
         drawerList = (ListView)findViewById(R.id.drawer);
         toggle = new ActionBarDrawerToggle(this, drawer, R.drawable.ic_drawer, R.string.projects, R.string.projects){
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
+                actionBar.setTitle(getResources().getString(R.string.projects));
             }
 
             @Override
             public void onDrawerClosed(View drawerView) {
                 super.onDrawerClosed(drawerView);
+                actionBar.setTitle(getResources().getString(R.string.projects));
             }
         };
         drawer.setDrawerListener(toggle);
@@ -94,6 +106,7 @@ public class Projects extends Activity {
     public void initActionBar(){
         actionBar = getActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FE0000")));
+        actionBar.setTitle(getResources().getString(R.string.projects));
     }
     /*
     * Este Método adquiere los proyectos y los carga los datos en el navigation drawer
@@ -108,18 +121,65 @@ public class Projects extends Activity {
                 ArrayList<String> prjNames = new ArrayList<String>();
                 prjNames.add(getResources().getString(R.string.fav));
                 prjNames.add(getResources().getString(R.string.done));
-                for(int a=0;a<prj.size();a++){
-                    prjNames.add(prj.get(a).getNombre());
+                //Abrir el acceso a la base de datos y cargar los datos desde la db
+                SQLiteDatabase dbRead = dbManager.getReadableDatabase();
+                //Abrir el acceso a la base de datos y cargar los datos desde la db END//
+                Cursor datos = dbRead.rawQuery("SELECT * FROM PROYECTOS", null);
+                if(datos.moveToFirst()){
+                    prjNames.add(datos.getString(1));
+                    while(datos.moveToNext()){
+                        prjNames.add(datos.getString(1));
+                    }
                 }
                 //Establecer el adaptador
                 drawerList.setAdapter(new DrawerProyectosAdapter(getApplicationContext(),prjNames));
             }
         };
+        /*
+        * Printar los datos antes de que se actualicen los webservices (EN CASO DE NO EXISTA CONEXION
+        * */
+        printProjects.sendEmptyMessage(0);
+        /*
+        * Zona de descarga de los datos
+        * */
         final ProyectosWS prjDAO = new ProyectosWS(getResources().getString(R.string.server));
+        final UsuariosWS usersDAO = new UsuariosWS(getResources().getString(R.string.server));
+        final UsuariosProjWS userProjDAO = new UsuariosProjWS(getResources().getString(R.string.server));
         new Thread(new Runnable() {
             @Override
             public void run() {
                 prj = prjDAO.getAllProyectos();
+                SQLiteDatabase db = dbManager.getWritableDatabase();
+                //Grabar los proyectos a la db de PROYECTOS
+                db.execSQL("DELETE FROM PROYECTOS WHERE 1");
+                    for(int a=0;a<prj.size();a++){
+                        //Grabar cada item a la db
+                        try{
+                            db.execSQL("INSERT INTO PROYECTOS (id, nombre, descripcion, owner) VALUES ("+prj.get(a).getId()+", '"+prj.get(a).getNombre()+"','"+prj.get(a).getDescripcion()+"',"+prj.get(a).getOwner().getId()+")");
+                        }catch(Exception e){
+                            e.printStackTrace();
+                        }
+                    }
+                //Cerrar la db
+
+                //Grabar los proyectos a la db DE PROYECTOS END//
+                //Grabar los USUARIOS a la db
+                users = usersDAO.getAllUsuarios();
+                db.execSQL("DELETE FROM USUARIOS WHERE 1");
+                for(int a=0;a<users.size();a++){
+                    db.execSQL("INSERT INTO USUARIOS (id, nombre, apellidos, telefono, mail) VALUES ("+users.get(a).getId()+",'"+users.get(a).getNombre()+"','"+users.get(a).getApellidos()+"',"+users.get(a).getTelefono()+",'"+users.get(a).getMail()+"')");
+
+                }
+                System.out.print("asd");
+                //Grabar los USUARIOS a la db END//
+                //Grabar los USUARIOS ASIGNADOS A PROYECTOS en la db/
+                userProj = userProjDAO.getAllUsuarios();
+                db.execSQL("DELETE FROM USER_PROJ WHERE 1");
+                for(int a=0;a<userProj.size();a++){
+                    db.execSQL("INSERT INTO USER_PROJ (id, id_usuario, id_proyecto) VALUES ("+userProj.get(a).getId()+","+userProj.get(a).getUsuario()+","+userProj.get(a).getProyecto()+")");
+                }
+                //Grabar los USUARIOS ASIGNADOS A PROYECTOS en la db END //
+                db.close();
                 printProjects.sendEmptyMessage(0);
             }
         }).start();
