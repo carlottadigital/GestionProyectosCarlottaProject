@@ -24,6 +24,7 @@ public class MainActivity extends Activity {
         //Iniciar directamente el listado de proyectos (DEBUG)
         Intent goToProjects = new Intent(MainActivity.this, Projects.class);
         startActivity(goToProjects);
+        finish();
     }
 
 

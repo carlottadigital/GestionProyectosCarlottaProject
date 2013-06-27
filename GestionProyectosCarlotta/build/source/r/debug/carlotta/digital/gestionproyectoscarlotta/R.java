@@ -24,19 +24,21 @@ public final class R {
         public static final int lst_prj=0x7f020006;
     }
     public static final class id {
-        public static final int action_settings=0x7f080005;
-        public static final int add_prj=0x7f080006;
+        public static final int action_settings=0x7f080006;
+        public static final int add_prj=0x7f080007;
         public static final int content=0x7f080001;
         public static final int drawer=0x7f080002;
         public static final int drawer_layout=0x7f080000;
-        public static final int imagenLista=0x7f080003;
-        public static final int textoLista=0x7f080004;
+        public static final int imagenLista=0x7f080004;
+        public static final int textView=0x7f080003;
+        public static final int textoLista=0x7f080005;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int activity_projects=0x7f030001;
-        public static final int lista_item=0x7f030002;
-        public static final int lista_proyectos=0x7f030003;
+        public static final int fragment_lista_proyectos=0x7f030002;
+        public static final int lista_item=0x7f030003;
+        public static final int lista_proyectos=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f070000;

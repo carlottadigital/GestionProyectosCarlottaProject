@@ -2,6 +2,8 @@ package carlotta.digital.gestionproyectoscarlotta;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -15,6 +17,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -22,6 +25,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import adapters.DrawerProyectosAdapter;
+import fragments.ListProyectos;
 import models.Proyecto;
 import models.Usuario;
 import models.UsuariosProyecto;
@@ -45,7 +49,10 @@ public class Projects extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.activity_projects);
+
+        setProgressBarIndeterminateVisibility(true);
         //Inicializar el ActionBar
         initActionBar();
         //Inicializar el drawerLayout
@@ -114,6 +121,14 @@ public class Projects extends Activity {
     public void getProjects(){
         //Declarar el array list como final para poder ser accedido desde una inner class
 
+        final Handler finishLoadProgress = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                setProgressBarIndeterminateVisibility(false);
+            }
+        };
+
         final Handler printProjects = new Handler(){
             @Override
             public void handleMessage(Message msg){
@@ -150,6 +165,7 @@ public class Projects extends Activity {
             public void run() {
                 prj = prjDAO.getAllProyectos();
                 SQLiteDatabase db = dbManager.getWritableDatabase();
+                if(prj!=null){
                 //Grabar los proyectos a la db de PROYECTOS
                 db.execSQL("DELETE FROM PROYECTOS WHERE 1");
                     for(int a=0;a<prj.size();a++){
@@ -160,27 +176,31 @@ public class Projects extends Activity {
                             e.printStackTrace();
                         }
                     }
-                //Cerrar la db
+                }
 
                 //Grabar los proyectos a la db DE PROYECTOS END//
                 //Grabar los USUARIOS a la db
                 users = usersDAO.getAllUsuarios();
+                if(users !=null){
                 db.execSQL("DELETE FROM USUARIOS WHERE 1");
                 for(int a=0;a<users.size();a++){
                     db.execSQL("INSERT INTO USUARIOS (id, nombre, apellidos, telefono, mail) VALUES ("+users.get(a).getId()+",'"+users.get(a).getNombre()+"','"+users.get(a).getApellidos()+"',"+users.get(a).getTelefono()+",'"+users.get(a).getMail()+"')");
 
                 }
-                System.out.print("asd");
+                }
                 //Grabar los USUARIOS a la db END//
                 //Grabar los USUARIOS ASIGNADOS A PROYECTOS en la db/
                 userProj = userProjDAO.getAllUsuarios();
+                if(userProj != null){
                 db.execSQL("DELETE FROM USER_PROJ WHERE 1");
                 for(int a=0;a<userProj.size();a++){
                     db.execSQL("INSERT INTO USER_PROJ (id, id_usuario, id_proyecto) VALUES ("+userProj.get(a).getId()+","+userProj.get(a).getUsuario()+","+userProj.get(a).getProyecto()+")");
                 }
+                }
                 //Grabar los USUARIOS ASIGNADOS A PROYECTOS en la db END //
                 db.close();
                 printProjects.sendEmptyMessage(0);
+                finishLoadProgress.sendEmptyMessage(0);
             }
         }).start();
     }
@@ -200,7 +220,14 @@ public class Projects extends Activity {
                         break;
                     default:
                         //Ejecutar el código normal para cada una de las selecciones de la lista
-
+                        Fragment fragment = new ListProyectos();
+                        Bundle args = new Bundle();
+                        fragment.setArguments(args);
+                        //Cambiar el fragment actual por el nuevo
+                        FragmentManager fm = getFragmentManager();
+                        fm.beginTransaction().replace(R.id.content, fragment, "vistaProyectos").commit();
+                        //Cerrar el drawer
+                        drawer.closeDrawer(drawerList);
                         break;
                 }
             }
