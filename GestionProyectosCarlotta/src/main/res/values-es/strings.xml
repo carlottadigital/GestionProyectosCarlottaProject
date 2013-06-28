@@ -7,5 +7,7 @@
     <string name="fav">Destacados</string>
     <string name="add">Agregar</string>
     <string name="sincro">Sincronizar</string>
+    <string name="horas">Horas</string>
+    <string name="tasks">Tareas</string>
 
 </resources>

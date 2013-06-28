@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -24,12 +25,16 @@ public class ListProyectos extends Fragment {
     DBManager dbManager;
     ArrayList<String> proyectos;
     ListView listaProyectos;
+    TextView tituloProyecto;
+    int prjID;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.fragment_lista_proyectos, container, false);
-
+        prjID = getArguments().getInt("prjID");
         listaProyectos = (ListView) vista.findViewById(R.id.listaProyectos);
+        tituloProyecto = (TextView) vista.findViewById(R.id.tituloProyecto);
+        tituloProyecto.setText(getArguments().getString("nombrePrj"));
         //Cargar los datos//
         getProjects();
         return vista;
@@ -39,12 +44,12 @@ public class ListProyectos extends Fragment {
         SQLiteDatabase dbRead = dbManager.getReadableDatabase();
 
         //Realizar la query
-        Cursor data = dbRead.rawQuery("SELECT * FROM PROYECTOS", null);
+        Cursor data = dbRead.rawQuery("SELECT * FROM TASK_PROJ WHERE id_proyecto="+prjID, null);
         proyectos = new ArrayList<String>();
         if(data.moveToFirst()){
-            proyectos.add(data.getString(1));
+            proyectos.add(data.getString(2));
             while(data.moveToNext()){
-                proyectos.add(data.getString(1));
+                proyectos.add(data.getString(2));
             }
         }
         listaProyectos.setAdapter(new ListProyectosAdapter(getActivity().getApplicationContext(), proyectos));

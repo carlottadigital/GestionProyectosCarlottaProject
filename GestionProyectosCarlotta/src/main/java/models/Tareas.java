@@ -5,12 +5,10 @@ package models;
  */
 public class Tareas {
     int id;
-    Proyecto proyecto;
+    int proyecto;
     String nombre;
     String descripcion;
-    int coste, valor;
-    Usuario usuario;
-    boolean completado;
+    int coste, valor, usuario, completado;
 
     public int getId() {
         return id;
@@ -20,11 +18,11 @@ public class Tareas {
         this.id = id;
     }
 
-    public Proyecto getProyecto() {
+    public int getProyecto() {
         return proyecto;
     }
 
-    public void setProyecto(Proyecto proyecto) {
+    public void setProyecto(int proyecto) {
         this.proyecto = proyecto;
     }
 
@@ -60,19 +58,19 @@ public class Tareas {
         this.valor = valor;
     }
 
-    public Usuario getUsuario() {
+    public int getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(int usuario) {
         this.usuario = usuario;
     }
 
-    public boolean isCompletado() {
+    public int getCompletado() {
         return completado;
     }
 
-    public void setCompletado(boolean completado) {
+    public void setCompletado(int completado) {
         this.completado = completado;
     }
 }

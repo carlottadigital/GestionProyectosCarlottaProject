@@ -5,7 +5,9 @@
     <string name="app_name">Carlotta Labs</string>
     <string name="done">Completados</string>
     <string name="fav">Destacados</string>
+    <string name="horas">Horas</string>
     <string name="projects">Proyectos</string>
     <string name="sincro">Sincronizar</string>
+    <string name="tasks">Tareas</string>
 
 </resources>

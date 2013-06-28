@@ -27,10 +27,12 @@ import java.util.ArrayList;
 import adapters.DrawerProyectosAdapter;
 import fragments.ListProyectos;
 import models.Proyecto;
+import models.Tareas;
 import models.Usuario;
 import models.UsuariosProyecto;
 import sqlite.DBManager;
 import webservices.ProyectosWS;
+import webservices.TareasWS;
 import webservices.UsuariosProjWS;
 import webservices.UsuariosWS;
 
@@ -44,6 +46,7 @@ public class Projects extends Activity {
     ArrayList<Proyecto> prj = new ArrayList<Proyecto>();
     ArrayList<Usuario> users = new ArrayList<Usuario>();
     ArrayList<UsuariosProyecto> userProj = new ArrayList<UsuariosProyecto>();
+    ArrayList<Tareas> tareas = new ArrayList<Tareas>();
     DBManager dbManager;
     Menu menu;
 
@@ -166,6 +169,7 @@ public class Projects extends Activity {
         final ProyectosWS prjDAO = new ProyectosWS(getResources().getString(R.string.server));
         final UsuariosWS usersDAO = new UsuariosWS(getResources().getString(R.string.server));
         final UsuariosProjWS userProjDAO = new UsuariosProjWS(getResources().getString(R.string.server));
+        final TareasWS tareasDAO = new TareasWS(getResources().getString(R.string.server));
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -204,8 +208,17 @@ public class Projects extends Activity {
                 }
                 }
                 //Grabar los USUARIOS ASIGNADOS A PROYECTOS en la db END //
-                db.close();
+                //Grabar las tareas de los proyectos a la DB
+                tareas = tareasDAO.getAllTareas();
+                if(tareas != null){
+                    db.execSQL("DELETE FROM TASK_PROJ WHERE 1");
+                    for(int a=0;a<tareas.size();a++){
+                        db.execSQL("INSERT INTO TASK_PROJ (id, id_proyecto, nombre , descripcion , coste , valor , id_usuario , completado ) VALUES ("+tareas.get(a).getId()+", "+tareas.get(a).getProyecto()+", '"+tareas.get(a).getNombre()+"', '"+tareas.get(a).getDescripcion()+"', "+tareas.get(a).getCoste()+", "+tareas.get(a).getValor()+", "+tareas.get(a).getUsuario()+", "+tareas.get(a).getCompletado()+")");
+                    }
+                }
+                //Grabar las tareas de los proyectos a la DB END//
                 printProjects.sendEmptyMessage(0);
+                db.close();
                 finishLoadProgress.sendEmptyMessage(0);
             }
         }).start();
@@ -228,6 +241,8 @@ public class Projects extends Activity {
                         //Ejecutar el código normal para cada una de las selecciones de la lista
                         Fragment fragment = new ListProyectos();
                         Bundle args = new Bundle();
+                        args.putInt("prjID", prj.get(i-2).getId());
+                        args.putString("nombrePrj", prj.get(i-2).getNombre());
                         fragment.setArguments(args);
                         //Cambiar el fragment actual por el nuevo
                         FragmentManager fm = getFragmentManager();
