@@ -6,5 +6,6 @@
     <string name="done">Completados</string>
     <string name="fav">Destacados</string>
     <string name="projects">Proyectos</string>
+    <string name="sincro">Sincronizar</string>
 
 </resources>

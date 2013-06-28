@@ -45,14 +45,13 @@ public class Projects extends Activity {
     ArrayList<Usuario> users = new ArrayList<Usuario>();
     ArrayList<UsuariosProyecto> userProj = new ArrayList<UsuariosProyecto>();
     DBManager dbManager;
+    Menu menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.activity_projects);
-
-        setProgressBarIndeterminateVisibility(true);
         //Inicializar el ActionBar
         initActionBar();
         //Inicializar el drawerLayout
@@ -97,6 +96,7 @@ public class Projects extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.projects, menu);
+        this.menu = menu;
         return true;
     }
 
@@ -104,6 +104,11 @@ public class Projects extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if(toggle.onOptionsItemSelected(item)){
             return true;
+        }
+        switch (item.getItemId()){
+            case R.id.sincro:
+                getProjects();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -119,6 +124,7 @@ public class Projects extends Activity {
     * Este Método adquiere los proyectos y los carga los datos en el navigation drawer
     * */
     public void getProjects(){
+        setProgressBarIndeterminateVisibility(true);
         //Declarar el array list como final para poder ser accedido desde una inner class
 
         final Handler finishLoadProgress = new Handler(){

@@ -96,6 +96,8 @@
                 </string>
                 <string name="done" >Done
                 </string>
+                <string name="sincro" >Synchronize
+                </string>
                 <string name="app_name" >Carlotta Labs
                 </string>
             </file>
@@ -103,6 +105,8 @@
                 path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\values-es\strings.xml"
                 qualifiers="es" >
                 <string name="app_name" >Carlotta Labs
+                </string>
+                <string name="sincro" >Sincronizar
                 </string>
                 <string name="done" >Completados
                 </string>
@@ -214,6 +218,21 @@
                 path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\layout\fragment_lista_proyectos.xml"
                 qualifiers=""
                 type="layout" />
+            <file
+                name="sincro"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\sincro.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="lista_proyectos_adapter"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\layout\lista_proyectos_adapter.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="proyecto_opt"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-mdpi\proyecto_opt.jpg"
+                qualifiers="mdpi"
+                type="drawable" />
         </source>
         <source path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\rs\debug" />
     </dataSet>

@@ -14,6 +14,7 @@ public class DBManager extends SQLiteOpenHelper {
     final String _CREATE = "CREATE TABLE PROYECTOS (id INTEGER PRIMARY KEY, nombre TEXT, descripcion, TEXT, owner INTEGER)";
     final String _CREATE_2 = "CREATE TABLE USUARIOS (id INTEGER PRIMARY KEY, nombre TEXT, apellidos TEXT, telefono TEXT, mail TEXT)";
     final String _CREATE_3 = "CREATE TABLE USER_PROJ (id INTEGER PRIMARY KEY, id_usuario INTEGER, id_proyecto, INTEGER)";
+    final String _CREATE_4= "CREATE TABLE USER_PROJ (id INTEGER PRIMARY KEY, id_usuario INTEGER, id_proyecto, INTEGER)";
 
     public DBManager(Context contexto, String nombre, SQLiteDatabase.CursorFactory factory, int version){
 
@@ -26,6 +27,7 @@ public class DBManager extends SQLiteOpenHelper {
             sqLiteDatabase.execSQL(_CREATE);
             sqLiteDatabase.execSQL(_CREATE_2);
             sqLiteDatabase.execSQL(_CREATE_3);
+            sqLiteDatabase.execSQL(_CREATE_4);
             System.out.print("CREATED");
         }catch (Exception e){
             e.printStackTrace();
