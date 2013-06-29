@@ -64,9 +64,10 @@
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/progressBar"
+                    android:id="@+id/progressTareas"
                     android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"/>
+                    android:layout_marginRight="12dp"
+                    android:indeterminate="false"/>
 
         </LinearLayout>
 
@@ -89,9 +90,10 @@
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/progressBar2"
+                    android:id="@+id/progressHoras"
                     android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"/>
+                    android:layout_marginRight="12dp"
+                    android:indeterminate="false"/>
 
         </LinearLayout>
 

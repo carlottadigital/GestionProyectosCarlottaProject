@@ -18,8 +18,14 @@
             >
 
         <LinearLayout
-                android:layout_width="315dp"
-                android:layout_height="fill_parent">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/chCompletado"
+                    android:checked="false"/>
 
             <ImageView
                     android:layout_width="wrap_content"
@@ -32,22 +38,15 @@
                     android:focusableInTouchMode="false"/>
 
             <TextView
-                    android:layout_width="fill_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="proyecto"
                     android:id="@+id/textoProyecto"
-                    android:layout_marginTop="15dp"
                     android:layout_marginLeft="12dp"
-                    android:layout_weight="0.68"
-                    android:layout_marginRight="-15dp"/>
+                    android:layout_weight="0.28"
+                    android:layout_marginBottom="10dp"/>
         </LinearLayout>
 
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:id="@+id/optBtn"
-                android:background="@drawable/proyecto_opt"/>
     </LinearLayout>
 
 </LinearLayout>

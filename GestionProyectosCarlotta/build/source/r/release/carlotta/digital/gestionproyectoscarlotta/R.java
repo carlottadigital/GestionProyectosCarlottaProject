@@ -31,21 +31,21 @@ public final class R {
         public static final int Proyecto=0x7f080003;
         public static final int action_settings=0x7f080010;
         public static final int add_prj=0x7f080011;
+        public static final int chCompletado=0x7f08000d;
         public static final int content=0x7f080001;
         public static final int drawer=0x7f080002;
         public static final int drawer_layout=0x7f080000;
         public static final int imagenLista=0x7f08000b;
-        public static final int imagenProyecto=0x7f08000d;
+        public static final int imagenProyecto=0x7f08000e;
         public static final int linearLayout=0x7f080007;
         public static final int listaProyectos=0x7f08000a;
-        public static final int optBtn=0x7f08000f;
-        public static final int progressBar=0x7f080006;
-        public static final int progressBar2=0x7f080009;
+        public static final int progressHoras=0x7f080009;
+        public static final int progressTareas=0x7f080006;
         public static final int sincro=0x7f080012;
         public static final int textView=0x7f080005;
         public static final int textView3=0x7f080008;
         public static final int textoLista=0x7f08000c;
-        public static final int textoProyecto=0x7f08000e;
+        public static final int textoProyecto=0x7f08000f;
         public static final int tituloProyecto=0x7f080004;
     }
     public static final class layout {
