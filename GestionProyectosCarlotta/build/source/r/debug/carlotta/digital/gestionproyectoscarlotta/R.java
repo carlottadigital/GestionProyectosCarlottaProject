@@ -42,8 +42,8 @@ public final class R {
         public static final int progressHoras=0x7f080009;
         public static final int progressTareas=0x7f080006;
         public static final int sincro=0x7f080012;
-        public static final int textView=0x7f080005;
-        public static final int textView3=0x7f080008;
+        public static final int textHours=0x7f080008;
+        public static final int textTask=0x7f080005;
         public static final int textoLista=0x7f08000c;
         public static final int textoProyecto=0x7f08000f;
         public static final int tituloProyecto=0x7f080004;

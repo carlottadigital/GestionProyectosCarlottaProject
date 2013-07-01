@@ -32,7 +32,7 @@ public class ListProyectos extends Fragment {
     DBManager dbManager;
     ArrayList<Tareas> proyectos;
     ListView listaProyectos;
-    TextView tituloProyecto;
+    TextView tituloProyecto, textHour, textTask;
     ProgressBar horas, tareas;
     int todoTask =0;
     int doneTask =0;
@@ -47,6 +47,8 @@ public class ListProyectos extends Fragment {
         prjID = getArguments().getInt("prjID");
         listaProyectos = (ListView) vista.findViewById(R.id.listaProyectos);
         tituloProyecto = (TextView) vista.findViewById(R.id.tituloProyecto);
+        textTask = (TextView)vista.findViewById(R.id.textTask);
+        textHour = (TextView)vista.findViewById(R.id.textHours);
         horas = (ProgressBar) vista.findViewById(R.id.progressHoras);
         tareas = (ProgressBar) vista.findViewById(R.id.progressTareas);
         tituloProyecto.setText(getArguments().getString("nombrePrj"));
@@ -60,6 +62,23 @@ public class ListProyectos extends Fragment {
         dbManager = new DBManager(getActivity().getApplicationContext(), "database", null, 1);
         listaProyectos.setAdapter(null);
         //Realizar la query
+        updateProjectStatus();
+        ListProyectosAdapter adapter = new ListProyectosAdapter(getActivity().getApplicationContext(), proyectos);
+        listaProyectos.setAdapter(adapter);
+    }
+    public void addListener(){
+        listaProyectos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                //getProjects();
+            }
+        });
+    }
+    public void updateProjectStatus(){
+        doneHour=0;
+        doneTask=0;
+        todoHour=0;
+        todoTask=0;
         SQLiteDatabase dbRead = dbManager.getReadableDatabase();
         Cursor data = dbRead.rawQuery("SELECT * FROM TASK_PROJ WHERE id_proyecto="+prjID, null);
         proyectos = new ArrayList<Tareas>();
@@ -106,17 +125,10 @@ public class ListProyectos extends Fragment {
             //Establecer el progreso total de horas y tareas
             tareas.setProgress(doneTask);
             horas.setProgress(doneHour);
+            //Establecer el progreso total y maximo de los textviews
+            textTask.setText(getResources().getString(R.string.tasks)+" ("+doneTask+"/"+(todoTask+doneTask)+")");
+            textHour.setText(getResources().getString(R.string.horas)+" ("+doneHour+"/"+(todoHour+doneHour)+")");
         }
-        ListProyectosAdapter adapter = new ListProyectosAdapter(getActivity().getApplicationContext(), proyectos);
-        listaProyectos.setAdapter(adapter);
-    }
-    public void addListener(){
-        listaProyectos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //getProjects();
-            }
-        });
     }
     public class ListProyectosAdapter extends BaseAdapter {
 
@@ -170,7 +182,6 @@ public class ListProyectos extends Fragment {
             chCompletado.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(getActivity().getApplicationContext(), "sdiofdshudwju", Toast.LENGTH_LONG).show();
                     SQLiteDatabase db = dbManager.getWritableDatabase();
                     if(chCompletado.isChecked()){
                         db.execSQL("UPDATE TASK_PROJ SET completado=1 WHERE id="+projects.get(position).getId());
@@ -183,6 +194,7 @@ public class ListProyectos extends Fragment {
                     }
                     db.execSQL("INSERT INTO SYNCRO (tipo, id_dato) VALUES (1, "+projects.get(position).getId()+")");
                     db.close();
+                    updateProjectStatus();
                 }
             });
             //Listener de cambio del item END//
