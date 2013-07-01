@@ -244,7 +244,7 @@ public class Projects extends Activity {
                 printProjects.sendEmptyMessage(0);
                 db.close();
                 finishLoadProgress.sendEmptyMessage(0);
-                
+
             }
         }).start();
     }

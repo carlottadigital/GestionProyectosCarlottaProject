@@ -48,7 +48,7 @@
                 </string>
                 <string name="app_name" >Carlotta Labs
                 </string>
-                <string name="server" >http://10.0.2.2/carlottalabs/api/
+                <string name="server" >http://192.168.1.12/carlottalabs/api/
                 </string>
                 <string name="hello_world" >Hello world!
                 </string>
