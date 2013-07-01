@@ -70,7 +70,7 @@ public class ListProyectos extends Fragment {
         listaProyectos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //getProjects();
+                Toast.makeText(getActivity().getApplicationContext(), "Item "+i+" pulsado", Toast.LENGTH_SHORT).show();
             }
         });
     }

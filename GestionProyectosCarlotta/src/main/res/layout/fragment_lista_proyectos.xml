@@ -12,7 +12,6 @@
             android:layout_gravity="left|center_vertical"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:layout_marginBottom="5dp"
             android:orientation="vertical">
 
         <LinearLayout
@@ -67,7 +66,8 @@
                     android:id="@+id/progressTareas"
                     android:layout_marginLeft="12dp"
                     android:layout_marginRight="12dp"
-                    android:indeterminate="false"/>
+                    android:indeterminate="false"
+                    android:layout_marginTop="2dp"/>
 
         </LinearLayout>
 
@@ -93,7 +93,8 @@
                     android:id="@+id/progressHoras"
                     android:layout_marginLeft="12dp"
                     android:layout_marginRight="12dp"
-                    android:indeterminate="false"/>
+                    android:indeterminate="false"
+                    android:layout_marginTop="2dp"/>
 
         </LinearLayout>
 
