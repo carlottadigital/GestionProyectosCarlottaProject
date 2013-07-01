@@ -53,4 +53,26 @@ public class TareasWS {
         }
         return tareas;
     }
+    public boolean setTaskDone(int task){
+        HttpClient client = new DefaultHttpClient();
+        HttpGet get = new HttpGet(urlServer+"gestProyectos.php?func=3&taskId="+task);
+        try {
+            HttpResponse respuesta = client.execute(get);
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+    public boolean setTaskUnDone(int task){
+        HttpClient client = new DefaultHttpClient();
+        HttpGet get = new HttpGet(urlServer+"gestProyectos.php?func=4&taskId="+task);
+        try {
+            HttpResponse respuesta = client.execute(get);
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
 }

@@ -137,6 +137,14 @@ public class Projects extends Activity {
                 setProgressBarIndeterminateVisibility(false);
             }
         };
+        final Handler errorAllowed = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                Toast.makeText(getApplicationContext(), "Sincronización cancelada debido a que no se pudo subir todos los cambios al servidor", Toast.LENGTH_LONG).show();
+                setProgressBarIndeterminateVisibility(false);
+            }
+        };
 
         final Handler printProjects = new Handler(){
             @Override
@@ -173,8 +181,24 @@ public class Projects extends Activity {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                //Variable que decide si se continua con la sincronización
+                boolean allowedSyncro=false;
+                /*Enviar todos los cambios al servidor antes de sincronizar*/
+                 SQLiteDatabase dbRead = dbManager.getWritableDatabase();
+                Cursor sync = dbRead.rawQuery("SELECT * FROM SYNCRO", null);
+                if(sync.moveToFirst()){
+                    //Llamada al metodo (por organización) que se encarga de controlar y enviar los cambios
+                    allowedSyncro = uploadChanges(sync.getInt(1),sync.getInt(0),sync.getInt(2));
+                    while(sync.moveToNext()){
+                        //Llamada al metodo (por organización) que se encarga de controlar y enviar los cambios
+                        allowedSyncro =  uploadChanges(sync.getInt(1),sync.getInt(0),sync.getInt(2));
+                    }
+                }
+                dbRead.execSQL("DELETE FROM SYNCRO WHERE 1");
+                /*Enviar todos los cambios al servidor antes de sincronizar END*/
                 prj = prjDAO.getAllProyectos();
                 SQLiteDatabase db = dbManager.getWritableDatabase();
+
                 if(prj!=null){
                 //Grabar los proyectos a la db de PROYECTOS
                 db.execSQL("DELETE FROM PROYECTOS WHERE 1");
@@ -220,6 +244,7 @@ public class Projects extends Activity {
                 printProjects.sendEmptyMessage(0);
                 db.close();
                 finishLoadProgress.sendEmptyMessage(0);
+                
             }
         }).start();
     }
@@ -272,5 +297,37 @@ public class Projects extends Activity {
                 return false;
             }
         });
+    }
+    public boolean uploadChanges(int tipo, int id, int idCambio){
+        boolean result=false;
+        switch (tipo){
+            case 1:
+                //Crear el webservice
+                TareasWS tareasDAO = new TareasWS(getResources().getString(R.string.server));
+                //Obtener los datos de la db y solo borrarlos en caso de que la sincrnización se realice correctamente
+                SQLiteDatabase db = dbManager.getWritableDatabase();
+                Cursor c = db.rawQuery("SELECT completado FROM TASK_PROJ WHERE id="+idCambio, null);
+                if(c.moveToFirst()){
+                    if(c.getInt(0)==1){
+                        //Si está completado
+                        if(tareasDAO.setTaskDone(idCambio)){
+                            db.execSQL("DELETE FROM SYNCRO WHERE id="+id);
+                            result= true;
+                        }else{
+                            result= false;
+                        }
+                    }else{
+                        //Si no está completado
+                        if(tareasDAO.setTaskUnDone(idCambio)){
+                            db.execSQL("DELETE FROM SYNCRO WHERE id="+id);
+                            result= true;
+                        }else{
+                            result= false;
+                        }
+                    }
+                }
+                break;
+        }
+        return result;
     }
 }
