@@ -16,6 +16,7 @@ import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -138,14 +139,14 @@ public class ListProyectos extends Fragment {
 
 
             TextView text;
-            CheckBox chCompletado;
+
             if (convertView == null) {
 
                 convertView = mInflater.inflate(R.layout.lista_proyectos_adapter, null);
 
             }
             text = (TextView)convertView.findViewById(R.id.textoProyecto);
-            chCompletado = (CheckBox) convertView.findViewById(R.id.chCompletado);
+           final CheckBox chCompletado = (CheckBox) convertView.findViewById(R.id.chCompletado);
             text.setTextColor(Color.parseColor("#000000"));
 
             text.setText(projects.get(position).getNombre());
@@ -158,24 +159,38 @@ public class ListProyectos extends Fragment {
             chCompletado.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                    if(canPinchar){
-                        SQLiteDatabase db = dbManager.getWritableDatabase();
-                        if(b){
-                            db.execSQL("UPDATE TASK_PROJ SET completado=1 WHERE id="+projects.get(position).getId());
-                        }else{
-                            db.execSQL("UPDATE TASK_PROJ SET completado=0 WHERE id="+projects.get(position).getId());
-                        }
-                        db.execSQL("INSERT INTO SYNCRO (tipo, id_dato) VALUES (1, "+projects.get(position).getId()+")");
-                        db.close();
+                    if(false){
+
                         canPinchar = false;
                         count = 0;
-                        getProjects();
+                        //getProjects();
                     }
                 }
             });
+            chCompletado.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(getActivity().getApplicationContext(), "sdiofdshudwju", Toast.LENGTH_LONG).show();
+                    SQLiteDatabase db = dbManager.getWritableDatabase();
+                    if(chCompletado.isChecked()){
+                        db.execSQL("UPDATE TASK_PROJ SET completado=1 WHERE id="+projects.get(position).getId());
+                        projects.get(position).setCompletado(1);
+                        proyectos.get(position).setCompletado(1);
+                    }else{
+                        db.execSQL("UPDATE TASK_PROJ SET completado=0 WHERE id="+projects.get(position).getId());
+                        projects.get(position).setCompletado(0);
+                        proyectos.get(position).setCompletado(0);
+                    }
+                    db.execSQL("INSERT INTO SYNCRO (tipo, id_dato) VALUES (1, "+projects.get(position).getId()+")");
+                    db.close();
+                }
+            });
             //Listener de cambio del item END//
+
+            //Tapon anti bucle-incremental
             count++;
             if(count ==projects.size())canPinchar=true;
+            //EXEC-END
             return convertView;
 
         }

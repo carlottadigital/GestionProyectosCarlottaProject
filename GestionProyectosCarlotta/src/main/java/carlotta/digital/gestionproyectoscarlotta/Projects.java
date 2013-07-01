@@ -308,6 +308,7 @@ public class Projects extends Activity {
                 SQLiteDatabase db = dbManager.getWritableDatabase();
                 Cursor c = db.rawQuery("SELECT completado FROM TASK_PROJ WHERE id="+idCambio, null);
                 if(c.moveToFirst()){
+                    int completado = c.getInt(0);
                     if(c.getInt(0)==1){
                         //Si está completado
                         if(tareasDAO.setTaskDone(idCambio)){
