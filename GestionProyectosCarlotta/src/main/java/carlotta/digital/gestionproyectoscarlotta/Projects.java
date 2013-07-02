@@ -3,8 +3,10 @@ package carlotta.digital.gestionproyectoscarlotta;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.DialogInterface;
 import android.content.pm.PackageInfo;
 import android.content.res.Configuration;
 import android.database.Cursor;
@@ -125,7 +127,7 @@ public class Projects extends Activity {
                 getProjects();
                 break;
             case R.id.add_prj:
-                addProject();
+                    addProject();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -278,7 +280,6 @@ public class Projects extends Activity {
                         Toast.makeText(getApplicationContext(), getResources().getString(R.string.done),Toast.LENGTH_SHORT).show();
                         break;
                     default:
-                        if(!editando){
                             //Ejecutar el código normal para cada una de las selecciones de la lista
                             Fragment fragment = new ListProyectos();
                             Bundle args = new Bundle();
@@ -290,7 +291,7 @@ public class Projects extends Activity {
                             fm.beginTransaction().replace(R.id.content, fragment, "vistaProyectos").commit();
                             //Cerrar el drawer
                             drawer.closeDrawer(drawerList);
-                        }
+                            startActionMode(editActionBar);
                         break;
                 }
             }
@@ -358,7 +359,7 @@ public class Projects extends Activity {
         return result;
     }
     /**
-     * Interfaz para convertir el actionBar en otro modo
+     * Interfaz para convertir el actionBar en modo editar proyecto
      */
 
     private ActionMode.Callback editActionBar = new ActionMode.Callback(){
@@ -378,7 +379,7 @@ public class Projects extends Activity {
         public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
             switch (menuItem.getItemId()){
                 case R.id.borrar:
-                    deleteProject();
+                    dialogBorrar();
                     onDestroyActionMode(actionMode);
                     break;
                 default:
@@ -484,4 +485,35 @@ public class Projects extends Activity {
         });
         deleteDialog.show();
     }
-}
+    /*
+    * Metodo para agregar una tarea al proyecto actual
+    * */
+    public void addTask(){
+        LayoutInflater factory = LayoutInflater.from(this);
+        final View deleteDialogView = factory.inflate(R.layout.dialog_add_task, null);
+        final AlertDialog deleteDialog = new AlertDialog.Builder(this).create();
+        deleteDialog.setView(deleteDialogView);
+        //Cargar los datos en los textviews
+
+        deleteDialog.show();
+    }
+    public Dialog dialogBorrar(){
+        final String[] items = {"Si", "No"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle("Desea borrar este proyecto?");
+        builder.setItems(items, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int item) {
+                switch (item){
+                    case 0:
+                        deleteProject();
+                        break;
+                    case 1:
+
+                        break;
+                }
+            }
+        });
+        return builder.create();
+    }
+ }

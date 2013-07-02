@@ -32,14 +32,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e10e2ed-1072-44a3-9d12-39ade7df4ba2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/layout/dialog_add_project.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/drawable-hdpi/add_task.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/layout/dialog_add_task.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/carlotta/digital/gestionproyectoscarlotta/Projects.java" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/carlotta/digital/gestionproyectoscarlotta/Projects.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/webservices/ProyectosWS.java" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/webservices/ProyectosWS.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/build/source/r/debug/carlotta/digital/gestionproyectoscarlotta/R.java" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/build/source/r/debug/carlotta/digital/gestionproyectoscarlotta/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/values-en/strings.xml" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/values-en/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/values-es/strings.xml" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/values-es/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/build/res/all/debug/values-en/values.xml" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/build/res/all/debug/values-en/values.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/build/res/all/debug/values-es/values.xml" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/build/res/all/debug/values-es/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/build/res/all/debug/menu/edit_projects.xml" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/build/res/all/debug/menu/edit_projects.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/menu/edit_projects.xml" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/menu/edit_projects.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GestionProyectosCarlotta.iws" />
@@ -126,16 +124,7 @@
       <file leaf-file-name="DBManager.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/sqlite/DBManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="50" selection-start="318" selection-end="327" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1224">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="419" selection-end="419" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="289">
+            <state line="13" column="50" selection-start="318" selection-end="327" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1190">
               <folding />
             </state>
           </provider>
@@ -144,53 +133,67 @@
       <file leaf-file-name="Projects.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/carlotta/digital/gestionproyectoscarlotta/Projects.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="456" column="30" selection-start="19902" selection-end="19902" vertical-scroll-proportion="0.08708273" vertical-offset="7692" max-vertical-offset="8381">
+            <state line="503" column="53" selection-start="21921" selection-end="21921" vertical-scroll-proportion="0.4871795" vertical-offset="8228" max-vertical-offset="8925">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1613#1623#0" expanded="true" />
-                <element signature="e#1671#1680#0" expanded="true" />
-                <element signature="e#1740#1758#0" expanded="true" />
-                <element signature="e#1806#1814#0" expanded="true" />
-                <element signature="e#2791#2834#0" expanded="true" />
-                <element signature="e#3017#3060#0" expanded="true" />
-                <element signature="e#4646#4689#0" expanded="true" />
-                <element signature="e#5019#5236#0" expanded="true" />
-                <element signature="e#5225#5226#0" expanded="true" />
-                <element signature="e#5275#5663#0" expanded="true" />
-                <element signature="e#5652#5653#0" expanded="true" />
-                <element signature="e#5704#6837#0" expanded="true" />
-                <element signature="e#5950#5958#0" expanded="true" />
-                <element signature="e#5991#6029#0" expanded="true" />
-                <element signature="e#6061#6100#0" expanded="true" />
-                <element signature="e#6826#6827#0" expanded="true" />
-                <element signature="e#7123#7164#0" expanded="true" />
-                <element signature="e#7218#7259#0" expanded="true" />
-                <element signature="e#7324#7365#0" expanded="true" />
-                <element signature="e#7416#7457#0" expanded="true" />
-                <element signature="e#7479#11552#0" expanded="true" />
-                <element signature="e#11541#11542#0" expanded="true" />
-                <element signature="e#11726#13250#0" expanded="true" />
-                <element signature="e#11999#12037#0" expanded="true" />
-                <element signature="e#12189#12228#0" expanded="true" />
-                <element signature="e#13239#13240#0" expanded="true" />
-                <element signature="e#13299#14255#0" expanded="true" />
-                <element signature="e#13584#13622#0" expanded="true" />
-                <element signature="e#13782#13821#0" expanded="true" />
-                <element signature="e#14244#14245#0" expanded="true" />
-                <element signature="e#14491#14532#0" expanded="true" />
-                <element signature="e#15816#15857#0" expanded="true" />
-                <element signature="e#18779#19057#0" expanded="true" />
-                <element signature="e#19046#19047#0" expanded="true" />
-                <element signature="e#19167#19470#0" expanded="true" />
-                <element signature="e#19459#19460#0" expanded="true" />
-                <element signature="e#19574#19966#0" expanded="true" />
-                <element signature="e#19955#19956#0" expanded="true" />
-                <element signature="e#20054#21151#0" expanded="true" />
-                <element signature="e#20238#21117#0" expanded="true" />
-                <element signature="e#20463#20504#0" expanded="true" />
-                <element signature="e#21098#21099#0" expanded="true" />
-                <element signature="e#21140#21141#0" expanded="true" />
+                <element signature="e#1680#1690#0" expanded="true" />
+                <element signature="e#1738#1747#0" expanded="true" />
+                <element signature="e#1807#1825#0" expanded="true" />
+                <element signature="e#1873#1881#0" expanded="true" />
+                <element signature="e#2858#2901#0" expanded="true" />
+                <element signature="e#3084#3127#0" expanded="true" />
+                <element signature="e#4717#4760#0" expanded="true" />
+                <element signature="e#5090#5307#0" expanded="true" />
+                <element signature="e#5296#5297#0" expanded="true" />
+                <element signature="e#5346#5734#0" expanded="true" />
+                <element signature="e#5723#5724#0" expanded="true" />
+                <element signature="e#5775#6908#0" expanded="true" />
+                <element signature="e#6021#6029#0" expanded="true" />
+                <element signature="e#6062#6100#0" expanded="true" />
+                <element signature="e#6132#6171#0" expanded="true" />
+                <element signature="e#6897#6898#0" expanded="true" />
+                <element signature="e#7194#7235#0" expanded="true" />
+                <element signature="e#7289#7330#0" expanded="true" />
+                <element signature="e#7395#7436#0" expanded="true" />
+                <element signature="e#7487#7528#0" expanded="true" />
+                <element signature="e#7550#11623#0" expanded="true" />
+                <element signature="e#11612#11613#0" expanded="true" />
+                <element signature="e#11797#13316#0" expanded="true" />
+                <element signature="e#12070#12108#0" expanded="true" />
+                <element signature="e#12260#12299#0" expanded="true" />
+                <element signature="e#13305#13306#0" expanded="true" />
+                <element signature="e#13365#14321#0" expanded="true" />
+                <element signature="e#13650#13688#0" expanded="true" />
+                <element signature="e#13848#13887#0" expanded="true" />
+                <element signature="e#14310#14311#0" expanded="true" />
+                <element signature="e#14557#14598#0" expanded="true" />
+                <element signature="e#15882#15923#0" expanded="true" />
+                <element signature="e#18855#19133#0" expanded="true" />
+                <element signature="e#19122#19123#0" expanded="true" />
+                <element signature="e#19243#19546#0" expanded="true" />
+                <element signature="e#19535#19536#0" expanded="true" />
+                <element signature="e#19650#20042#0" expanded="true" />
+                <element signature="e#20031#20032#0" expanded="true" />
+                <element signature="e#20130#21227#0" expanded="true" />
+                <element signature="e#20314#21193#0" expanded="true" />
+                <element signature="e#20539#20580#0" expanded="true" />
+                <element signature="e#21174#21175#0" expanded="true" />
+                <element signature="e#21216#21217#0" expanded="true" />
+                <element signature="e#21957#22297#0" expanded="true" />
+                <element signature="e#22286#22287#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dialog_add_task.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/layout/dialog_add_task.xml">
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -230,8 +233,11 @@
       <file leaf-file-name="edit_projects.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/menu/edit_projects.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="39" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="238">
-              <folding />
+            <state line="7" column="45" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+              <folding>
+                <element signature="e#166#179#0" expanded="true" />
+                <element signature="e#358#374#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -294,22 +300,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/carlotta/digital/gestionproyectoscarlotta/MainActivity.java" />
         <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/menu/projects.xml" />
         <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/models/Tareas.java" />
         <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/adapters/ListProyectosAdapter.java" />
         <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/webservices/TareasWS.java" />
         <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/layout/lista_proyectos_adapter.xml" />
         <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/layout/fragment_lista_proyectos.xml" />
-        <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/menu/edit_projects.xml" />
         <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/sqlite/DBManager.java" />
         <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/fragments/ListProyectos.java" />
         <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/values-en/strings.xml" />
         <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/values-es/strings.xml" />
         <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/layout/dialog_add_project.xml" />
-        <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/carlotta/digital/gestionproyectoscarlotta/Projects.java" />
         <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/webservices/ProyectosWS.java" />
+        <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/layout/dialog_add_task.xml" />
+        <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/menu/edit_projects.xml" />
+        <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/carlotta/digital/gestionproyectoscarlotta/Projects.java" />
       </list>
     </option>
   </component>
@@ -345,7 +351,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -422,6 +428,122 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionProyectosCarlotta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionProyectosCarlottaProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionProyectosCarlotta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionProyectosCarlotta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionProyectosCarlottaProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionProyectosCarlotta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionProyectosCarlotta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionProyectosCarlottaProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionProyectosCarlotta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-hdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionProyectosCarlotta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionProyectosCarlottaProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionProyectosCarlotta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -456,9 +578,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionProyectosCarlotta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionProyectosCarlottaProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionProyectosCarlotta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fragments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -487,9 +639,9 @@
       <recent name="webservices" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi" />
       <recent name="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-xhdpi" />
       <recent name="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-mdpi" />
-      <recent name="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi" />
       <recent name="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res" />
     </key>
   </component>
@@ -746,11 +898,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/widget/CompoundButton.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="13" selection-start="2191" selection-end="2191" vertical-scroll-proportion="0.8068182" vertical-offset="282" max-vertical-offset="986" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/layout/lista_proyectos_adapter.xml">
       <provider selected="true" editor-type-id="android-designer">
         <state />
@@ -813,13 +960,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/sqlite/DBManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="50" selection-start="318" selection-end="327" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1190">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/fragments/ListProyectos.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="136" column="0" selection-start="5347" selection-end="5347" vertical-scroll-proportion="0.0" vertical-offset="1457" max-vertical-offset="3587">
@@ -827,26 +967,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/menu/edit_projects.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="39" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/webservices/TareasWS.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="68" column="68" selection-start="2620" selection-end="2620" vertical-scroll-proportion="0.0" vertical-offset="537" max-vertical-offset="1241">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/layout/dialog_add_project.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
           <folding />
         </state>
       </provider>
@@ -860,54 +983,93 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/menu/edit_projects.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="45" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+          <folding>
+            <element signature="e#166#179#0" expanded="true" />
+            <element signature="e#358#374#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/layout/dialog_add_project.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/layout/dialog_add_task.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/sqlite/DBManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="50" selection-start="318" selection-end="327" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1190">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/carlotta/digital/gestionproyectoscarlotta/Projects.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="456" column="30" selection-start="19902" selection-end="19902" vertical-scroll-proportion="0.08708273" vertical-offset="7692" max-vertical-offset="8381">
+        <state line="503" column="53" selection-start="21921" selection-end="21921" vertical-scroll-proportion="0.4871795" vertical-offset="8228" max-vertical-offset="8925">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1613#1623#0" expanded="true" />
-            <element signature="e#1671#1680#0" expanded="true" />
-            <element signature="e#1740#1758#0" expanded="true" />
-            <element signature="e#1806#1814#0" expanded="true" />
-            <element signature="e#2791#2834#0" expanded="true" />
-            <element signature="e#3017#3060#0" expanded="true" />
-            <element signature="e#4646#4689#0" expanded="true" />
-            <element signature="e#5019#5236#0" expanded="true" />
-            <element signature="e#5225#5226#0" expanded="true" />
-            <element signature="e#5275#5663#0" expanded="true" />
-            <element signature="e#5652#5653#0" expanded="true" />
-            <element signature="e#5704#6837#0" expanded="true" />
-            <element signature="e#5950#5958#0" expanded="true" />
-            <element signature="e#5991#6029#0" expanded="true" />
-            <element signature="e#6061#6100#0" expanded="true" />
-            <element signature="e#6826#6827#0" expanded="true" />
-            <element signature="e#7123#7164#0" expanded="true" />
-            <element signature="e#7218#7259#0" expanded="true" />
-            <element signature="e#7324#7365#0" expanded="true" />
-            <element signature="e#7416#7457#0" expanded="true" />
-            <element signature="e#7479#11552#0" expanded="true" />
-            <element signature="e#11541#11542#0" expanded="true" />
-            <element signature="e#11726#13250#0" expanded="true" />
-            <element signature="e#11999#12037#0" expanded="true" />
-            <element signature="e#12189#12228#0" expanded="true" />
-            <element signature="e#13239#13240#0" expanded="true" />
-            <element signature="e#13299#14255#0" expanded="true" />
-            <element signature="e#13584#13622#0" expanded="true" />
-            <element signature="e#13782#13821#0" expanded="true" />
-            <element signature="e#14244#14245#0" expanded="true" />
-            <element signature="e#14491#14532#0" expanded="true" />
-            <element signature="e#15816#15857#0" expanded="true" />
-            <element signature="e#18779#19057#0" expanded="true" />
-            <element signature="e#19046#19047#0" expanded="true" />
-            <element signature="e#19167#19470#0" expanded="true" />
-            <element signature="e#19459#19460#0" expanded="true" />
-            <element signature="e#19574#19966#0" expanded="true" />
-            <element signature="e#19955#19956#0" expanded="true" />
-            <element signature="e#20054#21151#0" expanded="true" />
-            <element signature="e#20238#21117#0" expanded="true" />
-            <element signature="e#20463#20504#0" expanded="true" />
-            <element signature="e#21098#21099#0" expanded="true" />
-            <element signature="e#21140#21141#0" expanded="true" />
+            <element signature="e#1680#1690#0" expanded="true" />
+            <element signature="e#1738#1747#0" expanded="true" />
+            <element signature="e#1807#1825#0" expanded="true" />
+            <element signature="e#1873#1881#0" expanded="true" />
+            <element signature="e#2858#2901#0" expanded="true" />
+            <element signature="e#3084#3127#0" expanded="true" />
+            <element signature="e#4717#4760#0" expanded="true" />
+            <element signature="e#5090#5307#0" expanded="true" />
+            <element signature="e#5296#5297#0" expanded="true" />
+            <element signature="e#5346#5734#0" expanded="true" />
+            <element signature="e#5723#5724#0" expanded="true" />
+            <element signature="e#5775#6908#0" expanded="true" />
+            <element signature="e#6021#6029#0" expanded="true" />
+            <element signature="e#6062#6100#0" expanded="true" />
+            <element signature="e#6132#6171#0" expanded="true" />
+            <element signature="e#6897#6898#0" expanded="true" />
+            <element signature="e#7194#7235#0" expanded="true" />
+            <element signature="e#7289#7330#0" expanded="true" />
+            <element signature="e#7395#7436#0" expanded="true" />
+            <element signature="e#7487#7528#0" expanded="true" />
+            <element signature="e#7550#11623#0" expanded="true" />
+            <element signature="e#11612#11613#0" expanded="true" />
+            <element signature="e#11797#13316#0" expanded="true" />
+            <element signature="e#12070#12108#0" expanded="true" />
+            <element signature="e#12260#12299#0" expanded="true" />
+            <element signature="e#13305#13306#0" expanded="true" />
+            <element signature="e#13365#14321#0" expanded="true" />
+            <element signature="e#13650#13688#0" expanded="true" />
+            <element signature="e#13848#13887#0" expanded="true" />
+            <element signature="e#14310#14311#0" expanded="true" />
+            <element signature="e#14557#14598#0" expanded="true" />
+            <element signature="e#15882#15923#0" expanded="true" />
+            <element signature="e#18855#19133#0" expanded="true" />
+            <element signature="e#19122#19123#0" expanded="true" />
+            <element signature="e#19243#19546#0" expanded="true" />
+            <element signature="e#19535#19536#0" expanded="true" />
+            <element signature="e#19650#20042#0" expanded="true" />
+            <element signature="e#20031#20032#0" expanded="true" />
+            <element signature="e#20130#21227#0" expanded="true" />
+            <element signature="e#20314#21193#0" expanded="true" />
+            <element signature="e#20539#20580#0" expanded="true" />
+            <element signature="e#21174#21175#0" expanded="true" />
+            <element signature="e#21216#21217#0" expanded="true" />
+            <element signature="e#21957#22297#0" expanded="true" />
+            <element signature="e#22286#22287#0" expanded="true" />
           </folding>
         </state>
       </provider>
