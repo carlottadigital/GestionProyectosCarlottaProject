@@ -14,5 +14,15 @@
     <string name="Prjname">Project name</string>
     <string name="Prjdesc">Project description</string>
     <string name="PrjCreate">Create Project</string>
+    <!-- Añadir tareas -->
+    <string name="addTask">Add Task</string>
+    <string name="taskName">Task name</string>
+    <string name="taskDesc">Task description</string>
+    <string name="taskCoste">Cost (inversion)</string>
+    <string name="taskHours">Work Hours</string>
+    <string name="taskValue">Value (ROI)</string>
+    <string name="taskUser">User assigned to the task</string>
+    <string name="saveTask">Save Task</string>
+    <!-- Añadir tareas END-->
 
 </resources>

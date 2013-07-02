@@ -26,9 +26,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -291,7 +293,6 @@ public class Projects extends Activity {
                             fm.beginTransaction().replace(R.id.content, fragment, "vistaProyectos").commit();
                             //Cerrar el drawer
                             drawer.closeDrawer(drawerList);
-                            startActionMode(editActionBar);
                         break;
                 }
             }
@@ -321,9 +322,21 @@ public class Projects extends Activity {
     public boolean uploadChanges(int tipo, int id, int idCambio){
         boolean result=false;
         switch (tipo){
+            case 6:
+                //Obtener instancia del webservice de Tareas
+                SQLiteDatabase db3 = dbManager.getWritableDatabase();
+                TareasWS tareasDAO = new TareasWS(getResources().getString(R.string.server));
+                Cursor tasks = db3.rawQuery("SELECT FROM TASK_PROJ WHERE id="+idCambio,null);
+                if(tasks.moveToFirst()){
+                    tareasDAO.addTask(tasks.getString(2),tasks.getString(3),tasks.getInt(5),tasks.getInt(4),tasks.getInt(5),tasks.getInt(6), tasks.getInt(1));
+                    while (tasks.moveToNext()){
+                        tareasDAO.addTask(tasks.getString(2),tasks.getString(3),tasks.getInt(5),tasks.getInt(4),tasks.getInt(5),tasks.getInt(6), tasks.getInt(1));
+                    }
+                }
+                break;
             case 1:
                 //Crear el webservice
-                TareasWS tareasDAO = new TareasWS(getResources().getString(R.string.server));
+                tareasDAO = new TareasWS(getResources().getString(R.string.server));
                 //Obtener los datos de la db y solo borrarlos en caso de que la sincrnización se realice correctamente
                 SQLiteDatabase db = dbManager.getWritableDatabase();
                 Cursor c = db.rawQuery("SELECT completado FROM TASK_PROJ WHERE id="+idCambio, null);
@@ -355,6 +368,7 @@ public class Projects extends Activity {
                 SQLiteDatabase db2 = dbManager.getWritableDatabase();
                 proyectosDAO.deleteProject(idCambio);
                 break;
+
         }
         return result;
     }
@@ -379,8 +393,11 @@ public class Projects extends Activity {
         public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
             switch (menuItem.getItemId()){
                 case R.id.borrar:
-                    dialogBorrar();
+                    dialogBorrar().show();
                     onDestroyActionMode(actionMode);
+                    break;
+                case R.id.addTask:
+                    addTask();
                     break;
                 default:
                     break;
@@ -494,6 +511,70 @@ public class Projects extends Activity {
         final AlertDialog deleteDialog = new AlertDialog.Builder(this).create();
         deleteDialog.setView(deleteDialogView);
         //Cargar los datos en los textviews
+        final EditText nombre = (EditText)deleteDialogView.findViewById(R.id.taskName);
+        final EditText desc = (EditText)deleteDialogView.findViewById(R.id.taskDesc);
+        final EditText coste = (EditText)deleteDialogView.findViewById(R.id.taskCoste);
+        final EditText horas = (EditText)deleteDialogView.findViewById(R.id.taskHours);
+        final EditText inversion = (EditText)deleteDialogView.findViewById(R.id.taskValue);
+        final Spinner spinnerUsers = (Spinner)deleteDialogView.findViewById(R.id.taskUser);
+        Button taskBtn = (Button)deleteDialogView.findViewById(R.id.taskBtn);
+        //Rellenar el spinner//
+        final SQLiteDatabase db = dbManager.getWritableDatabase();
+        final ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+        Cursor c = db.rawQuery("SELECT * FROM USUARIOS", null);
+        if(c.moveToFirst()){
+            Usuario user = new Usuario();
+            user.setId(c.getInt(0));
+            user.setNombre(c.getString(1));
+            user.setApellidos(c.getString(2));
+            user.setTelefono(c.getInt(3));
+            user.setMail(c.getString(4));
+            usuarios.add(user);
+            while(c.moveToNext()){
+                user = new Usuario();
+                user.setId(c.getInt(0));
+                user.setNombre(c.getString(1));
+                user.setApellidos(c.getString(2));
+                user.setTelefono(c.getInt(3));
+                user.setMail(c.getString(4));
+                usuarios.add(user);
+            }
+            ArrayList<String> userNames = new ArrayList<String>();
+            if(userNames.size()!=0){
+                //Comprobar si la lista de usuarios está vacia
+                for(int a=0;a<usuarios.size();a++){
+                    userNames.add(usuarios.get(a).getNombre()+" "+usuarios.get(a).getApellidos());
+                }
+                spinnerUsers.setAdapter(new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, userNames));
+            }
+        }
+        //Rellenar el spinner//
+        //Acciones y demás
+        taskBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if((nombre.getText().toString() !="")&&(desc.getText().toString()!="")&&(coste.getText().toString()!="")&(horas.getText().toString()!="")&&(inversion.getText().toString()!="")){
+                    try{
+                        Toast.makeText(getApplicationContext(), "Agregando tarea....", Toast.LENGTH_LONG).show();
+                        db.execSQL("INSERT INTO TASK_PROJ (id_proyecto, nombre, descripcion, coste, valor, id_usuario, completado) VALUES ("+prj.get(selectedItem-2).getId()+", '"+nombre.getText().toString()+"', '"+desc.getText().toString()+"', "+horas.getText().toString()+", "+inversion.getText().toString()+", "+usuarios.get(spinnerUsers.getSelectedItemPosition()).getId()+",0)");
+                        db.execSQL("INSERT INTO USER_PROJ (id_usuario, id_proyecto) VALUES ("+prj.get(selectedItem-2).getId()+","+usuarios.get(spinnerUsers.getSelectedItemPosition()).getId()+")");
+                        Cursor checkQ = db.rawQuery("SELECT id FROM TASK_PROJ WHERE 1", null);
+                        checkQ.moveToLast();
+                        db.execSQL("INSERT INTO SYNCRO (tipo, id_dato) VALUES (6, "+checkQ.getString(0)+")");
+                        db.close();
+                        deleteDialog.dismiss();
+                        ListProyectos detalle = (ListProyectos) getFragmentManager().findFragmentByTag("vistaProyectos");
+                        detalle.updateProjectStatus();
+                        detalle.getProjects();
+                    }catch (Exception e){
+                        e.printStackTrace();
+                        Toast.makeText(getApplicationContext(), "Error Nº: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                }else{
+                    Toast.makeText(getApplicationContext(), "Introduzca todos los campos antes de continuar", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
         deleteDialog.show();
     }

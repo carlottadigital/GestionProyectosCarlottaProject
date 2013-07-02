@@ -6,13 +6,21 @@
     <string name="Prjname">Project name</string>
     <string name="add">Add</string>
     <string name="addProject">Add new Project</string>
+    <string name="addTask">Add Task</string>
     <string name="app_name">Carlotta Labs</string>
     <string name="delete">Delete</string>
     <string name="done">Done</string>
     <string name="fav">Featured</string>
     <string name="horas">Hours</string>
     <string name="projects">Projects</string>
+    <string name="saveTask">Save Task</string>
     <string name="sincro">Synchronize</string>
+    <string name="taskCoste">Cost (inversion)</string>
+    <string name="taskDesc">Task description</string>
+    <string name="taskHours">Work Hours</string>
+    <string name="taskName">Task name</string>
+    <string name="taskUser">User assigned to the task</string>
+    <string name="taskValue">Value (ROI)</string>
     <string name="tasks">Tasks</string>
 
 </resources>
