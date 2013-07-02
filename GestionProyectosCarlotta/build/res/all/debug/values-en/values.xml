@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="PrjCreate">Create Project</string>
+    <string name="Prjdesc">Project description</string>
+    <string name="Prjname">Project name</string>
     <string name="add">Add</string>
+    <string name="addProject">Add new Project</string>
     <string name="app_name">Carlotta Labs</string>
     <string name="delete">Delete</string>
     <string name="done">Done</string>

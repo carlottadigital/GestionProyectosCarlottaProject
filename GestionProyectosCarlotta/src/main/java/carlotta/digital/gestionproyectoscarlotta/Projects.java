@@ -2,8 +2,10 @@ package carlotta.digital.gestionproyectoscarlotta;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.pm.PackageInfo;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -15,13 +17,17 @@ import android.os.Message;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.ActionMode;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -53,6 +59,8 @@ public class Projects extends Activity {
     Menu menu;
     int selectedItem;
     boolean editando = false;
+    //DEBUG BORRAR AL PASAR A PRODUCCION
+    int owner = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,6 +123,9 @@ public class Projects extends Activity {
         switch (item.getItemId()){
             case R.id.sincro:
                 getProjects();
+                break;
+            case R.id.add_prj:
+                addProject();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -398,5 +409,79 @@ public class Projects extends Activity {
             Toast.makeText(getApplicationContext(), "Error Nº: "+e.getMessage(), Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
+    }
+    /*
+    * Dialogo de creación de proyecto
+    * */
+    public void addProject(){//Preparar el dialogo
+        LayoutInflater factory = LayoutInflater.from(this);
+        final View deleteDialogView = factory.inflate(R.layout.dialog_add_project, null);
+        final AlertDialog deleteDialog = new AlertDialog.Builder(this).create();
+        deleteDialog.setView(deleteDialogView);
+        //Cargar los datos en los textviews
+        final EditText nombrePrj = (EditText) deleteDialogView.findViewById(R.id.prjName);
+        final EditText descripcionPrj = (EditText) deleteDialogView.findViewById(R.id.prjDesc);
+        Button btnPrj = (Button) deleteDialogView.findViewById(R.id.createPrjBtn);
+        //Handlers//
+
+        /*
+        * En caso de que los datos esté incompleto
+        * */
+        final Handler errorEmpty = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                Toast.makeText(getApplicationContext(), "Introduzca un nombre para continuar", Toast.LENGTH_SHORT).show();
+            }
+        };
+        /*
+        * En caso de que ocurra un error de red
+        * */
+        final Handler errorVarius = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                Toast.makeText(getApplicationContext(), "Error desconocido...", Toast.LENGTH_SHORT).show();
+                deleteDialog.dismiss();
+            }
+        };
+        /*
+        * En caso de que el resultado sea ok
+        * */
+        final Handler resultOK = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                Toast.makeText(getApplicationContext(), "Sincronizando...", Toast.LENGTH_SHORT).show();
+                setProgressBarIndeterminateVisibility(false);
+                getProjects();
+                deleteDialog.dismiss();
+            }
+        };
+        //Handlers END//
+        //Accion del boton
+        btnPrj.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setProgressBarIndeterminateVisibility(true);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(nombrePrj.getText().toString() != "") {
+                            ProyectosWS proyectosDAO = new ProyectosWS(getResources().getString(R.string.server));
+                            //Crea el proyecto y comprueba que no ha ocurrido ningun error de red y a continuación sincroniza
+                            if(proyectosDAO.createProject(owner, nombrePrj.getText().toString(), descripcionPrj.getText().toString())){
+                                resultOK.sendEmptyMessage(0);
+                            }else{
+                                errorVarius.sendEmptyMessage(0);
+                            }
+                        }else{
+                            errorEmpty.sendEmptyMessage(0);
+                        }
+                    }
+                }).start();
+            }
+        });
+        deleteDialog.show();
     }
 }

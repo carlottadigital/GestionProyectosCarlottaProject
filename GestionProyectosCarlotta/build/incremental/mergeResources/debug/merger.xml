@@ -52,9 +52,9 @@
                 </string>
                 <string name="hello_world" >Hello world!
                 </string>
-                <string name="serverOLD" >http://10.0.2.2/carlottalabs/api/
-                </string>
                 <string name="title_activity_projects" >MainActivity
+                </string>
+                <string name="serverOLD" >http://10.0.2.2/carlottalabs/api/
                 </string>
             </file>
             <file
@@ -73,18 +73,18 @@
                 </style>
 
                 <style
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                </style>
+
+                <style
                     name="MyActionBar"
                     parent="@android:style/Widget.Holo.Light.ActionBar" >
                     <item name="android:background">
 #FE0000
                     </item>
-                </style>
-
-                <style
-                    name="AppTheme"
-                    parent="AppBaseTheme" >
-
-                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
                 </style>
             </file>
             <file
@@ -94,15 +94,23 @@
                 </string>
                 <string name="add" >Add
                 </string>
+                <string name="PrjCreate" >Create Project
+                </string>
+                <string name="addProject" >Add new Project
+                </string>
+                <string name="Prjname" >Project name
+                </string>
                 <string name="fav" >Featured
                 </string>
-                <string name="done" >Done
-                </string>
                 <string name="sincro" >Synchronize
+                </string>
+                <string name="done" >Done
                 </string>
                 <string name="horas" >Hours
                 </string>
                 <string name="tasks" >Tasks
+                </string>
+                <string name="Prjdesc" >Project description
                 </string>
                 <string name="app_name" >Carlotta Labs
                 </string>
@@ -114,15 +122,23 @@
                 qualifiers="es" >
                 <string name="app_name" >Carlotta Labs
                 </string>
-                <string name="sincro" >Sincronizar
+                <string name="Prjname" >Nombre del proyecto
                 </string>
                 <string name="delete" >Borrar
                 </string>
+                <string name="addProject" >Agregar un proyecto
+                </string>
+                <string name="sincro" >Sincronizar
+                </string>
                 <string name="done" >Completados
+                </string>
+                <string name="PrjCreate" >Crear Proyecto
+                </string>
+                <string name="tasks" >Tareas
                 </string>
                 <string name="fav" >Destacados
                 </string>
-                <string name="tasks" >Tareas
+                <string name="Prjdesc" >Descripcion del Proyecto
                 </string>
                 <string name="horas" >Horas
                 </string>
@@ -277,6 +293,11 @@
                 path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-xhdpi\delete.png"
                 qualifiers="xhdpi"
                 type="drawable" />
+            <file
+                name="dialog_add_project"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\layout\dialog_add_project.xml"
+                qualifiers=""
+                type="layout" />
         </source>
         <source path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\rs\debug" />
     </dataSet>

@@ -6,9 +6,13 @@
     <string name="done">Completados</string>
     <string name="fav">Destacados</string>
     <string name="add">Agregar</string>
+    <string name="addProject">Agregar un proyecto</string>
     <string name="sincro">Sincronizar</string>
     <string name="horas">Horas</string>
     <string name="tasks">Tareas</string>
     <string name="delete">Borrar</string>
+    <string name="Prjname">Nombre del proyecto</string>
+    <string name="Prjdesc">Descripcion del Proyecto</string>
+    <string name="PrjCreate">Crear Proyecto</string>
 
 </resources>
