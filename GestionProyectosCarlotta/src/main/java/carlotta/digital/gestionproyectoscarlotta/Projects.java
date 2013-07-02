@@ -326,7 +326,7 @@ public class Projects extends Activity {
                 //Obtener instancia del webservice de Tareas
                 SQLiteDatabase db3 = dbManager.getWritableDatabase();
                 TareasWS tareasDAO = new TareasWS(getResources().getString(R.string.server));
-                Cursor tasks = db3.rawQuery("SELECT FROM TASK_PROJ WHERE id="+idCambio,null);
+                Cursor tasks = db3.rawQuery("SELECT * FROM TASK_PROJ WHERE id="+idCambio,null);
                 if(tasks.moveToFirst()){
                     tareasDAO.addTask(tasks.getString(2),tasks.getString(3),tasks.getInt(5),tasks.getInt(4),tasks.getInt(5),tasks.getInt(6), tasks.getInt(1));
                     while (tasks.moveToNext()){
@@ -540,13 +540,12 @@ public class Projects extends Activity {
                 usuarios.add(user);
             }
             ArrayList<String> userNames = new ArrayList<String>();
-            if(userNames.size()!=0){
                 //Comprobar si la lista de usuarios está vacia
                 for(int a=0;a<usuarios.size();a++){
                     userNames.add(usuarios.get(a).getNombre()+" "+usuarios.get(a).getApellidos());
                 }
                 spinnerUsers.setAdapter(new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, userNames));
-            }
+
         }
         //Rellenar el spinner//
         //Acciones y demás

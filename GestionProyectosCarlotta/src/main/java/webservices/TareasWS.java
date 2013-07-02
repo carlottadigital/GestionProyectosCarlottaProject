@@ -86,7 +86,7 @@ public class TareasWS {
         boolean result = false;
         // Create a new HttpClient and Post Header
         HttpClient httpclient = new DefaultHttpClient();
-        HttpPost httppost = new HttpPost(urlServer+"gestTask.php?func=6");
+        HttpPost httppost = new HttpPost(urlServer+"gestProyectos.php?func=7");
 
         try {
             // Add your data
