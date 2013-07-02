@@ -6,7 +6,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.ActionMode;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -130,6 +134,10 @@ public class ListProyectos extends Fragment {
             textHour.setText(getResources().getString(R.string.horas)+" ("+doneHour+"/"+(todoHour+doneHour)+")");
         }
     }
+
+    /*
+    * Innerclass del Adapter
+    * */
     public class ListProyectosAdapter extends BaseAdapter {
 
         private LayoutInflater mInflater;

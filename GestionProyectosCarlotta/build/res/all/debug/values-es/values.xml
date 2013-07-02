@@ -3,6 +3,7 @@
 
     <string name="add">Agregar</string>
     <string name="app_name">Carlotta Labs</string>
+    <string name="delete">Borrar</string>
     <string name="done">Completados</string>
     <string name="fav">Destacados</string>
     <string name="horas">Horas</string>

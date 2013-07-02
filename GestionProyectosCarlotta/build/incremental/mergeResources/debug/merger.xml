@@ -48,9 +48,11 @@
                 </string>
                 <string name="app_name" >Carlotta Labs
                 </string>
-                <string name="server" >http://10.0.2.2/carlottalabs/api/
+                <string name="server" >http://192.168.1.12/carlottalabs/api/
                 </string>
                 <string name="hello_world" >Hello world!
+                </string>
+                <string name="serverOLD" >http://10.0.2.2/carlottalabs/api/
                 </string>
                 <string name="title_activity_projects" >MainActivity
                 </string>
@@ -104,6 +106,8 @@
                 </string>
                 <string name="app_name" >Carlotta Labs
                 </string>
+                <string name="delete" >Delete
+                </string>
             </file>
             <file
                 path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\values-es\strings.xml"
@@ -111,6 +115,8 @@
                 <string name="app_name" >Carlotta Labs
                 </string>
                 <string name="sincro" >Sincronizar
+                </string>
+                <string name="delete" >Borrar
                 </string>
                 <string name="done" >Completados
                 </string>
@@ -250,6 +256,26 @@
                 name="proyecto"
                 path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\proyecto.png"
                 qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="delete"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-mdpi\delete.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="edit_projects"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\menu\edit_projects.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="delete"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\delete.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="delete"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-xhdpi\delete.png"
+                qualifiers="xhdpi"
                 type="drawable" />
         </source>
         <source path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\rs\debug" />

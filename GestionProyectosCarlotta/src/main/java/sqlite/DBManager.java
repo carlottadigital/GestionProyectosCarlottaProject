@@ -15,6 +15,16 @@ public class DBManager extends SQLiteOpenHelper {
     final String _CREATE_2 = "CREATE TABLE USUARIOS (id INTEGER PRIMARY KEY, nombre TEXT, apellidos TEXT, telefono TEXT, mail TEXT)";
     final String _CREATE_3 = "CREATE TABLE USER_PROJ (id INTEGER PRIMARY KEY, id_usuario INTEGER, id_proyecto INTEGER)";
     final String _CREATE_4 = "CREATE TABLE TASK_PROJ (id INTEGER PRIMARY KEY, id_proyecto INTEGER, nombre TEXT, descripcion TEXT, coste INTEGER, valor INTEGER, id_usuario INTEGER, completado INTEGER)";
+    /*
+    * Tipos de dato de la tabla syncro
+    *
+    * 1 - Tarea marcada como completa o incompleta
+    * 2 - Cambios en los datos de la tarea
+    * 3 - Borrado de tarea
+    * 4 - Borrado de proyecto
+    * 5 - Creación de un proyecto
+    * 6 - Tarea agregada a un proyecto
+    * */
     final String _CREATE_5 = "CREATE TABLE SYNCRO (id INTEGER PRIMARY KEY, tipo INTEGER, id_dato INTEGER)";
 
     public DBManager(Context contexto, String nombre, SQLiteDatabase.CursorFactory factory, int version){

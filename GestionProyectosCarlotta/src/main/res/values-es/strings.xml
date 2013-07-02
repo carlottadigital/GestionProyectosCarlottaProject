@@ -9,5 +9,6 @@
     <string name="sincro">Sincronizar</string>
     <string name="horas">Horas</string>
     <string name="tasks">Tareas</string>
+    <string name="delete">Borrar</string>
 
 </resources>

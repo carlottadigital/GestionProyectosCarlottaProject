@@ -14,7 +14,9 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
+import android.view.ActionMode;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -49,6 +51,8 @@ public class Projects extends Activity {
     ArrayList<Tareas> tareas = new ArrayList<Tareas>();
     DBManager dbManager;
     Menu menu;
+    int selectedItem;
+    boolean editando = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -263,17 +267,19 @@ public class Projects extends Activity {
                         Toast.makeText(getApplicationContext(), getResources().getString(R.string.done),Toast.LENGTH_SHORT).show();
                         break;
                     default:
-                        //Ejecutar el código normal para cada una de las selecciones de la lista
-                        Fragment fragment = new ListProyectos();
-                        Bundle args = new Bundle();
-                        args.putInt("prjID", prj.get(i-2).getId());
-                        args.putString("nombrePrj", prj.get(i-2).getNombre());
-                        fragment.setArguments(args);
-                        //Cambiar el fragment actual por el nuevo
-                        FragmentManager fm = getFragmentManager();
-                        fm.beginTransaction().replace(R.id.content, fragment, "vistaProyectos").commit();
-                        //Cerrar el drawer
-                        drawer.closeDrawer(drawerList);
+                        if(!editando){
+                            //Ejecutar el código normal para cada una de las selecciones de la lista
+                            Fragment fragment = new ListProyectos();
+                            Bundle args = new Bundle();
+                            args.putInt("prjID", prj.get(i-2).getId());
+                            args.putString("nombrePrj", prj.get(i-2).getNombre());
+                            fragment.setArguments(args);
+                            //Cambiar el fragment actual por el nuevo
+                            FragmentManager fm = getFragmentManager();
+                            fm.beginTransaction().replace(R.id.content, fragment, "vistaProyectos").commit();
+                            //Cerrar el drawer
+                            drawer.closeDrawer(drawerList);
+                        }
                         break;
                 }
             }
@@ -291,7 +297,9 @@ public class Projects extends Activity {
                         break;
                     default:
                         //Ejecutar el código normal para cada una de las selecciones de la lista
-
+                        selectedItem = i;
+                        editando =true;
+                        startActionMode(editActionBar);
                         break;
                 }
                 return false;
@@ -328,7 +336,67 @@ public class Projects extends Activity {
                     }
                 }
                 break;
+            case 4:
+                //Obtener el WS de proyectos
+                ProyectosWS proyectosDAO = new ProyectosWS(getResources().getString(R.string.server));
+                //Obtener los cambios de la db
+                SQLiteDatabase db2 = dbManager.getWritableDatabase();
+                proyectosDAO.deleteProject(idCambio);
+                break;
         }
         return result;
+    }
+    /**
+     * Interfaz para convertir el actionBar en otro modo
+     */
+
+    private ActionMode.Callback editActionBar = new ActionMode.Callback(){
+        @Override
+        public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
+            MenuInflater inflater = actionMode.getMenuInflater();
+            inflater.inflate(R.menu.edit_projects, menu);
+            return true;
+        }
+
+        @Override
+        public boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
+            return false;
+        }
+
+        @Override
+        public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
+            switch (menuItem.getItemId()){
+                case R.id.borrar:
+                    deleteProject();
+                    onDestroyActionMode(actionMode);
+                    break;
+                default:
+                    break;
+            }
+            editando = false;
+            drawer.closeDrawer(drawerList);
+            return false;
+        }
+
+        @Override
+        public void onDestroyActionMode(ActionMode actionMode) {
+            actionMode = null;
+            editando = false;
+        }
+    };
+    /**
+     * Metodo para borrar un proyecto
+     */
+    public void deleteProject(){
+        try{
+            Toast.makeText(getApplicationContext(), "Borrando...", Toast.LENGTH_SHORT).show();
+            SQLiteDatabase db = dbManager.getWritableDatabase();
+            db.execSQL("INSERT INTO SYNCRO (tipo, id_dato) VALUES (4, "+prj.get(selectedItem-2).getId()+")");
+            db.execSQL("DELETE FROM PROYECTOS WHERE id=" + prj.get(selectedItem - 2).getId());
+            getProjects();
+        }catch (Exception e){
+            Toast.makeText(getApplicationContext(), "Error Nº: "+e.getMessage(), Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
     }
 }

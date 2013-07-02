@@ -63,4 +63,15 @@ public class ProyectosWS {
 
         return proyecto;
     }
+    public boolean deleteProject(int id){
+        //Obtener datos del webservice
+        HttpClient httpClient = new DefaultHttpClient();
+        HttpGet get = new HttpGet(urlServer+"gestProyectos.php?func=5&projectID="+id);
+        try{
+            HttpResponse respuesta = httpClient.execute(get);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return true;
+    }
 }
