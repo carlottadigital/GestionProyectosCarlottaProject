@@ -212,35 +212,47 @@
             <file
                 path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\values-en\strings.xml"
                 qualifiers="en" >
-                <string name="taskValue" >Value (ROI)
-                </string>
-                <string name="projects" >Projects
-                </string>
-                <string name="taskUser" >User assigned to the task
-                </string>
                 <string name="add" >Add
+                </string>
+                <string name="pass" >Contraseña
                 </string>
                 <string name="taskName" >Task name
                 </string>
-                <string name="PrjCreate" >Create Project
+                <string name="Prjname" >Project name
                 </string>
                 <string name="fav" >Featured
                 </string>
-                <string name="Prjname" >Project name
-                </string>
-                <string name="done" >Done
-                </string>
-                <string name="taskCoste" >Cost (inversion)
+                <string name="login" >Acceder
                 </string>
                 <string name="tasks" >Tasks
                 </string>
                 <string name="Prjdesc" >Project description
                 </string>
+                <string name="mail" >Mail
+                </string>
+                <string name="addProject" >Add new Project
+                </string>
+                <string name="taskDesc" >Task description
+                </string>
+                <string name="saveTask" >Save Task
+                </string>
+                <string name="projects" >Projects
+                </string>
+                <string name="taskValue" >Value (ROI)
+                </string>
+                <string name="loginIncorrect" >Incorrect Username or Password
+                </string>
+                <string name="taskUser" >User assigned to the task
+                </string>
+                <string name="PrjCreate" >Create Project
+                </string>
+                <string name="done" >Done
+                </string>
+                <string name="taskCoste" >Cost (inversion)
+                </string>
                 <string name="addTask" >Add Task
                 </string>
                 <string name="app_name" >Carlotta Labs
-                </string>
-                <string name="addProject" >Add new Project
                 </string>
                 <string name="sincro" >Synchronize
                 </string>
@@ -248,17 +260,19 @@
                 </string>
                 <string name="horas" >Hours
                 </string>
-                <string name="taskDesc" >Task description
-                </string>
-                <string name="saveTask" >Save Task
-                </string>
                 <string name="delete" >Delete
                 </string>
             </file>
             <file
                 path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\values-es\strings.xml"
                 qualifiers="es" >
+                <string name="pass" >Contraseña
+                </string>
                 <string name="taskCoste" >Coste (inversion)
+                </string>
+                <string name="loginIncorrect" >Nombre de usuario y Contresña erróneos
+                </string>
+                <string name="mail" >Mail
                 </string>
                 <string name="Prjname" >Nombre del proyecto
                 </string>
@@ -278,9 +292,11 @@
                 </string>
                 <string name="taskValue" >Valor (ROI)
                 </string>
-                <string name="taskUser" >Usuario asignado a la tarea
+                <string name="login" >Acceder
                 </string>
                 <string name="app_name" >Carlotta Labs
+                </string>
+                <string name="taskUser" >Usuario asignado a la tarea
                 </string>
                 <string name="taskName" >Nombre de la tarea
                 </string>
@@ -332,6 +348,11 @@
                     <!-- API 14 theme customizations can go here. -->
                 </style>
             </file>
+            <file
+                name="logo_cd"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\logo_cd.png"
+                qualifiers="hdpi"
+                type="drawable" />
         </source>
         <source path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\rs\debug" />
     </dataSet>

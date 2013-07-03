@@ -24,4 +24,10 @@
     <string name="taskUser">Usuario asignado a la tarea</string>
     <string name="saveTask">Guardar tarea</string>
     <!-- Añadir tareas END-->
+    <!-- Login -->
+    <string name="mail">Mail</string>
+    <string name="pass">Contraseña</string>
+    <string name="login">Acceder</string>
+    <string name="loginIncorrect">Nombre de usuario y Contresña erróneos</string>
+    <!-- Login END -->
 </resources>

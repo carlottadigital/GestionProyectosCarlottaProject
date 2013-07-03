@@ -12,6 +12,10 @@
     <string name="done">Done</string>
     <string name="fav">Featured</string>
     <string name="horas">Hours</string>
+    <string name="login">Acceder</string>
+    <string name="loginIncorrect">Incorrect Username or Password</string>
+    <string name="mail">Mail</string>
+    <string name="pass">Contraseña</string>
     <string name="projects">Projects</string>
     <string name="saveTask">Save Task</string>
     <string name="sincro">Synchronize</string>
