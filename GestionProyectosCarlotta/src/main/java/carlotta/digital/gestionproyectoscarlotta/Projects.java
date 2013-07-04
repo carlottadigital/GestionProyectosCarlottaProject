@@ -674,9 +674,10 @@ public class Projects extends Activity {
         //Establecer el adaptador al listview
         listaUsuarios.setAdapter(new UserListAdapter(getApplicationContext(), usuariosNames));
         //Colocar un Listener al listview
-        listaUsuarios.setOnLongClickListener(new View.OnLongClickListener() {
+        listaUsuarios.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public boolean onLongClick(View view) {
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                dialogBorrarUsuario(users.get(i).getId()).show();
                 return false;
             }
         });
@@ -744,5 +745,56 @@ public class Projects extends Activity {
             }
         });
         deleteDialog.show();
+    }
+    public Dialog dialogBorrarUsuario(final int position){
+        final String[] items = {"Si", "No"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle("Desea borrar este Usuario?");
+        builder.setItems(items, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int item) {
+                switch (item){
+                    case 0:
+                        setProgressBarIndeterminateVisibility(true);
+                        Toast.makeText(getApplicationContext(), "Borrando usuario", Toast.LENGTH_SHORT).show();
+                        //Handlers//
+                        final Handler resultOK = new Handler(){
+                            @Override
+                            public void handleMessage(Message msg) {
+                                super.handleMessage(msg);
+                                setProgressBarIndeterminateVisibility(false);
+                                Toast.makeText(getApplicationContext(), "Usuario borrado", Toast.LENGTH_SHORT).show();
+
+                                getProjects();
+                            }
+                        };
+                        final Handler resultERR = new Handler(){
+                            @Override
+                            public void handleMessage(Message msg) {
+                                super.handleMessage(msg);
+                                setProgressBarIndeterminateVisibility(false);
+                                Toast.makeText(getApplicationContext(), "Error al borrar el usuario", Toast.LENGTH_SHORT).show();
+                            }
+                        };
+                        //Handlers END//
+                        new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                UsuariosWS userDAO = new UsuariosWS(getResources().getString(R.string.server));
+                                if(userDAO.deleteUsuer(Integer.toString(position))){
+                                    resultOK.sendEmptyMessage(0);
+                                }else{
+                                    resultERR.sendEmptyMessage(0);
+                                }
+                            }
+                        }).start();
+                        break;
+                    case 1:
+
+                        break;
+                }
+            }
+        });
+        return builder.create();
     }
   }

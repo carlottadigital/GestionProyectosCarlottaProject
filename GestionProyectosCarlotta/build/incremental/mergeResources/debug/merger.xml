@@ -54,8 +54,23 @@
                 qualifiers="hdpi"
                 type="drawable" />
             <file
+                name="single_user"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\single_user.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
                 name="task"
                 path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\task.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="users"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\users.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="users_add"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\users_add.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
@@ -131,6 +146,16 @@
             <file
                 name="dialog_add_task"
                 path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\layout\dialog_add_task.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="dialog_gest_users"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\layout\dialog_gest_users.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="dialog_gest_users_add"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\layout\dialog_gest_users_add.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -289,9 +314,9 @@
                 </string>
                 <string name="enroledUsers" >Usuarios en esta empresa
                 </string>
-                <string name="mail" >Mail
-                </string>
                 <string name="user" >Usuarios
+                </string>
+                <string name="mail" >Mail
                 </string>
                 <string name="Prjname" >Nombre del proyecto
                 </string>
@@ -301,17 +326,17 @@
                 </string>
                 <string name="addTask" >Añadir tarea
                 </string>
-                <string name="taskValue" >Valor (ROI)
-                </string>
                 <string name="login" >Acceder
+                </string>
+                <string name="taskValue" >Valor (ROI)
                 </string>
                 <string name="taskUser" >Usuario asignado a la tarea
                 </string>
                 <string name="taskName" >Nombre de la tarea
                 </string>
-                <string name="addProject" >Agregar un proyecto
-                </string>
                 <string name="delete" >Borrar
+                </string>
+                <string name="addProject" >Agregar un proyecto
                 </string>
                 <string name="done" >Completados
                 </string>
@@ -377,31 +402,6 @@
                     <!-- API 14 theme customizations can go here. -->
                 </style>
             </file>
-            <file
-                name="users"
-                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\users.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="users_add"
-                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\users_add.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="dialog_gest_users"
-                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\layout\dialog_gest_users.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="single_user"
-                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\single_user.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="dialog_gest_users_add"
-                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\layout\dialog_gest_users_add.xml"
-                qualifiers=""
-                type="layout" />
         </source>
         <source path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\rs\debug" />
     </dataSet>

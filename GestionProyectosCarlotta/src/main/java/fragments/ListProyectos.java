@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.ActionMode;
@@ -88,7 +89,7 @@ public class ListProyectos extends Fragment {
         proyectos = new ArrayList<Tareas>();
         if(data.moveToFirst()){
             Tareas tarea = new Tareas();
-            if(data.getInt(7)!=0){
+            if(data.getInt(8)!=0){
                 doneHour = doneHour + data.getInt(4);
                 doneTask++;
             }else{
@@ -100,12 +101,12 @@ public class ListProyectos extends Fragment {
             tarea.setNombre(data.getString(2));
             tarea.setDescripcion(data.getString(3));
             tarea.setCoste(data.getInt(4));
-            tarea.setValor(data.getInt(5));
-            tarea.setUsuario(data.getInt(6));
-            tarea.setCompletado(data.getInt(7));
+            tarea.setValor(data.getInt(6));
+            tarea.setUsuario(data.getInt(7));
+            tarea.setCompletado(data.getInt(8));
             proyectos.add(tarea);
             while(data.moveToNext()){
-                if(data.getInt(7)!=0){
+                if(data.getInt(8)!=0){
                     doneHour = doneHour + data.getInt(4);
                     doneTask++;
                 }else{
@@ -118,9 +119,9 @@ public class ListProyectos extends Fragment {
                 tarea2.setNombre(data.getString(2));
                 tarea2.setDescripcion(data.getString(3));
                 tarea2.setCoste(data.getInt(4));
-                tarea2.setValor(data.getInt(5));
-                tarea2.setUsuario(data.getInt(6));
-                tarea2.setCompletado(data.getInt(7));
+                tarea2.setValor(data.getInt(6));
+                tarea2.setUsuario(data.getInt(7));
+                tarea2.setCompletado(data.getInt(8));
                 proyectos.add(tarea2);
             }
             //Establecer el maximo de tareas y horas (Barras de progreso
@@ -191,6 +192,7 @@ public class ListProyectos extends Fragment {
                 @Override
                 public void onClick(View view) {
                     SQLiteDatabase db = dbManager.getWritableDatabase();
+                    try{
                     if(chCompletado.isChecked()){
                         db.execSQL("UPDATE TASK_PROJ SET completado=1 WHERE id="+projects.get(position).getId());
                         projects.get(position).setCompletado(1);
@@ -203,6 +205,12 @@ public class ListProyectos extends Fragment {
                     db.execSQL("INSERT INTO SYNCRO (tipo, id_dato) VALUES (1, "+projects.get(position).getId()+")");
                     db.close();
                     updateProjectStatus();
+                    }catch (SQLiteException ex){
+                        ex.printStackTrace();
+                    }
+                    catch (Exception e){
+                        e.printStackTrace();
+                    }
                 }
             });
             //Listener de cambio del item END//
