@@ -7,6 +7,7 @@ import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.res.Configuration;
 import android.database.Cursor;
@@ -15,6 +16,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -35,8 +37,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import adapters.DrawerProyectosAdapter;
+import adapters.UserListAdapter;
 import fragments.ListProyectos;
 import models.Proyecto;
 import models.Tareas;
@@ -61,8 +66,9 @@ public class Projects extends Activity {
     ArrayList<Tareas> tareas = new ArrayList<Tareas>();
     DBManager dbManager;
     Menu menu;
-    int selectedItem;
+    int selectedItem, userID;
     boolean editando = false;
+    SharedPreferences prefs;
     //DEBUG BORRAR AL PASAR A PRODUCCION
     int owner = 1;
 
@@ -73,6 +79,8 @@ public class Projects extends Activity {
         setContentView(R.layout.activity_projects);
         //Inicializar el ActionBar
         initActionBar();
+        prefs = getSharedPreferences("prefs",getApplicationContext().MODE_PRIVATE);
+        userID = prefs.getInt("id",0);
         //Inicializar el drawerLayout
         dbManager = new DBManager(getApplicationContext(),"database", null, 1);
         drawer = (DrawerLayout)findViewById(R.id.drawer_layout);
@@ -131,6 +139,9 @@ public class Projects extends Activity {
             case R.id.add_prj:
                     addProject();
                 break;
+            case R.id.usr_prj:
+                    gestCompanyUsers();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -146,9 +157,16 @@ public class Projects extends Activity {
     * Este Método adquiere los proyectos y los carga los datos en el navigation drawer
     * */
     public void getProjects(){
-        setProgressBarIndeterminateVisibility(true);
         //Declarar el array list como final para poder ser accedido desde una inner class
 
+        final Handler startLoadProgress = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                setProgressBarIndeterminateVisibility(true);
+            }
+        };
+        startLoadProgress.sendEmptyMessage(0);
         final Handler finishLoadProgress = new Handler(){
             @Override
             public void handleMessage(Message msg) {
@@ -174,12 +192,52 @@ public class Projects extends Activity {
                 prjNames.add(getResources().getString(R.string.done));
                 //Abrir el acceso a la base de datos y cargar los datos desde la db
                 SQLiteDatabase dbRead = dbManager.getReadableDatabase();
+                //Reestablecer el arrayList de proyectos
+                prj = new ArrayList<Proyecto>();
+                prj.clear();
                 //Abrir el acceso a la base de datos y cargar los datos desde la db END//
-                Cursor datos = dbRead.rawQuery("SELECT * FROM PROYECTOS", null);
+                //Precargar en que proyectos se pertenece
+                Cursor idParticipante = dbRead.rawQuery("SELECT id_proyecto FROM USER_PROJ WHERE id_usuario="+userID, null);
+                //Obtener cada uno de los IDs de  los proyectos en los que se participa
+                if(idParticipante.moveToFirst()){
+                    //Obtener el proyecto a través de cada uno de los IDs obtenidos
+                    Cursor project = dbRead.rawQuery("SELECT * FROM PROYECTOS WHERE id="+idParticipante.getInt(0), null);
+                    if(project.moveToFirst()){
+                        prjNames.add(project.getString(1));
+                        Proyecto tempPrj = new Proyecto();
+                        tempPrj.setId(project.getInt(0));
+                        tempPrj.setNombre(project.getString(1));
+                        tempPrj.setOwner(project.getInt(3));
+                        prj.add(tempPrj);
+                    }
+                    while(idParticipante.moveToNext()){
+                        project = dbRead.rawQuery("SELECT * FROM PROYECTOS WHERE id="+idParticipante.getInt(0), null);
+                        if(project.moveToFirst()){
+                            prjNames.add(project.getString(1));
+                            Proyecto tempPrj = new Proyecto();
+                            tempPrj.setId(project.getInt(0));
+                            tempPrj.setNombre(project.getString(1));
+                            tempPrj.setOwner(project.getInt(3));
+                            prj.add(tempPrj);
+                        }
+                    }
+                }
+                //Precargar en que proyectos se pertenece END//
+                Cursor datos = dbRead.rawQuery("SELECT * FROM PROYECTOS WHERE owner="+userID, null);
                 if(datos.moveToFirst()){
                     prjNames.add(datos.getString(1));
+                    Proyecto tempPrj = new Proyecto();
+                    tempPrj.setId(datos.getInt(0));
+                    tempPrj.setNombre(datos.getString(1));
+                    tempPrj.setOwner(datos.getInt(3));
+                    prj.add(tempPrj);
                     while(datos.moveToNext()){
                         prjNames.add(datos.getString(1));
+                        tempPrj = new Proyecto();
+                        tempPrj.setId(datos.getInt(0));
+                        tempPrj.setNombre(datos.getString(1));
+                        tempPrj.setOwner(datos.getInt(3));
+                        prj.add(tempPrj);
                     }
                 }
                 //Establecer el adaptador
@@ -224,7 +282,7 @@ public class Projects extends Activity {
                     for(int a=0;a<prj.size();a++){
                         //Grabar cada item a la db
                         try{
-                            db.execSQL("INSERT INTO PROYECTOS (id, nombre, descripcion, owner) VALUES ("+prj.get(a).getId()+", '"+prj.get(a).getNombre()+"','"+prj.get(a).getDescripcion()+"',"+prj.get(a).getOwner().getId()+")");
+                            db.execSQL("INSERT INTO PROYECTOS (id, nombre, descripcion, owner) VALUES ("+prj.get(a).getId()+", '"+prj.get(a).getNombre()+"','"+prj.get(a).getDescripcion()+"',"+prj.get(a).getOwner()+")");
                         }catch(Exception e){
                             e.printStackTrace();
                         }
@@ -256,7 +314,7 @@ public class Projects extends Activity {
                 if(tareas != null){
                     db.execSQL("DELETE FROM TASK_PROJ WHERE 1");
                     for(int a=0;a<tareas.size();a++){
-                        db.execSQL("INSERT INTO TASK_PROJ (id, id_proyecto, nombre , descripcion , coste , valor , id_usuario , completado ) VALUES ("+tareas.get(a).getId()+", "+tareas.get(a).getProyecto()+", '"+tareas.get(a).getNombre()+"', '"+tareas.get(a).getDescripcion()+"', "+tareas.get(a).getCoste()+", "+tareas.get(a).getValor()+", "+tareas.get(a).getUsuario()+", "+tareas.get(a).getCompletado()+")");
+                        db.execSQL("INSERT INTO TASK_PROJ (id, id_proyecto, nombre , descripcion , coste, costeFinal, valor  , id_usuario , completado ) VALUES ("+tareas.get(a).getId()+", "+tareas.get(a).getProyecto()+", '"+tareas.get(a).getNombre()+"', '"+tareas.get(a).getDescripcion()+"', "+tareas.get(a).getCoste()+", "+tareas.get(a).getCosteFinal()+" ,"+tareas.get(a).getValor()+", "+tareas.get(a).getUsuario()+", "+tareas.get(a).getCompletado()+")");
                     }
                 }
                 //Grabar las tareas de los proyectos a la DB END//
@@ -596,4 +654,95 @@ public class Projects extends Activity {
         });
         return builder.create();
     }
- }
+    /*
+     * Metodo que muestra un dialog con todos los usuarios enrolados en la empresa
+     * */
+    public void gestCompanyUsers(){
+        LayoutInflater factory = LayoutInflater.from(this);
+        final View deleteDialogView = factory.inflate(R.layout.dialog_gest_users, null);
+        final AlertDialog deleteDialog = new AlertDialog.Builder(this).create();
+        deleteDialog.setView(deleteDialogView);
+        //Cargar los datos en los textviews
+        ListView listaUsuarios = (ListView)deleteDialogView.findViewById(R.id.listaUsers);
+        final EditText mailUser = (EditText)deleteDialogView.findViewById(R.id.mailUser);
+        Button addUserBtn = (Button)deleteDialogView.findViewById(R.id.addUserBtn);
+        //Cargar los nombres de los usuarios en un array para evitar construir un custom adapter
+        ArrayList<String>usuariosNames = new ArrayList<String>();
+        for (int a=0;a<users.size();a++){
+            usuariosNames.add(users.get(a).getNombre());
+        }
+        //Establecer el adaptador al listview
+        listaUsuarios.setAdapter(new UserListAdapter(getApplicationContext(), usuariosNames));
+        //Colocar un Listener al listview
+        listaUsuarios.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                return false;
+            }
+        });
+        //Listener del boton
+        addUserBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addCompanyUserDialog(mailUser.getText().toString());
+                deleteDialog.dismiss();
+            }
+        });
+        deleteDialog.show();
+    }
+    public void addCompanyUserDialog(final String mail){
+        LayoutInflater factory = LayoutInflater.from(this);
+        final View view = factory.inflate(R.layout.dialog_gest_users_add, null);
+        final AlertDialog deleteDialog = new AlertDialog.Builder(this).create();
+        deleteDialog.setView(view);
+        //Establecer los listViews
+        EditText mailTxt = (EditText)view.findViewById(R.id.mailUser);
+        mailTxt.setText(mail);
+        final EditText nombreUsuario = (EditText) view.findViewById(R.id.nombreUser);
+        final EditText apellidoUsuario = (EditText) view.findViewById(R.id.apellidoUser);
+        final EditText passUsuario = (EditText) view.findViewById(R.id.passUser);
+        final EditText telfUsuario = (EditText) view.findViewById(R.id.telfUsuario);
+        Button botonAddUsuario = (Button)view.findViewById(R.id.addBtbn);
+        //Establecer el listener
+        botonAddUsuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Activar el modo de carga del actionbar y mostrar un mensaje al usuario
+                setProgressBarIndeterminateVisibility(true);
+                Toast.makeText(getApplicationContext(), "Creando usuario", Toast.LENGTH_SHORT).show();
+                //Handlers//
+                final Handler resultOK = new Handler(){
+                    @Override
+                    public void handleMessage(Message msg) {
+                        super.handleMessage(msg);
+                        setProgressBarIndeterminateVisibility(false);
+                        Toast.makeText(getApplicationContext(), "Usuario creado correctamente", Toast.LENGTH_SHORT).show();
+                        deleteDialog.dismiss();
+                        getProjects();
+                    }
+                };
+                final Handler resultERR = new Handler(){
+                    @Override
+                    public void handleMessage(Message msg) {
+                        super.handleMessage(msg);
+                        setProgressBarIndeterminateVisibility(false);
+                        Toast.makeText(getApplicationContext(), "Error al crear el usuario", Toast.LENGTH_SHORT).show();
+                    }
+                };
+                //Handlers END//
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        UsuariosWS userDAO = new UsuariosWS(getResources().getString(R.string.server));
+                        if(userDAO.addUsuario(mail, nombreUsuario.getText().toString(), apellidoUsuario.getText().toString(),telfUsuario.getText().toString(), passUsuario.getText().toString())){
+                            resultOK.sendEmptyMessage(0);
+                        }else{
+                            resultERR.sendEmptyMessage(0);
+                        }
+                    }
+                }).start();
+            }
+        });
+        deleteDialog.show();
+    }
+  }

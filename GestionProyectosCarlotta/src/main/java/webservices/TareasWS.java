@@ -48,6 +48,7 @@ public class TareasWS {
                 tarea.setProyecto(jUsuario.getInt("id_proyecto"));
                 tarea.setDescripcion(jUsuario.getString("descripcion"));
                 tarea.setCoste(jUsuario.getInt("coste"));
+                tarea.setCosteFinal(jUsuario.getInt("costeFinal"));
                 tarea.setValor(jUsuario.getInt("valor"));
                 tarea.setCompletado(jUsuario.getInt("completado"));
                 tarea.setUsuario(jUsuario.getInt("id_usuario"));

@@ -1,14 +1,21 @@
 package webservices;
 
 import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import models.Proyecto;
 import models.Usuario;
@@ -51,5 +58,34 @@ public class UsuariosWS {
         }
         return usuarios;
     }
+    public boolean addUsuario(String mail, String nombre, String apellido, String telefono, String password){
+        boolean result = false;
+        // Create a new HttpClient and Post Header
+        HttpClient httpclient = new DefaultHttpClient();
+        HttpPost httppost = new HttpPost(urlServer+"gestUsuarios.php?func=3");
 
+        try {
+            // Add your data
+            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(5);
+            nameValuePairs.add(new BasicNameValuePair("nombre", nombre));
+            nameValuePairs.add(new BasicNameValuePair("apellidos", apellido));
+            nameValuePairs.add(new BasicNameValuePair("telefono", telefono));
+            nameValuePairs.add(new BasicNameValuePair("mail", mail));
+            nameValuePairs.add(new BasicNameValuePair("pass", password));
+            httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+            // Execute HTTP Post Request
+            HttpResponse response = httpclient.execute(httppost);
+            result = true;
+        } catch (ClientProtocolException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            result = false;
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            result = false;
+        }
+        return result;
+    }
 }

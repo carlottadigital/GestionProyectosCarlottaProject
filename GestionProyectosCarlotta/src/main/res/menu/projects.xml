@@ -4,6 +4,11 @@
           android:visible="true"
           android:showAsAction="always"
           android:icon="@drawable/add"/>
+    <item android:id="@+id/usr_prj"
+          android:title="@string/user"
+          android:visible="true"
+          android:showAsAction="always"
+          android:icon="@drawable/users"/>
     <item android:id="@+id/sincro"
           android:title="@string/sincro"
           android:visible="true"

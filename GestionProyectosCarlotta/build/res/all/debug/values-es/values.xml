@@ -7,9 +7,11 @@
     <string name="add">Agregar</string>
     <string name="addProject">Agregar un proyecto</string>
     <string name="addTask">Añadir tarea</string>
+    <string name="addUser">Agregar usuario</string>
     <string name="app_name">Carlotta Labs</string>
     <string name="delete">Borrar</string>
     <string name="done">Completados</string>
+    <string name="enroledUsers">Usuarios en esta empresa</string>
     <string name="fav">Destacados</string>
     <string name="horas">Horas</string>
     <string name="login">Acceder</string>
@@ -26,5 +28,9 @@
     <string name="taskUser">Usuario asignado a la tarea</string>
     <string name="taskValue">Valor (ROI)</string>
     <string name="tasks">Tareas</string>
+    <string name="user">Usuarios</string>
+    <string name="userApellido">Apellidos</string>
+    <string name="userNombre">Nombre</string>
+    <string name="userTelefono">Telefono</string>
 
 </resources>

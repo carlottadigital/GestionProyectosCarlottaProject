@@ -6,6 +6,11 @@
           android:visible="true"
           android:showAsAction="always"
           android:icon="@drawable/add_task"/>
+    <item android:id="@+id/usr_in_prj"
+          android:title="@string/user"
+          android:visible="true"
+          android:showAsAction="always"
+          android:icon="@drawable/users"/>
     <item android:id="@+id/borrar"
           android:title="@string/delete"
           android:visible="true"

@@ -8,7 +8,7 @@ public class Tareas {
     int proyecto;
     String nombre;
     String descripcion;
-    int coste, valor, usuario, completado;
+    int coste,costeFinal, valor, usuario, completado;
 
     public int getId() {
         return id;
@@ -48,6 +48,15 @@ public class Tareas {
 
     public void setCoste(int coste) {
         this.coste = coste;
+    }
+
+
+    public int getCosteFinal() {
+        return costeFinal;
+    }
+
+    public void setCosteFinal(int costeFinal) {
+        this.costeFinal = costeFinal;
     }
 
     public int getValor() {

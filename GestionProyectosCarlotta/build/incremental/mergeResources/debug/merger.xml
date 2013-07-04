@@ -24,6 +24,11 @@
                 qualifiers="hdpi"
                 type="drawable" />
             <file
+                name="logo_cd"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\logo_cd.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
                 name="lst_done"
                 path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\lst_done.png"
                 qualifiers="hdpi"
@@ -214,7 +219,7 @@
                 qualifiers="en" >
                 <string name="add" >Add
                 </string>
-                <string name="pass" >Contraseña
+                <string name="pass" >Password
                 </string>
                 <string name="taskName" >Task name
                 </string>
@@ -222,19 +227,27 @@
                 </string>
                 <string name="fav" >Featured
                 </string>
+                <string name="user" >Users
+                </string>
+                <string name="addUser" >Add user
+                </string>
                 <string name="login" >Acceder
                 </string>
-                <string name="tasks" >Tasks
-                </string>
                 <string name="Prjdesc" >Project description
+                </string>
+                <string name="tasks" >Tasks
                 </string>
                 <string name="mail" >Mail
                 </string>
                 <string name="addProject" >Add new Project
                 </string>
+                <string name="userNombre" >Name
+                </string>
                 <string name="taskDesc" >Task description
                 </string>
                 <string name="saveTask" >Save Task
+                </string>
+                <string name="userApellido" >Last Name
                 </string>
                 <string name="projects" >Projects
                 </string>
@@ -260,33 +273,31 @@
                 </string>
                 <string name="horas" >Hours
                 </string>
+                <string name="userTelefono" >Telephone
+                </string>
+                <string name="enroledUsers" >Users in this company
+                </string>
                 <string name="delete" >Delete
                 </string>
             </file>
             <file
                 path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\values-es\strings.xml"
                 qualifiers="es" >
-                <string name="pass" >Contraseña
-                </string>
                 <string name="taskCoste" >Coste (inversion)
                 </string>
-                <string name="loginIncorrect" >Nombre de usuario y Contresña erróneos
+                <string name="userApellido" >Apellidos
+                </string>
+                <string name="enroledUsers" >Usuarios en esta empresa
                 </string>
                 <string name="mail" >Mail
                 </string>
-                <string name="Prjname" >Nombre del proyecto
+                <string name="user" >Usuarios
                 </string>
-                <string name="sincro" >Sincronizar
+                <string name="Prjname" >Nombre del proyecto
                 </string>
                 <string name="PrjCreate" >Crear Proyecto
                 </string>
                 <string name="fav" >Destacados
-                </string>
-                <string name="Prjdesc" >Descripcion del Proyecto
-                </string>
-                <string name="taskDesc" >Descripcion de la tarea
-                </string>
-                <string name="horas" >Horas
                 </string>
                 <string name="addTask" >Añadir tarea
                 </string>
@@ -294,15 +305,9 @@
                 </string>
                 <string name="login" >Acceder
                 </string>
-                <string name="app_name" >Carlotta Labs
-                </string>
                 <string name="taskUser" >Usuario asignado a la tarea
                 </string>
                 <string name="taskName" >Nombre de la tarea
-                </string>
-                <string name="taskHours" >Horas de trabajo
-                </string>
-                <string name="saveTask" >Guardar tarea
                 </string>
                 <string name="addProject" >Agregar un proyecto
                 </string>
@@ -312,9 +317,33 @@
                 </string>
                 <string name="tasks" >Tareas
                 </string>
-                <string name="projects" >Proyectos
-                </string>
                 <string name="add" >Agregar
+                </string>
+                <string name="pass" >Contraseña
+                </string>
+                <string name="loginIncorrect" >Nombre de usuario y Contresña erróneos
+                </string>
+                <string name="sincro" >Sincronizar
+                </string>
+                <string name="Prjdesc" >Descripcion del Proyecto
+                </string>
+                <string name="taskDesc" >Descripcion de la tarea
+                </string>
+                <string name="horas" >Horas
+                </string>
+                <string name="userTelefono" >Telefono
+                </string>
+                <string name="addUser" >Agregar usuario
+                </string>
+                <string name="app_name" >Carlotta Labs
+                </string>
+                <string name="taskHours" >Horas de trabajo
+                </string>
+                <string name="userNombre" >Nombre
+                </string>
+                <string name="saveTask" >Guardar tarea
+                </string>
+                <string name="projects" >Proyectos
                 </string>
             </file>
             <file
@@ -349,10 +378,30 @@
                 </style>
             </file>
             <file
-                name="logo_cd"
-                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\logo_cd.png"
+                name="users"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\users.png"
                 qualifiers="hdpi"
                 type="drawable" />
+            <file
+                name="users_add"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\users_add.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="dialog_gest_users"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\layout\dialog_gest_users.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="single_user"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\single_user.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="dialog_gest_users_add"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\layout\dialog_gest_users_add.xml"
+                qualifiers=""
+                type="layout" />
         </source>
         <source path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\rs\debug" />
     </dataSet>

@@ -14,6 +14,7 @@
     <string name="Prjname">Nombre del proyecto</string>
     <string name="Prjdesc">Descripcion del Proyecto</string>
     <string name="PrjCreate">Crear Proyecto</string>
+    <string name="user">Usuarios</string>
     <!-- Añadir tareas -->
     <string name="addTask">Añadir tarea</string>
     <string name="taskName">Nombre de la tarea</string>
@@ -30,4 +31,11 @@
     <string name="login">Acceder</string>
     <string name="loginIncorrect">Nombre de usuario y Contresña erróneos</string>
     <!-- Login END -->
+    <!-- gestion de usuarios -->
+    <string name="addUser">Agregar usuario</string>
+    <string name="enroledUsers">Usuarios en esta empresa</string>
+    <string name="userNombre">Nombre</string>
+    <string name="userApellido">Apellidos</string>
+    <string name="userTelefono">Telefono</string>
+    <!-- gestion de usuarios END -->
 </resources>
