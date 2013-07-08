@@ -55,6 +55,7 @@ public class ProyectosWS {
                 proyecto.setNombre(jProyecto.getString("nombre"));
                 proyecto.setDescripcion(jProyecto.getString("descripcion"));
                 proyecto.setOwner(usuario.getId());
+                proyecto.setCompletado(jProyecto.getInt("completado"));
                 //Añadir el proyeto a la lista de proyectos y continuar
                 proyectos.add(proyecto);
             }

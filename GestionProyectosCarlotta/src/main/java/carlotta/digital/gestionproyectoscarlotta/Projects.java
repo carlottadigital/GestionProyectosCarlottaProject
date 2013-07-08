@@ -6,9 +6,10 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageInfo;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -17,7 +18,6 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
 import android.os.Message;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -27,6 +27,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -34,12 +35,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import adapters.DrawerProyectosAdapter;
 import adapters.UserListAdapter;
@@ -70,8 +69,6 @@ public class Projects extends Activity {
     int selectedItem, userID;
     boolean editando = false;
     SharedPreferences prefs;
-    //DEBUG BORRAR AL PASAR A PRODUCCION
-    int owner = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,13 +87,11 @@ public class Projects extends Activity {
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                actionBar.setTitle(getResources().getString(R.string.projects));
             }
 
             @Override
             public void onDrawerClosed(View drawerView) {
                 super.onDrawerClosed(drawerView);
-                actionBar.setTitle(getResources().getString(R.string.projects));
             }
         };
         drawer.setDrawerListener(toggle);
@@ -145,6 +140,20 @@ public class Projects extends Activity {
             case R.id.usr_prj:
                     gestCompanyUsers();
                 break;
+            case R.id.logOff:
+                //Hacer LogOff y borrar las bases de datos
+                final ProgressDialog pd = ProgressDialog.show(this, "Salida", "Borrando datos", true, false);
+                pd.show();
+                dbManager.purge(dbManager.getWritableDatabase(), prefs);
+                Intent goToLogOff = new Intent(Projects.this, MainActivity.class);
+                startActivity(goToLogOff);
+                Toast.makeText(getApplicationContext(), "Borrado completado, vuelva a iniciar sesion", Toast.LENGTH_LONG).show();
+                pd.dismiss();
+                finish();
+                break;
+            case R.id.about:
+
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -155,6 +164,7 @@ public class Projects extends Activity {
         actionBar = getActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FE0000")));
         actionBar.setTitle(getResources().getString(R.string.projects));
+        getOverflowMenu();
     }
     /*
     * Este Método adquiere los proyectos y los carga los datos en el navigation drawer
@@ -338,6 +348,7 @@ public class Projects extends Activity {
                 switch(i){
                     case 0:
                         showMainScreen();
+                        actionBar.setTitle(getResources().getString(R.string.toDo));
                         break;
                     case 1:
                         Toast.makeText(getApplicationContext(), getResources().getString(R.string.done),Toast.LENGTH_SHORT).show();
@@ -347,7 +358,7 @@ public class Projects extends Activity {
                             Fragment fragment = new ListProyectos();
                             Bundle args = new Bundle();
                             args.putInt("prjID", prj.get(i-2).getId());
-                            args.putString("nombrePrj", prj.get(i-2).getNombre());
+                            args.putString("nombrePrj", prj.get(i - 2).getNombre());
                             args.putBoolean("isHome", false);
                             fragment.setArguments(args);
                             //Cambiar el fragment actual por el nuevo
@@ -355,6 +366,7 @@ public class Projects extends Activity {
                             fm.beginTransaction().replace(R.id.content, fragment, "vistaProyectos").commit();
                             //Cerrar el drawer
                             drawer.closeDrawer(drawerList);
+                            actionBar.setTitle(prj.get(i - 2).getNombre());
                         break;
                 }
             }
@@ -561,7 +573,7 @@ public class Projects extends Activity {
                         if(nombrePrj.getText().toString() != "") {
                             ProyectosWS proyectosDAO = new ProyectosWS(getResources().getString(R.string.server));
                             //Crea el proyecto y comprueba que no ha ocurrido ningun error de red y a continuación sincroniza
-                            if(proyectosDAO.createProject(owner, nombrePrj.getText().toString(), descripcionPrj.getText().toString())){
+                            if(proyectosDAO.createProject(prefs.getInt("id",0), nombrePrj.getText().toString(), descripcionPrj.getText().toString())){
                                 resultOK.sendEmptyMessage(0);
                             }else{
                                 errorVarius.sendEmptyMessage(0);
@@ -975,5 +987,22 @@ public class Projects extends Activity {
         fm.beginTransaction().replace(R.id.content, fragment, "vistaProyectos").commit();
         //Cerrar el drawer
         drawer.closeDrawer(drawerList);
+        actionBar.setTitle(getResources().getString(R.string.toDo));
+    }
+    /**
+     * Obtiene la vista OVERFLOW del menú incluso si el dispositivo tiene boton Menú
+     */
+    private void getOverflowMenu() {
+
+        try {
+            ViewConfiguration config = ViewConfiguration.get(this);
+            Field menuKeyField = ViewConfiguration.class.getDeclaredField("sHasPermanentMenuKey");
+            if(menuKeyField != null) {
+                menuKeyField.setAccessible(true);
+                menuKeyField.setBoolean(config, false);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
   }

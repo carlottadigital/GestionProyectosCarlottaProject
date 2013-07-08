@@ -7,7 +7,7 @@ public class Proyecto {
     int id;
     String nombre;
     String descripcion;
-    int owner;
+    int owner, completado;
 
     public int getId() {
         return id;
@@ -39,5 +39,13 @@ public class Proyecto {
 
     public void setOwner(int owner) {
         this.owner = owner;
+    }
+
+    public int getCompletado() {
+        return completado;
+    }
+
+    public void setCompletado(int completado) {
+        this.completado = completado;
     }
 }

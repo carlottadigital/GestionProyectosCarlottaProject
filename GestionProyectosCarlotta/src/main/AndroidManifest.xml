@@ -24,6 +24,8 @@
         </activity>
         <activity
             android:name="carlotta.digital.gestionproyectoscarlotta.Projects"
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_projects" >
         </activity>
     </application>

@@ -86,6 +86,7 @@ public class MainActivity extends Activity {
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
                 Intent i = new Intent(MainActivity.this, Projects.class);
+                Toast.makeText(getApplicationContext(), Integer.toString(prefs.getInt("id",0)), Toast.LENGTH_LONG).show();
                 startActivity(i);
                 finish();
             }
@@ -106,6 +107,7 @@ public class MainActivity extends Activity {
                     if(result!=0){
                         SharedPreferences.Editor editor = prefs.edit();
                         editor.putInt("id", result);
+
                         editor.commit();
                         loginCorrect.sendEmptyMessage(0);
                     }else{
