@@ -217,9 +217,9 @@
                 </string>
                 <string name="hello_world" >Hello world!
                 </string>
-                <string name="title_activity_projects" >MainActivity
-                </string>
                 <string name="serverOLD" >http://10.0.2.2/carlottalabs/api/
+                </string>
+                <string name="title_activity_projects" >MainActivity
                 </string>
             </file>
             <file
@@ -249,25 +249,25 @@
                 qualifiers="en" >
                 <string name="usersProjects" >Users in this project
                 </string>
-                <string name="add" >Add
-                </string>
                 <string name="pass" >Password
+                </string>
+                <string name="add" >Add
                 </string>
                 <string name="taskName" >Task name
                 </string>
-                <string name="fav" >To-Do
-                </string>
                 <string name="Prjname" >Project name
+                </string>
+                <string name="fav" >To-Do
                 </string>
                 <string name="user" >Users
                 </string>
-                <string name="login" >Acceder
-                </string>
                 <string name="addUser" >Add user
                 </string>
-                <string name="Prjdesc" >Project description
+                <string name="login" >Acceder
                 </string>
                 <string name="tasks" >Tasks
+                </string>
+                <string name="Prjdesc" >Project description
                 </string>
                 <string name="mail" >Mail
                 </string>
@@ -311,9 +311,9 @@
                 </string>
                 <string name="toDo" >Pending Tasks for You
                 </string>
-                <string name="enroledUsers" >Users in this company
-                </string>
                 <string name="userTelefono" >Telephone
+                </string>
+                <string name="enroledUsers" >Users in this company
                 </string>
                 <string name="completado" >Done
                 </string>
@@ -327,13 +327,13 @@
                 </string>
                 <string name="usersProjects" >Usuarios en este proyecto
                 </string>
-                <string name="enroledUsers" >Usuarios en esta empresa
-                </string>
                 <string name="userApellido" >Apellidos
                 </string>
-                <string name="user" >Usuarios
+                <string name="enroledUsers" >Usuarios en esta empresa
                 </string>
                 <string name="mail" >Mail
+                </string>
+                <string name="user" >Usuarios
                 </string>
                 <string name="Prjname" >Nombre del proyecto
                 </string>
