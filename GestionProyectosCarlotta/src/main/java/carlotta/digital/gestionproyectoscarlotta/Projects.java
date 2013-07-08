@@ -765,6 +765,60 @@ public class Projects extends Activity {
         builder.setTitle("Desea borrar este Usuario?");
         builder.setItems(items, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
+                switch (item) {
+                    case 0:
+                        setProgressBarIndeterminateVisibility(true);
+                        Toast.makeText(getApplicationContext(), "Borrando usuario", Toast.LENGTH_SHORT).show();
+                        //Handlers//
+                        final Handler resultOK = new Handler() {
+                            @Override
+                            public void handleMessage(Message msg) {
+                                super.handleMessage(msg);
+                                setProgressBarIndeterminateVisibility(false);
+                                Toast.makeText(getApplicationContext(), "Usuario borrado", Toast.LENGTH_SHORT).show();
+
+                                getProjects();
+                            }
+                        };
+                        final Handler resultERR = new Handler() {
+                            @Override
+                            public void handleMessage(Message msg) {
+                                super.handleMessage(msg);
+                                setProgressBarIndeterminateVisibility(false);
+                                Toast.makeText(getApplicationContext(), "Error al borrar el usuario", Toast.LENGTH_SHORT).show();
+                            }
+                        };
+                        //Handlers END//
+                        new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                UsuariosWS userDAO = new UsuariosWS(getResources().getString(R.string.server));
+                                if (userDAO.deleteUsuer(Integer.toString(position))) {
+                                    resultOK.sendEmptyMessage(0);
+                                } else {
+                                    resultERR.sendEmptyMessage(0);
+                                }
+                            }
+                        }).start();
+                        break;
+                    case 1:
+
+                        break;
+                }
+            }
+        });
+        return builder.create();
+    }
+    /*
+    * Dialogo de borrado de usuario de un proyecto
+    * */
+    public Dialog dialogBorrarUsuarioPrj(final int position){
+        final String[] items = {"Si", "No"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle("Desea quitar a este usuario del proyecto actual?");
+        builder.setItems(items, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int item) {
                 switch (item){
                     case 0:
                         setProgressBarIndeterminateVisibility(true);
@@ -792,8 +846,8 @@ public class Projects extends Activity {
                         new Thread(new Runnable() {
                             @Override
                             public void run() {
-                                UsuariosWS userDAO = new UsuariosWS(getResources().getString(R.string.server));
-                                if(userDAO.deleteUsuer(Integer.toString(position))){
+                                UsuariosProjWS userDAO = new UsuariosProjWS(getResources().getString(R.string.server));
+                                if(userDAO.desEnrolUser(position)){
                                     resultOK.sendEmptyMessage(0);
                                 }else{
                                     resultERR.sendEmptyMessage(0);
@@ -809,6 +863,9 @@ public class Projects extends Activity {
         });
         return builder.create();
     }
+    /*
+    * Dialogo de gestión de usuarios dentro de los proyectos
+    * */
     public void gestUsersInProjects(int idProyecto){
         LayoutInflater factory = LayoutInflater.from(this);
         final View view = factory.inflate(R.layout.dialog_gest_users_prj, null);
@@ -828,9 +885,11 @@ public class Projects extends Activity {
         ArrayList<String> currentUserNames = new ArrayList<String>();
         //Array de modelos de usuario para obtener los ids en las interacciones del listview
         final ArrayList<Usuario> currentUserModel = new ArrayList<Usuario>();
+        //Array que contiene los ids del User_proj
+        final ArrayList<Integer> currentUserProj = new ArrayList<Integer>();
         //Realizar a consulta a la db de los usuarios actuales y printarlos
         final SQLiteDatabase db = dbManager.getWritableDatabase();
-        Cursor usuariosEnProyecto = db.rawQuery("SELECT id_usuario FROM USER_PROJ WHERE id_proyecto="+prj.get(selectedItem-2).getId(), null);
+        Cursor usuariosEnProyecto = db.rawQuery("SELECT id_usuario, id FROM USER_PROJ WHERE id_proyecto="+prj.get(selectedItem-2).getId(), null);
         //Crear una lista de los usuarios asociados al proyecto y luego extraer sus credenciales
         if(usuariosEnProyecto.moveToFirst()){
             //Obtener el dato por cada uno de los usuarios asociados
@@ -842,6 +901,7 @@ public class Projects extends Activity {
                 tempUser.setNombre(userData.getString(1));
                 tempUser.setApellidos(userData.getString(2));
                 currentUserModel.add(tempUser);
+                currentUserProj.add(usuariosEnProyecto.getInt(1));
             }
             while(usuariosEnProyecto.moveToNext()){
                     //Obtener el dato por cada uno de los usuarios asociados
@@ -853,6 +913,7 @@ public class Projects extends Activity {
                         tempUser.setNombre(userData.getString(1));
                         tempUser.setApellidos(userData.getString(2));
                         currentUserModel.add(tempUser);
+                        currentUserProj.add(usuariosEnProyecto.getInt(1));
                 }
             }
         }
@@ -888,6 +949,13 @@ public class Projects extends Activity {
                     ex.printStackTrace();
                     Toast.makeText(getApplicationContext(), "Error Nº: "+ex.getMessage(),Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+        listaUsuarios.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                dialogBorrarUsuarioPrj(currentUserProj.get(i)).show();
+                return false;
             }
         });
         deleteDialog.show();
