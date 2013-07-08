@@ -18,10 +18,11 @@
                 android:layout_gravity="center_horizontal|top"/>
 
         <Spinner
-                android:layout_width="243dp"
+                android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:id="@+id/spinnerUsuarios"
-                />
+                android:layout_gravity="center_horizontal|top"
+                android:layout_weight="1"/>
 
         <Button
                 android:layout_width="44dp"

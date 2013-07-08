@@ -159,6 +159,11 @@
                 qualifiers=""
                 type="layout" />
             <file
+                name="dialog_gest_users_prj"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\layout\dialog_gest_users_prj.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="fragment_lista_proyectos"
                 path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\layout\fragment_lista_proyectos.xml"
                 qualifiers=""
@@ -274,6 +279,8 @@
                 </string>
                 <string name="saveTask" >Save Task
                 </string>
+                <string name="about" >About
+                </string>
                 <string name="userApellido" >Last Name
                 </string>
                 <string name="projects" >Projects
@@ -290,6 +297,8 @@
                 </string>
                 <string name="taskCoste" >Cost (inversion)
                 </string>
+                <string name="logOff" >Log off
+                </string>
                 <string name="addTask" >Add Task
                 </string>
                 <string name="app_name" >Carlotta Labs
@@ -299,6 +308,8 @@
                 <string name="taskHours" >Work Hours
                 </string>
                 <string name="horas" >Hours
+                </string>
+                <string name="toDo" >Pending Tasks for You
                 </string>
                 <string name="enroledUsers" >Users in this company
                 </string>
@@ -328,6 +339,8 @@
                 </string>
                 <string name="fav" >Por hacer
                 </string>
+                <string name="about" >Acerca de
+                </string>
                 <string name="addTask" >Añadir tarea
                 </string>
                 <string name="taskValue" >Valor (ROI)
@@ -335,6 +348,8 @@
                 <string name="login" >Acceder
                 </string>
                 <string name="taskUser" >Usuario asignado a la tarea
+                </string>
+                <string name="logOff" >Cerrar sesión
                 </string>
                 <string name="taskName" >Nombre de la tarea
                 </string>
@@ -372,6 +387,8 @@
                 </string>
                 <string name="saveTask" >Guardar tarea
                 </string>
+                <string name="toDo" >Sus tareas pendientes
+                </string>
                 <string name="projects" >Proyectos
                 </string>
             </file>
@@ -406,31 +423,6 @@
                     <!-- API 14 theme customizations can go here. -->
                 </style>
             </file>
-            <file
-                name="dialog_gest_users_prj"
-                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\layout\dialog_gest_users_prj.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="Thumbs"
-                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-xhdpi\Thumbs.db"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="Thumbs"
-                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-xxhdpi\Thumbs.db"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="Thumbs"
-                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-mdpi\Thumbs.db"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="Thumbs"
-                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-hdpi\Thumbs.db"
-                qualifiers="hdpi"
-                type="drawable" />
         </source>
         <source path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\rs\debug" />
     </dataSet>

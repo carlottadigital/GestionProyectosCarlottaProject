@@ -45,6 +45,7 @@ public class MainActivity extends Activity {
         if(prefs.getInt("id",0)!=0){
             Intent i = new Intent(MainActivity.this, Projects.class);
             startActivity(i);
+            finish();
         }
         //Establecer el listener del boton
         loginBtn.setOnClickListener(new View.OnClickListener() {

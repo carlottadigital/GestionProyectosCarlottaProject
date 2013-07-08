@@ -4,6 +4,7 @@ package sqlite;
  * Created by Borja on 27/06/13.
  */
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -11,7 +12,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by Borja on 1/06/13.
  */
 public class DBManager extends SQLiteOpenHelper {
-    final String _CREATE = "CREATE TABLE PROYECTOS (id INTEGER PRIMARY KEY, nombre TEXT, descripcion, TEXT, owner INTEGER)";
+    final String _CREATE = "CREATE TABLE PROYECTOS (id INTEGER PRIMARY KEY, nombre TEXT, descripcion, TEXT, owner INTEGER, completado INTEGER)";
     final String _CREATE_2 = "CREATE TABLE USUARIOS (id INTEGER PRIMARY KEY, nombre TEXT, apellidos TEXT, telefono TEXT, mail TEXT)";
     final String _CREATE_3 = "CREATE TABLE USER_PROJ (id INTEGER PRIMARY KEY, id_usuario INTEGER, id_proyecto INTEGER)";
     final String _CREATE_4 = "CREATE TABLE TASK_PROJ (id INTEGER PRIMARY KEY, id_proyecto INTEGER, nombre TEXT, descripcion TEXT, coste INTEGER, costeFinal INTEGER, valor INTEGER, id_usuario INTEGER, completado INTEGER)";
@@ -64,5 +65,18 @@ public class DBManager extends SQLiteOpenHelper {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+    public void purge(SQLiteDatabase sqLiteDatabase, SharedPreferences prefs){
+        //Eliminar datos de la base de datos
+        sqLiteDatabase.execSQL("DELETE FROM PROYECTOS WHERE 1");
+        sqLiteDatabase.execSQL("DELETE FROM USUARIOS WHERE 1");
+        sqLiteDatabase.execSQL("DELETE FROM USER_PROJ WHERE 1");
+        sqLiteDatabase.execSQL("DELETE FROM TASK_PROJ WHERE 1");
+        sqLiteDatabase.execSQL("DELETE FROM SYNCRO WHERE 1");
+        sqLiteDatabase.close();
+        //Eliminar el ID de inicio de sesión
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt("id", 0);
+        editor.commit();
     }
 }

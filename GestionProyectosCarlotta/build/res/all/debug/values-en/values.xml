@@ -4,6 +4,7 @@
     <string name="PrjCreate">Create Project</string>
     <string name="Prjdesc">Project description</string>
     <string name="Prjname">Project name</string>
+    <string name="about">About</string>
     <string name="add">Add</string>
     <string name="addProject">Add new Project</string>
     <string name="addTask">Add Task</string>
@@ -14,6 +15,7 @@
     <string name="enroledUsers">Users in this company</string>
     <string name="fav">To-Do</string>
     <string name="horas">Hours</string>
+    <string name="logOff">Log off</string>
     <string name="login">Acceder</string>
     <string name="loginIncorrect">Incorrect Username or Password</string>
     <string name="mail">Mail</string>
@@ -28,6 +30,7 @@
     <string name="taskUser">User assigned to the task</string>
     <string name="taskValue">Value (ROI)</string>
     <string name="tasks">Tasks</string>
+    <string name="toDo">Pending Tasks for You</string>
     <string name="user">Users</string>
     <string name="userApellido">Last Name</string>
     <string name="userNombre">Name</string>

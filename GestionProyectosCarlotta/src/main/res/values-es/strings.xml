@@ -5,6 +5,7 @@
     <string name="projects">Proyectos</string>
     <string name="done">Completados</string>
     <string name="fav">Por hacer</string>
+    <string name="toDo">Sus tareas pendientes</string>
     <string name="add">Agregar</string>
     <string name="addProject">Agregar un proyecto</string>
     <string name="sincro">Sincronizar</string>
@@ -15,6 +16,8 @@
     <string name="Prjdesc">Descripcion del Proyecto</string>
     <string name="PrjCreate">Crear Proyecto</string>
     <string name="user">Usuarios</string>
+    <string name="logOff">Cerrar sesión</string>
+    <string name="about">Acerca de</string>
     <!-- Añadir tareas -->
     <string name="addTask">Añadir tarea</string>
     <string name="taskName">Nombre de la tarea</string>

@@ -14,4 +14,15 @@
           android:visible="true"
           android:showAsAction="always"
           android:icon="@drawable/sincro"/>
+    <!-- Botones de puntitos -->
+    <group>
+        <item android:id="@+id/logOff"
+              android:title="@string/logOff"
+              android:showAsAction="ifRoom|withText">
+        </item>
+        <item android:id="@+id/about"
+              android:title="@string/about"
+              android:showAsAction="ifRoom|withText">
+        </item>
+    </group>
 </menu>
