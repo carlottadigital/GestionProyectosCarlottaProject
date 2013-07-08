@@ -32,5 +32,6 @@
     <string name="userApellido">Last Name</string>
     <string name="userNombre">Name</string>
     <string name="userTelefono">Telephone</string>
+    <string name="usersProjects">Users in this project</string>
 
 </resources>

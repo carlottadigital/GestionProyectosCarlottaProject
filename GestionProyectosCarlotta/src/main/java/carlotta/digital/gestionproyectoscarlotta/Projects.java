@@ -12,6 +12,7 @@ import android.content.pm.PackageInfo;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -427,6 +428,14 @@ public class Projects extends Activity {
                 proyectosDAO.deleteProject(idCambio);
                 break;
 
+            case 7:
+                UsuariosProjWS userDAO = new UsuariosProjWS(getResources().getString(R.string.server));
+                SQLiteDatabase dbRenole = dbManager.getReadableDatabase();
+                Cursor enroleData = dbRenole.rawQuery("SELECT id_proyecto, id_usuario FROM USER_PROJ WHERE id="+idCambio, null);
+                if(enroleData.moveToFirst()){
+                    userDAO.enrolUser(enroleData.getInt(0), enroleData.getInt(1));
+                }
+                break;
         }
         return result;
     }
@@ -456,6 +465,9 @@ public class Projects extends Activity {
                     break;
                 case R.id.addTask:
                     addTask();
+                    break;
+                case R.id.usr_in_prj:
+                    gestUsersInProjects(selectedItem-2);
                     break;
                 default:
                     break;
@@ -796,5 +808,88 @@ public class Projects extends Activity {
             }
         });
         return builder.create();
+    }
+    public void gestUsersInProjects(int idProyecto){
+        LayoutInflater factory = LayoutInflater.from(this);
+        final View view = factory.inflate(R.layout.dialog_gest_users_prj, null);
+        final AlertDialog deleteDialog = new AlertDialog.Builder(this).create();
+        deleteDialog.setView(view);
+        //Inicializar widgets
+        final Spinner spinner = (Spinner)view.findViewById(R.id.spinnerUsuarios);
+        ListView listaUsuarios = (ListView)view.findViewById(R.id.listaUsers);
+        Button boton = (Button)view.findViewById(R.id.addUserBtn);
+        //Dar valores a los widgets
+        ArrayList<String> userNames = new ArrayList<String>();
+        for(int a=0;a<users.size();a++){
+            userNames.add(users.get(a).getNombre()+" "+users.get(a).getApellidos());
+        }
+        spinner.setAdapter(new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_spinner_item, userNames));
+        //Array con los nombres de los usuarios actuales en el proyecto (para el listview)
+        ArrayList<String> currentUserNames = new ArrayList<String>();
+        //Array de modelos de usuario para obtener los ids en las interacciones del listview
+        final ArrayList<Usuario> currentUserModel = new ArrayList<Usuario>();
+        //Realizar a consulta a la db de los usuarios actuales y printarlos
+        final SQLiteDatabase db = dbManager.getWritableDatabase();
+        Cursor usuariosEnProyecto = db.rawQuery("SELECT id_usuario FROM USER_PROJ WHERE id_proyecto="+prj.get(selectedItem-2).getId(), null);
+        //Crear una lista de los usuarios asociados al proyecto y luego extraer sus credenciales
+        if(usuariosEnProyecto.moveToFirst()){
+            //Obtener el dato por cada uno de los usuarios asociados
+            Cursor userData = db.rawQuery("SELECT * FROM USUARIOS where id="+usuariosEnProyecto.getInt(0), null);
+            if(userData.moveToFirst()){
+                //Crear el susodicho dato
+                Usuario tempUser = new Usuario();
+                tempUser.setId(userData.getInt(0));
+                tempUser.setNombre(userData.getString(1));
+                tempUser.setApellidos(userData.getString(2));
+                currentUserModel.add(tempUser);
+            }
+            while(usuariosEnProyecto.moveToNext()){
+                    //Obtener el dato por cada uno de los usuarios asociados
+                    userData = db.rawQuery("SELECT * FROM USUARIOS where id="+usuariosEnProyecto.getInt(0), null);
+                    if(userData.moveToFirst()){
+                        //Crear el susodicho dato
+                        Usuario tempUser = new Usuario();
+                        tempUser.setId(userData.getInt(0));
+                        tempUser.setNombre(userData.getString(1));
+                        tempUser.setApellidos(userData.getString(2));
+                        currentUserModel.add(tempUser);
+                }
+            }
+        }
+        //Transformar el arrayList de los modelos en un array de Strings para el listview
+        for(int a=0; a<currentUserModel.size();a++){
+            currentUserNames.add(currentUserModel.get(a).getNombre()+" "+currentUserModel.get(a).getApellidos());
+        }
+        //Establecer el Adapter del ListView
+        listaUsuarios.setAdapter(new UserListAdapter(getApplicationContext(), currentUserNames));
+        //Establecer el listener del boton
+        boton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{
+                    db.execSQL("INSERT INTO USER_PROJ (id_usuario, id_proyecto) VALUES ("+users.get(spinner.getSelectedItemPosition()).getId()+", "+prj.get(selectedItem-2).getId()+")");
+                    SQLiteDatabase finalDB = dbManager.getReadableDatabase();
+                    Cursor last = finalDB.rawQuery("SELECT id FROM USER_PROJ", null);
+                    if(last.moveToFirst()){
+                        db.execSQL("INSERT INTO SYNCRO (tipo, id_dato) VALUES (7, "+last.getInt(0)+")");
+                        finalDB.close();
+                        finalDB = null;
+                        Toast.makeText(getApplicationContext(), "Asignacion guardada",Toast.LENGTH_SHORT).show();
+                    }
+                }catch (SQLiteException ex){
+                    ex.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "Error Nº: "+ex.getMessage(),Toast.LENGTH_LONG).show();
+                }
+                catch(ArrayIndexOutOfBoundsException ex){
+                    ex.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "Error Nº: "+ex.getMessage(),Toast.LENGTH_LONG).show();
+                }
+                catch(IndexOutOfBoundsException ex){
+                    ex.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "Error Nº: "+ex.getMessage(),Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        deleteDialog.show();
     }
   }

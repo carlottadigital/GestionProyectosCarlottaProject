@@ -34,6 +34,7 @@
     <!-- gestion de usuarios -->
     <string name="addUser">Agregar usuario</string>
     <string name="enroledUsers">Usuarios en esta empresa</string>
+    <string name="usersProjects">Usuarios en este proyecto</string>
     <string name="userNombre">Nombre</string>
     <string name="userApellido">Apellidos</string>
     <string name="userTelefono">Telefono</string>

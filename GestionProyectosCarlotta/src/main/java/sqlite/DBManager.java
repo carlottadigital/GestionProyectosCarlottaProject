@@ -24,6 +24,7 @@ public class DBManager extends SQLiteOpenHelper {
     * 4 - Borrado de proyecto
     * 5 - Creación de un proyecto
     * 6 - Tarea agregada a un proyecto
+    * 7 - Usuario asignado a un proyecto
     * */
     final String _CREATE_5 = "CREATE TABLE SYNCRO (id INTEGER PRIMARY KEY, tipo INTEGER, id_dato INTEGER)";
 

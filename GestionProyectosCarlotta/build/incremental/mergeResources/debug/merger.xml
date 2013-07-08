@@ -212,9 +212,9 @@
                 </string>
                 <string name="hello_world" >Hello world!
                 </string>
-                <string name="serverOLD" >http://10.0.2.2/carlottalabs/api/
-                </string>
                 <string name="title_activity_projects" >MainActivity
+                </string>
+                <string name="serverOLD" >http://10.0.2.2/carlottalabs/api/
                 </string>
             </file>
             <file
@@ -242,25 +242,27 @@
             <file
                 path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\values-en\strings.xml"
                 qualifiers="en" >
-                <string name="add" >Add
+                <string name="usersProjects" >Users in this project
                 </string>
                 <string name="pass" >Password
                 </string>
-                <string name="taskName" >Task name
+                <string name="add" >Add
                 </string>
-                <string name="Prjname" >Project name
+                <string name="taskName" >Task name
                 </string>
                 <string name="fav" >Featured
                 </string>
-                <string name="user" >Users
+                <string name="Prjname" >Project name
                 </string>
-                <string name="addUser" >Add user
+                <string name="user" >Users
                 </string>
                 <string name="login" >Acceder
                 </string>
-                <string name="Prjdesc" >Project description
+                <string name="addUser" >Add user
                 </string>
                 <string name="tasks" >Tasks
+                </string>
+                <string name="Prjdesc" >Project description
                 </string>
                 <string name="mail" >Mail
                 </string>
@@ -298,9 +300,9 @@
                 </string>
                 <string name="horas" >Hours
                 </string>
-                <string name="userTelefono" >Telephone
-                </string>
                 <string name="enroledUsers" >Users in this company
+                </string>
+                <string name="userTelefono" >Telephone
                 </string>
                 <string name="delete" >Delete
                 </string>
@@ -310,13 +312,15 @@
                 qualifiers="es" >
                 <string name="taskCoste" >Coste (inversion)
                 </string>
-                <string name="userApellido" >Apellidos
+                <string name="usersProjects" >Usuarios en este proyecto
                 </string>
                 <string name="enroledUsers" >Usuarios en esta empresa
                 </string>
-                <string name="user" >Usuarios
+                <string name="userApellido" >Apellidos
                 </string>
                 <string name="mail" >Mail
+                </string>
+                <string name="user" >Usuarios
                 </string>
                 <string name="Prjname" >Nombre del proyecto
                 </string>
@@ -326,9 +330,9 @@
                 </string>
                 <string name="addTask" >Añadir tarea
                 </string>
-                <string name="login" >Acceder
-                </string>
                 <string name="taskValue" >Valor (ROI)
+                </string>
+                <string name="login" >Acceder
                 </string>
                 <string name="taskUser" >Usuario asignado a la tarea
                 </string>
@@ -402,6 +406,11 @@
                     <!-- API 14 theme customizations can go here. -->
                 </style>
             </file>
+            <file
+                name="dialog_gest_users_prj"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\layout\dialog_gest_users_prj.xml"
+                qualifiers=""
+                type="layout" />
         </source>
         <source path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\rs\debug" />
     </dataSet>

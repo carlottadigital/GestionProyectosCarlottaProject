@@ -32,5 +32,6 @@
     <string name="userApellido">Apellidos</string>
     <string name="userNombre">Nombre</string>
     <string name="userTelefono">Telefono</string>
+    <string name="usersProjects">Usuarios en este proyecto</string>
 
 </resources>
