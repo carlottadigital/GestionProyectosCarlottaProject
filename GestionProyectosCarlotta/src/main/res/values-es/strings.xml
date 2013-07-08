@@ -18,6 +18,7 @@
     <string name="user">Usuarios</string>
     <string name="logOff">Cerrar sesión</string>
     <string name="about">Acerca de</string>
+    <string name="completado">Completado</string>
     <!-- Añadir tareas -->
     <string name="addTask">Añadir tarea</string>
     <string name="taskName">Nombre de la tarea</string>

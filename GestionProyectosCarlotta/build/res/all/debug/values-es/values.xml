@@ -10,6 +10,7 @@
     <string name="addTask">Añadir tarea</string>
     <string name="addUser">Agregar usuario</string>
     <string name="app_name">Carlotta Labs</string>
+    <string name="completado">Completado</string>
     <string name="delete">Borrar</string>
     <string name="done">Completados</string>
     <string name="enroledUsers">Usuarios en esta empresa</string>

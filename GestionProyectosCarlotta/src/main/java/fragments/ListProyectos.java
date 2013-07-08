@@ -44,6 +44,7 @@ public class ListProyectos extends Fragment {
     ArrayList<Tareas> proyectos;
     ListView listaProyectos;
     TextView tituloProyecto, textHour, textTask;
+    CheckBox prjDone;
     ProgressBar horas, tareas;
     int todoTask =0;
     int doneTask =0;
@@ -74,6 +75,7 @@ public class ListProyectos extends Fragment {
         textHour = (TextView)vista.findViewById(R.id.textHours);
         horas = (ProgressBar) vista.findViewById(R.id.progressHoras);
         tareas = (ProgressBar) vista.findViewById(R.id.progressTareas);
+        prjDone = (CheckBox) vista.findViewById(R.id.prjDone);
         tituloProyecto.setText(getArguments().getString("nombrePrj"));
         //Cargar los datos//
         getProjects();
@@ -156,6 +158,13 @@ public class ListProyectos extends Fragment {
             //Establecer el progreso total y maximo de los textviews
             textTask.setText(getResources().getString(R.string.tasks)+" ("+doneTask+"/"+(todoTask+doneTask)+")");
             textHour.setText(getResources().getString(R.string.horas)+" ("+doneHour+"/"+(todoHour+doneHour)+")");
+            //Verificar si el proyecto está completado o no
+            if(doneTask >= (todoTask+doneTask)){
+                prjDone.setChecked(true);
+                prjDone.setText(getActivity().getResources().getString(R.string.completado));
+            }else{
+                prjDone.setChecked(false);
+            }
         }
     }
 

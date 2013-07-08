@@ -18,11 +18,11 @@
     <group>
         <item android:id="@+id/logOff"
               android:title="@string/logOff"
-              android:showAsAction="ifRoom|withText">
+              android:showAsAction="never|withText">
         </item>
         <item android:id="@+id/about"
               android:title="@string/about"
-              android:showAsAction="ifRoom|withText">
+              android:showAsAction="never|withText">
         </item>
     </group>
 </menu>

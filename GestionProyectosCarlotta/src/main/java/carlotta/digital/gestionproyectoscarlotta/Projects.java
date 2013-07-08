@@ -477,6 +477,8 @@ public class Projects extends Activity {
                 case R.id.borrar:
                     dialogBorrar().show();
                     onDestroyActionMode(actionMode);
+                    //Volver a la vista de tareas pendientes
+                    showMainScreen();
                     break;
                 case R.id.addTask:
                     addTask();

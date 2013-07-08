@@ -86,7 +86,6 @@ public class MainActivity extends Activity {
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
                 Intent i = new Intent(MainActivity.this, Projects.class);
-                Toast.makeText(getApplicationContext(), Integer.toString(prefs.getInt("id",0)), Toast.LENGTH_LONG).show();
                 startActivity(i);
                 finish();
             }

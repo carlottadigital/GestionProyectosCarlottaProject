@@ -10,6 +10,7 @@
     <string name="addTask">Add Task</string>
     <string name="addUser">Add user</string>
     <string name="app_name">Carlotta Labs</string>
+    <string name="completado">Done</string>
     <string name="delete">Delete</string>
     <string name="done">Done</string>
     <string name="enroledUsers">Users in this company</string>
