@@ -106,6 +106,8 @@ public class Projects extends Activity {
         getProjects();
         //Establecer el listener de la lista de proyectos
         addDrawerListener();
+        //Cargar la vista de inicio
+        showMainScreen();
     }
 
     @Override
@@ -346,6 +348,7 @@ public class Projects extends Activity {
                             Bundle args = new Bundle();
                             args.putInt("prjID", prj.get(i-2).getId());
                             args.putString("nombrePrj", prj.get(i-2).getNombre());
+                            args.putBoolean("isHome", false);
                             fragment.setArguments(args);
                             //Cambiar el fragment actual por el nuevo
                             FragmentManager fm = getFragmentManager();
@@ -959,5 +962,18 @@ public class Projects extends Activity {
             }
         });
         deleteDialog.show();
+    }
+    public void showMainScreen(){
+        //Ejecutar el código normal para cada una de las selecciones de la lista
+        Fragment fragment = new ListProyectos();
+        Bundle args = new Bundle();
+        args.putString("nombrePrj", "Tareas pendientes");
+        args.putBoolean("isHome", true);
+        fragment.setArguments(args);
+        //Cambiar el fragment actual por el nuevo
+        FragmentManager fm = getFragmentManager();
+        fm.beginTransaction().replace(R.id.content, fragment, "vistaProyectos").commit();
+        //Cerrar el drawer
+        drawer.closeDrawer(drawerList);
     }
   }

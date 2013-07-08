@@ -18,6 +18,8 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -30,6 +32,9 @@ import models.Tareas;
 import sqlite.DBManager;
 
 /**
+ *
+ * Clase que extiende de Fragment y muestra las tareas pendientes (y completadas) de un proyecto
+ *
  * Created by Borja on 27/06/13.
  */
 public class ListProyectos extends Fragment {
@@ -50,6 +55,14 @@ public class ListProyectos extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.fragment_lista_proyectos, container, false);
         prjID = getArguments().getInt("prjID");
+        //Ocultar la barra superior de "Estado del proyecto" si se está en la vista principal de la aplicación (Home)
+        if(getArguments().getBoolean("isHome")){
+            /*TEST*/
+            LinearLayout llTeds = (LinearLayout) vista.findViewById(R.id.layoutTest);
+            llTeds.setVisibility(LinearLayout.INVISIBLE);
+            llTeds.setLayoutParams(new LinearLayout.LayoutParams(1,1));
+            /*TEST*/
+        }
         listaProyectos = (ListView) vista.findViewById(R.id.listaProyectos);
         tituloProyecto = (TextView) vista.findViewById(R.id.tituloProyecto);
         textTask = (TextView)vista.findViewById(R.id.textTask);
@@ -84,8 +97,13 @@ public class ListProyectos extends Fragment {
         doneTask=0;
         todoHour=0;
         todoTask=0;
+        Cursor data = null;
         SQLiteDatabase dbRead = dbManager.getReadableDatabase();
-        Cursor data = dbRead.rawQuery("SELECT * FROM TASK_PROJ WHERE id_proyecto="+prjID, null);
+        if(getArguments().getBoolean("isHome")){
+            data = dbRead.rawQuery("SELECT * FROM TASK_PROJ WHERE completado=0", null);
+        }else{
+            data = dbRead.rawQuery("SELECT * FROM TASK_PROJ WHERE id_proyecto="+prjID, null);
+        }
         proyectos = new ArrayList<Tareas>();
         if(data.moveToFirst()){
             Tareas tarea = new Tareas();

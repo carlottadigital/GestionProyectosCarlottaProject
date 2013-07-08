@@ -6,6 +6,7 @@
               android:background="#E5E5E5"
               android:layout_height="match_parent">
     <LinearLayout
+            android:id="@+id/layoutTest"
             android:background="#ffffff"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

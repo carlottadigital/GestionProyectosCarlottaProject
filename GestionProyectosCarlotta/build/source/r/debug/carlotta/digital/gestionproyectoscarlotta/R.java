@@ -34,23 +34,24 @@ public final class R {
         public static final int users_add=0x7f020010;
     }
     public static final class id {
-        public static final int Proyecto=0x7f080023;
+        public static final int Proyecto=0x7f080024;
         public static final int addBtbn=0x7f080021;
-        public static final int addTask=0x7f080030;
+        public static final int addTask=0x7f080031;
         public static final int addUserBtn=0x7f08001b;
-        public static final int add_prj=0x7f080033;
+        public static final int add_prj=0x7f080034;
         public static final int apellidoUser=0x7f08001e;
-        public static final int borrar=0x7f080032;
-        public static final int chCompletado=0x7f08002d;
+        public static final int borrar=0x7f080033;
+        public static final int chCompletado=0x7f08002e;
         public static final int content=0x7f080008;
         public static final int createPrjBtn=0x7f08000d;
         public static final int drawer=0x7f080009;
         public static final int drawer_layout=0x7f080007;
         public static final int imageView=0x7f080000;
-        public static final int imagenLista=0x7f08002b;
-        public static final int imagenProyecto=0x7f08002e;
-        public static final int linearLayout=0x7f080027;
-        public static final int listaProyectos=0x7f08002a;
+        public static final int imagenLista=0x7f08002c;
+        public static final int imagenProyecto=0x7f08002f;
+        public static final int layoutTest=0x7f080023;
+        public static final int linearLayout=0x7f080028;
+        public static final int listaProyectos=0x7f08002b;
         public static final int listaUsers=0x7f08001c;
         public static final int loginBtn=0x7f080006;
         public static final int loginMail=0x7f080002;
@@ -61,10 +62,10 @@ public final class R {
         public static final int passUser=0x7f080020;
         public static final int prjDesc=0x7f08000c;
         public static final int prjName=0x7f08000b;
-        public static final int progressHoras=0x7f080029;
-        public static final int progressTareas=0x7f080026;
+        public static final int progressHoras=0x7f08002a;
+        public static final int progressTareas=0x7f080027;
         public static final int scrollView=0x7f08000e;
-        public static final int sincro=0x7f080035;
+        public static final int sincro=0x7f080036;
         public static final int spinnerUsuarios=0x7f080022;
         public static final int taskBtn=0x7f080019;
         public static final int taskCoste=0x7f080012;
@@ -74,8 +75,8 @@ public final class R {
         public static final int taskUser=0x7f080018;
         public static final int taskValue=0x7f080014;
         public static final int telfUsuario=0x7f08001f;
-        public static final int textHours=0x7f080028;
-        public static final int textTask=0x7f080025;
+        public static final int textHours=0x7f080029;
+        public static final int textTask=0x7f080026;
         public static final int textView=0x7f080001;
         public static final int textView2=0x7f080003;
         public static final int textView3=0x7f08000a;
@@ -83,11 +84,11 @@ public final class R {
         public static final int textView5=0x7f080013;
         public static final int textView6=0x7f080017;
         public static final int textView7=0x7f080015;
-        public static final int textoLista=0x7f08002c;
-        public static final int textoProyecto=0x7f08002f;
-        public static final int tituloProyecto=0x7f080024;
-        public static final int usr_in_prj=0x7f080031;
-        public static final int usr_prj=0x7f080034;
+        public static final int textoLista=0x7f08002d;
+        public static final int textoProyecto=0x7f080030;
+        public static final int tituloProyecto=0x7f080025;
+        public static final int usr_in_prj=0x7f080032;
+        public static final int usr_prj=0x7f080035;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
