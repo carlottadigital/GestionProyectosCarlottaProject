@@ -870,7 +870,7 @@ public class Projects extends Activity {
                     db.execSQL("INSERT INTO USER_PROJ (id_usuario, id_proyecto) VALUES ("+users.get(spinner.getSelectedItemPosition()).getId()+", "+prj.get(selectedItem-2).getId()+")");
                     SQLiteDatabase finalDB = dbManager.getReadableDatabase();
                     Cursor last = finalDB.rawQuery("SELECT id FROM USER_PROJ", null);
-                    if(last.moveToFirst()){
+                    if(last.moveToLast()){
                         db.execSQL("INSERT INTO SYNCRO (tipo, id_dato) VALUES (7, "+last.getInt(0)+")");
                         finalDB.close();
                         finalDB = null;
