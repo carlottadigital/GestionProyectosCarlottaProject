@@ -12,7 +12,7 @@
     <string name="delete">Borrar</string>
     <string name="done">Completados</string>
     <string name="enroledUsers">Usuarios en esta empresa</string>
-    <string name="fav">Destacados</string>
+    <string name="fav">Por hacer</string>
     <string name="horas">Horas</string>
     <string name="login">Acceder</string>
     <string name="loginIncorrect">Nombre de usuario y Contresña erróneos</string>

@@ -337,7 +337,7 @@ public class Projects extends Activity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch(i){
                     case 0:
-                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.fav),Toast.LENGTH_SHORT).show();
+                        showMainScreen();
                         break;
                     case 1:
                         Toast.makeText(getApplicationContext(), getResources().getString(R.string.done),Toast.LENGTH_SHORT).show();
@@ -365,7 +365,7 @@ public class Projects extends Activity {
 
                 switch(i){
                     case 0:
-                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.fav)+" Long",Toast.LENGTH_SHORT).show();
+                        
                         break;
                     case 1:
                         Toast.makeText(getApplicationContext(), getResources().getString(R.string.done)+" Long",Toast.LENGTH_SHORT).show();

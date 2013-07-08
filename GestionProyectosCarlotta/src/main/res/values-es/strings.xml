@@ -4,7 +4,7 @@
     <string name="app_name">Carlotta Labs</string>
     <string name="projects">Proyectos</string>
     <string name="done">Completados</string>
-    <string name="fav">Destacados</string>
+    <string name="fav">Por hacer</string>
     <string name="add">Agregar</string>
     <string name="addProject">Agregar un proyecto</string>
     <string name="sincro">Sincronizar</string>
