@@ -32,13 +32,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e10e2ed-1072-44a3-9d12-39ade7df4ba2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/build/res/all/debug/drawable-hdpi/lst_fav.png" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/build/res/all/debug/drawable-hdpi/lst_fav.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/drawable-hdpi/lst_fav.png" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/drawable-hdpi/lst_fav.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/fragments/ListProyectos.java" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/fragments/ListProyectos.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/carlotta/digital/gestionproyectoscarlotta/Projects.java" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/carlotta/digital/gestionproyectoscarlotta/Projects.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/values-en/strings.xml" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/values-en/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/values-es/strings.xml" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/values-es/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/build/res/all/debug/values-en/values.xml" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/build/res/all/debug/values-en/values.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/build/res/all/debug/values-es/values.xml" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/build/res/all/debug/values-es/values.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GestionProyectosCarlotta.iws" />
@@ -138,15 +133,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListProyectos.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ListProyectos.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/fragments/ListProyectos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="48" selection-start="2180" selection-end="2180" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="4029">
+            <state line="100" column="19" selection-start="3833" selection-end="3833" vertical-scroll-proportion="0.38746437" vertical-offset="918" max-vertical-offset="4097">
               <folding>
-                <element signature="e#3231#3528#0" expanded="true" />
-                <element signature="e#3517#3518#0" expanded="true" />
-                <element signature="e#5976#6016#0" expanded="true" />
-                <element signature="e#6090#6130#0" expanded="true" />
+                <element signature="e#3469#3766#0" expanded="true" />
+                <element signature="e#3755#3756#0" expanded="true" />
+                <element signature="e#6237#6277#0" expanded="true" />
+                <element signature="e#6351#6391#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -167,7 +162,7 @@
       <file leaf-file-name="DBManager.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/sqlite/DBManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="50" selection-start="1471" selection-end="1471" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1224">
+            <state line="16" column="190" selection-start="837" selection-end="847" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1224">
               <folding />
             </state>
           </provider>
@@ -182,10 +177,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Projects.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Projects.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/carlotta/digital/gestionproyectoscarlotta/Projects.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="367" column="24" selection-start="16750" selection-end="16750" vertical-scroll-proportion="0.6666667" vertical-offset="4573" max-vertical-offset="14943">
+            <state line="83" column="38" selection-start="2646" selection-end="2761" vertical-scroll-proportion="-10.461538" vertical-offset="255" max-vertical-offset="14943">
               <folding>
                 <element signature="e#2141#2149#0" expanded="true" />
                 <element signature="e#3286#3329#0" expanded="true" />
@@ -198,44 +193,53 @@
                 <element signature="e#10583#10624#0" expanded="true" />
                 <element signature="e#10675#10716#0" expanded="true" />
                 <element signature="e#15398#15437#0" expanded="true" />
-                <element signature="e#16874#16913#0" expanded="true" />
-                <element signature="e#17676#17717#0" expanded="true" />
-                <element signature="e#18389#18430#0" expanded="true" />
-                <element signature="e#19714#19755#0" expanded="true" />
-                <element signature="e#24203#24595#0" expanded="true" />
-                <element signature="e#24584#24585#0" expanded="true" />
-                <element signature="e#25092#25133#0" expanded="true" />
-                <element signature="e#31830#31838#0" expanded="true" />
-                <element signature="e#32537#32765#0" expanded="true" />
-                <element signature="e#32754#32755#0" expanded="true" />
-                <element signature="e#35282#35323#0" expanded="true" />
-                <element signature="e#36068#38266#0" expanded="true" />
-                <element signature="e#36503#36984#0" expanded="true" />
-                <element signature="e#36957#36958#0" expanded="true" />
-                <element signature="e#37036#37480#0" expanded="true" />
-                <element signature="e#37453#37454#0" expanded="true" />
-                <element signature="e#37558#38123#0" expanded="true" />
-                <element signature="e#37729#37770#0" expanded="true" />
-                <element signature="e#38096#38097#0" expanded="true" />
-                <element signature="e#38255#38256#0" expanded="true" />
-                <element signature="e#38662#40844#0" expanded="true" />
-                <element signature="e#39096#39576#0" expanded="true" />
-                <element signature="e#39549#39550#0" expanded="true" />
-                <element signature="e#39628#40071#0" expanded="true" />
-                <element signature="e#40044#40045#0" expanded="true" />
-                <element signature="e#40149#40701#0" expanded="true" />
-                <element signature="e#40328#40369#0" expanded="true" />
-                <element signature="e#40674#40675#0" expanded="true" />
-                <element signature="e#40833#40834#0" expanded="true" />
-                <element signature="e#41619#41627#0" expanded="true" />
-                <element signature="e#42043#42051#0" expanded="true" />
-                <element signature="e#42213#42222#0" expanded="true" />
-                <element signature="e#42341#42350#0" expanded="true" />
-                <element signature="e#44659#46198#0" expanded="true" />
-                <element signature="e#46187#46188#0" expanded="true" />
-                <element signature="e#46250#46539#0" expanded="true" />
-                <element signature="e#46528#46529#0" expanded="true" />
+                <element signature="e#16850#16889#0" expanded="true" />
+                <element signature="e#17652#17693#0" expanded="true" />
+                <element signature="e#18365#18406#0" expanded="true" />
+                <element signature="e#19690#19731#0" expanded="true" />
+                <element signature="e#24179#24571#0" expanded="true" />
+                <element signature="e#24560#24561#0" expanded="true" />
+                <element signature="e#25068#25109#0" expanded="true" />
+                <element signature="e#31806#31814#0" expanded="true" />
+                <element signature="e#32513#32741#0" expanded="true" />
+                <element signature="e#32730#32731#0" expanded="true" />
+                <element signature="e#35258#35299#0" expanded="true" />
+                <element signature="e#36044#38242#0" expanded="true" />
+                <element signature="e#36479#36960#0" expanded="true" />
+                <element signature="e#36933#36934#0" expanded="true" />
+                <element signature="e#37012#37456#0" expanded="true" />
+                <element signature="e#37429#37430#0" expanded="true" />
+                <element signature="e#37534#38099#0" expanded="true" />
+                <element signature="e#37705#37746#0" expanded="true" />
+                <element signature="e#38072#38073#0" expanded="true" />
+                <element signature="e#38231#38232#0" expanded="true" />
+                <element signature="e#38638#40820#0" expanded="true" />
+                <element signature="e#39072#39552#0" expanded="true" />
+                <element signature="e#39525#39526#0" expanded="true" />
+                <element signature="e#39604#40047#0" expanded="true" />
+                <element signature="e#40020#40021#0" expanded="true" />
+                <element signature="e#40125#40677#0" expanded="true" />
+                <element signature="e#40304#40345#0" expanded="true" />
+                <element signature="e#40650#40651#0" expanded="true" />
+                <element signature="e#40809#40810#0" expanded="true" />
+                <element signature="e#41595#41603#0" expanded="true" />
+                <element signature="e#42019#42027#0" expanded="true" />
+                <element signature="e#42189#42198#0" expanded="true" />
+                <element signature="e#42317#42326#0" expanded="true" />
+                <element signature="e#44635#46174#0" expanded="true" />
+                <element signature="e#46163#46164#0" expanded="true" />
+                <element signature="e#46226#46515#0" expanded="true" />
+                <element signature="e#46504#46505#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="35" selection-start="309" selection-end="309" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -247,21 +251,6 @@
               <folding>
                 <element signature="e#2597#2612#0" expanded="true" />
                 <element signature="e#3718#3733#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dialog_gest_users_prj.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/layout/dialog_gest_users_prj.xml">
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state line="19" column="8" selection-start="708" selection-end="708" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="918">
-              <folding>
-                <element signature="e#573#590#0" expanded="true" />
-                <element signature="e#1385#1408#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -334,10 +323,10 @@
         <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/sqlite/DBManager.java" />
         <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/webservices/UsuariosProjWS.java" />
         <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/layout/fragment_lista_proyectos.xml" />
-        <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/fragments/ListProyectos.java" />
         <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/values-en/strings.xml" />
         <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/values-es/strings.xml" />
         <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/carlotta/digital/gestionproyectoscarlotta/Projects.java" />
+        <option value="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/fragments/ListProyectos.java" />
       </list>
     </option>
   </component>
@@ -996,13 +985,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/menu/projects.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="646" selection-end="646" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/adapters/DrawerProyectosAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="69" selection-start="1000" selection-end="1061" vertical-scroll-proportion="0.32193732" vertical-offset="335" max-vertical-offset="1360">
@@ -1057,13 +1039,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/adapters/UserListAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="849" selection-end="849" vertical-scroll-proportion="0.0" vertical-offset="590" max-vertical-offset="1343">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/webservices/UsuariosProjWS.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="110" column="5" selection-start="4365" selection-end="4365" vertical-scroll-proportion="0.0" vertical-offset="998" max-vertical-offset="1700">
@@ -1071,13 +1046,6 @@
             <element signature="e#2597#2612#0" expanded="true" />
             <element signature="e#3718#3733#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/sqlite/DBManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="50" selection-start="1471" selection-end="1471" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1224">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1105,30 +1073,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/webservices/UsuariosWS.java">
+    <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="49" selection-start="4013" selection-end="4013" vertical-scroll-proportion="0.0" vertical-offset="1015" max-vertical-offset="1768">
-          <folding>
-            <element signature="e#4026#4041#0" expanded="true" />
-          </folding>
+        <state line="8" column="35" selection-start="309" selection-end="309" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/fragments/ListProyectos.java">
+    <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/adapters/UserListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="48" selection-start="2180" selection-end="2180" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="4029">
-          <folding>
-            <element signature="e#3231#3528#0" expanded="true" />
-            <element signature="e#3517#3518#0" expanded="true" />
-            <element signature="e#5976#6016#0" expanded="true" />
-            <element signature="e#6090#6130#0" expanded="true" />
-          </folding>
+        <state line="38" column="0" selection-start="849" selection-end="849" vertical-scroll-proportion="0.0" vertical-offset="590" max-vertical-offset="1343">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/carlotta/digital/gestionproyectoscarlotta/Projects.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="367" column="24" selection-start="16750" selection-end="16750" vertical-scroll-proportion="0.6666667" vertical-offset="4573" max-vertical-offset="14943">
+        <state line="83" column="38" selection-start="2646" selection-end="2761" vertical-scroll-proportion="-10.461538" vertical-offset="255" max-vertical-offset="14943">
           <folding>
             <element signature="e#2141#2149#0" expanded="true" />
             <element signature="e#3286#3329#0" expanded="true" />
@@ -1141,43 +1102,71 @@
             <element signature="e#10583#10624#0" expanded="true" />
             <element signature="e#10675#10716#0" expanded="true" />
             <element signature="e#15398#15437#0" expanded="true" />
-            <element signature="e#16874#16913#0" expanded="true" />
-            <element signature="e#17676#17717#0" expanded="true" />
-            <element signature="e#18389#18430#0" expanded="true" />
-            <element signature="e#19714#19755#0" expanded="true" />
-            <element signature="e#24203#24595#0" expanded="true" />
-            <element signature="e#24584#24585#0" expanded="true" />
-            <element signature="e#25092#25133#0" expanded="true" />
-            <element signature="e#31830#31838#0" expanded="true" />
-            <element signature="e#32537#32765#0" expanded="true" />
-            <element signature="e#32754#32755#0" expanded="true" />
-            <element signature="e#35282#35323#0" expanded="true" />
-            <element signature="e#36068#38266#0" expanded="true" />
-            <element signature="e#36503#36984#0" expanded="true" />
-            <element signature="e#36957#36958#0" expanded="true" />
-            <element signature="e#37036#37480#0" expanded="true" />
-            <element signature="e#37453#37454#0" expanded="true" />
-            <element signature="e#37558#38123#0" expanded="true" />
-            <element signature="e#37729#37770#0" expanded="true" />
-            <element signature="e#38096#38097#0" expanded="true" />
-            <element signature="e#38255#38256#0" expanded="true" />
-            <element signature="e#38662#40844#0" expanded="true" />
-            <element signature="e#39096#39576#0" expanded="true" />
-            <element signature="e#39549#39550#0" expanded="true" />
-            <element signature="e#39628#40071#0" expanded="true" />
-            <element signature="e#40044#40045#0" expanded="true" />
-            <element signature="e#40149#40701#0" expanded="true" />
-            <element signature="e#40328#40369#0" expanded="true" />
-            <element signature="e#40674#40675#0" expanded="true" />
-            <element signature="e#40833#40834#0" expanded="true" />
-            <element signature="e#41619#41627#0" expanded="true" />
-            <element signature="e#42043#42051#0" expanded="true" />
-            <element signature="e#42213#42222#0" expanded="true" />
-            <element signature="e#42341#42350#0" expanded="true" />
-            <element signature="e#44659#46198#0" expanded="true" />
-            <element signature="e#46187#46188#0" expanded="true" />
-            <element signature="e#46250#46539#0" expanded="true" />
-            <element signature="e#46528#46529#0" expanded="true" />
+            <element signature="e#16850#16889#0" expanded="true" />
+            <element signature="e#17652#17693#0" expanded="true" />
+            <element signature="e#18365#18406#0" expanded="true" />
+            <element signature="e#19690#19731#0" expanded="true" />
+            <element signature="e#24179#24571#0" expanded="true" />
+            <element signature="e#24560#24561#0" expanded="true" />
+            <element signature="e#25068#25109#0" expanded="true" />
+            <element signature="e#31806#31814#0" expanded="true" />
+            <element signature="e#32513#32741#0" expanded="true" />
+            <element signature="e#32730#32731#0" expanded="true" />
+            <element signature="e#35258#35299#0" expanded="true" />
+            <element signature="e#36044#38242#0" expanded="true" />
+            <element signature="e#36479#36960#0" expanded="true" />
+            <element signature="e#36933#36934#0" expanded="true" />
+            <element signature="e#37012#37456#0" expanded="true" />
+            <element signature="e#37429#37430#0" expanded="true" />
+            <element signature="e#37534#38099#0" expanded="true" />
+            <element signature="e#37705#37746#0" expanded="true" />
+            <element signature="e#38072#38073#0" expanded="true" />
+            <element signature="e#38231#38232#0" expanded="true" />
+            <element signature="e#38638#40820#0" expanded="true" />
+            <element signature="e#39072#39552#0" expanded="true" />
+            <element signature="e#39525#39526#0" expanded="true" />
+            <element signature="e#39604#40047#0" expanded="true" />
+            <element signature="e#40020#40021#0" expanded="true" />
+            <element signature="e#40125#40677#0" expanded="true" />
+            <element signature="e#40304#40345#0" expanded="true" />
+            <element signature="e#40650#40651#0" expanded="true" />
+            <element signature="e#40809#40810#0" expanded="true" />
+            <element signature="e#41595#41603#0" expanded="true" />
+            <element signature="e#42019#42027#0" expanded="true" />
+            <element signature="e#42189#42198#0" expanded="true" />
+            <element signature="e#42317#42326#0" expanded="true" />
+            <element signature="e#44635#46174#0" expanded="true" />
+            <element signature="e#46163#46164#0" expanded="true" />
+            <element signature="e#46226#46515#0" expanded="true" />
+            <element signature="e#46504#46505#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/webservices/UsuariosWS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="49" selection-start="4013" selection-end="4013" vertical-scroll-proportion="0.0" vertical-offset="1015" max-vertical-offset="1768">
+          <folding>
+            <element signature="e#4026#4041#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/sqlite/DBManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="190" selection-start="837" selection-end="847" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1224">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/fragments/ListProyectos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="19" selection-start="3833" selection-end="3833" vertical-scroll-proportion="0.38746437" vertical-offset="918" max-vertical-offset="4097">
+          <folding>
+            <element signature="e#3469#3766#0" expanded="true" />
+            <element signature="e#3755#3756#0" expanded="true" />
+            <element signature="e#6237#6277#0" expanded="true" />
+            <element signature="e#6351#6391#0" expanded="true" />
           </folding>
         </state>
       </provider>

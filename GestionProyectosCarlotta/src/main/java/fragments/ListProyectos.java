@@ -2,6 +2,7 @@ package fragments;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
@@ -49,12 +50,16 @@ public class ListProyectos extends Fragment {
     int todoHour =0;
     int doneHour =0;
     int prjID;
+    int userID;
     boolean canPinchar = false;
+    SharedPreferences prefs;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.fragment_lista_proyectos, container, false);
         prjID = getArguments().getInt("prjID");
+        prefs = getActivity().getSharedPreferences("prefs",getActivity().getApplicationContext().MODE_PRIVATE);
+        userID = prefs.getInt("id",0);
         //Ocultar la barra superior de "Estado del proyecto" si se está en la vista principal de la aplicación (Home)
         if(getArguments().getBoolean("isHome")){
             /*TEST*/
@@ -100,7 +105,7 @@ public class ListProyectos extends Fragment {
         Cursor data = null;
         SQLiteDatabase dbRead = dbManager.getReadableDatabase();
         if(getArguments().getBoolean("isHome")){
-            data = dbRead.rawQuery("SELECT * FROM TASK_PROJ WHERE completado=0", null);
+            data = dbRead.rawQuery("SELECT * FROM TASK_PROJ WHERE completado=0 AND id_usuario="+userID, null);
         }else{
             data = dbRead.rawQuery("SELECT * FROM TASK_PROJ WHERE id_proyecto="+prjID, null);
         }

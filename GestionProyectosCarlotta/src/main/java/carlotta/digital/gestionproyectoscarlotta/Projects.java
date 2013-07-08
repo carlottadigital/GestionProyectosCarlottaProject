@@ -365,7 +365,7 @@ public class Projects extends Activity {
 
                 switch(i){
                     case 0:
-                        
+
                         break;
                     case 1:
                         Toast.makeText(getApplicationContext(), getResources().getString(R.string.done)+" Long",Toast.LENGTH_SHORT).show();
