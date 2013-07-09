@@ -126,13 +126,14 @@ public class ListProyectos extends Fragment {
             tarea.setNombre(data.getString(2));
             tarea.setDescripcion(data.getString(3));
             tarea.setCoste(data.getInt(4));
+            tarea.setCosteFinal(data.getInt(5));
             tarea.setValor(data.getInt(6));
             tarea.setUsuario(data.getInt(7));
             tarea.setCompletado(data.getInt(8));
             proyectos.add(tarea);
             while(data.moveToNext()){
                 if(data.getInt(8)!=0){
-                    doneHour = doneHour + data.getInt(4);
+                    doneHour = doneHour + data.getInt(4) + data.getInt(5) ;
                     doneTask++;
                 }else{
                     todoHour = todoHour + data.getInt(4);
@@ -144,6 +145,7 @@ public class ListProyectos extends Fragment {
                 tarea2.setNombre(data.getString(2));
                 tarea2.setDescripcion(data.getString(3));
                 tarea2.setCoste(data.getInt(4));
+                tarea.setCosteFinal(data.getInt(5));
                 tarea2.setValor(data.getInt(6));
                 tarea2.setUsuario(data.getInt(7));
                 tarea2.setCompletado(data.getInt(8));

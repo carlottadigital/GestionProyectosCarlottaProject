@@ -334,7 +334,7 @@ public class Projects extends Activity {
                 if(tareas != null){
                     db.execSQL("DELETE FROM TASK_PROJ WHERE 1");
                     for(int a=0;a<tareas.size();a++){
-                        db.execSQL("INSERT INTO TASK_PROJ (id, id_proyecto, nombre , descripcion , coste, costeFinal, valor  , id_usuario , completado ) VALUES ("+tareas.get(a).getId()+", "+tareas.get(a).getProyecto()+", '"+tareas.get(a).getNombre()+"', '"+tareas.get(a).getDescripcion()+"', "+tareas.get(a).getCoste()+", "+tareas.get(a).getCosteFinal()+" ,"+tareas.get(a).getValor()+", "+tareas.get(a).getUsuario()+", "+tareas.get(a).getCompletado()+")");
+                        db.execSQL("INSERT INTO TASK_PROJ (id, id_proyecto, nombre , descripcion , coste, costeFinal, valor , id_usuario , completado ) VALUES ("+tareas.get(a).getId()+", "+tareas.get(a).getProyecto()+", '"+tareas.get(a).getNombre()+"', '"+tareas.get(a).getDescripcion()+"', "+tareas.get(a).getCoste()+", "+tareas.get(a).getCosteFinal()+" ,"+tareas.get(a).getValor()+", "+tareas.get(a).getUsuario()+", "+tareas.get(a).getCompletado()+")");
                     }
                 }
                 //Grabar las tareas de los proyectos a la DB END//
@@ -1045,7 +1045,7 @@ public class Projects extends Activity {
         final EditText horas = (EditText)view.findViewById(R.id.overHours);
         //Casteo de widgets END//
         //Trabajo con los widgets
-        horas.setText(task.getCosteFinal());
+        horas.setText(task.getCosteFinal()+"");
         taskName.setText(task.getNombre());
         taskHoras.setText(task.getCoste()+" Hrs");
         taskRoi.setText(task.getValor()+"");
