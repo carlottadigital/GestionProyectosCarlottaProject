@@ -461,6 +461,14 @@ public class Projects extends Activity {
                     userDAO.enrolUser(enroleData.getInt(0), enroleData.getInt(1));
                 }
                 break;
+            case 8:
+                tareasDAO = new TareasWS(getResources().getString(R.string.server));
+                SQLiteDatabase db8 = dbManager.getReadableDatabase();
+                Cursor c8 = db8.rawQuery("SELECT costeFinal FROM TASK_PROJ WHERE id="+idCambio,null);
+                if(c8.moveToFirst()){
+                    tareasDAO.addOverCost(c8.getInt(0), idCambio);
+                }
+                break;
         }
         return result;
     }
@@ -1023,7 +1031,7 @@ public class Projects extends Activity {
     /*
     * Mostrar las opciones de la tarea
     * */
-    public void showTaskOptions(Tareas task){
+    public void showTaskOptions(final Tareas task){
         LayoutInflater factory = LayoutInflater.from(this);
         final View view = factory.inflate(R.layout.dialog_gest_task, null);
         final AlertDialog deleteDialog = new AlertDialog.Builder(this).create();
@@ -1034,13 +1042,39 @@ public class Projects extends Activity {
         TextView taskRoi = (TextView)view.findViewById(R.id.taskROI);
         Button deleteTask = (Button)view.findViewById(R.id.delTaskBtn);
         Button overHourBtn = (Button)view.findViewById(R.id.sobrecosteBtn);
-        EditText horas = (EditText)view.findViewById(R.id.overHours);
+        final EditText horas = (EditText)view.findViewById(R.id.overHours);
         //Casteo de widgets END//
         //Trabajo con los widgets
+        horas.setText(task.getCosteFinal());
         taskName.setText(task.getNombre());
         taskHoras.setText(task.getCoste()+" Hrs");
-        taskRoi.setText(task.getValor());
+        taskRoi.setText(task.getValor()+"");
         //Trabajo con los widgets END//
+        //Funcion de los botones
+        overHourBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(horas.getText().toString() != ""){
+                    //Do stuff
+                    try{
+                        int newValor = Integer.valueOf(horas.getText().toString());
+                        SQLiteDatabase db = dbManager.getWritableDatabase();
+                        //Cambiar el dato
+                        db.execSQL("UPDATE TASK_PROJ SET costeFinal = "+newValor+" WHERE id="+task.getId());
+                        //Insertar entrada en la tabla de sincronización
+                        db.execSQL("INSERT INTO SYNCRO (tipo, id_dato) VALUES (8, "+task.getId()+")");
+                        db.close();
+                        deleteDialog.dismiss();
+                        Toast.makeText(getApplicationContext(), "Modificando datos de la tarea", Toast.LENGTH_SHORT).show();
+                    }catch(Exception e){
+                        Toast.makeText(getApplicationContext(), "Ha ocurrido un error", Toast.LENGTH_SHORT).show();
+                    }
+                }else{
+                    Toast.makeText(getApplicationContext(), "El campo de sobrecoste no puede estar vacio", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        //Funcion de los botones END//
         deleteDialog.show();
     }
    }

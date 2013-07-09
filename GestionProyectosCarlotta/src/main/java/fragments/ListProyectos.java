@@ -268,28 +268,20 @@ public class ListProyectos extends Fragment {
             if(count ==projects.size())canPinchar=true;
             //EXEC-END
             return convertView;
-
         }
 
-
         public int getCount() {
-
             return projects.size();
-
         }
 
 
         public Object getItem(int position) {
-
             return position;
-
         }
 
 
         public long getItemId(int position) {
-
             return position;
-
         }
 
     }

@@ -21,7 +21,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="TASK NAME"
-                android:id="@+id/textView2"
+                android:id="@+id/taskName"
                 android:layout_gravity="left|center_vertical"
                 android:layout_marginLeft="6dp"/>
     </LinearLayout>
@@ -90,12 +90,14 @@
                     android:layout_height="wrap_content"
                     android:text="@string/delTask"
                     android:id="@+id/delTaskBtn"
+                    android:enabled="false"
                     android:layout_gravity="left|center_vertical"/>
 
             <Button
                     android:layout_width="wrap_content"
                     android:layout_height="fill_parent"
                     android:text="@string/enroleTask"
+                    android:enabled="false"
                     android:id="@+id/userTaskBtn"/>
         </LinearLayout>
 
@@ -138,7 +140,8 @@
                 android:text="@string/sobrecosteBtn"
                 android:id="@+id/sobrecosteBtn"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="9dp"/>
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="5dp"/>
 
     </LinearLayout>
 
