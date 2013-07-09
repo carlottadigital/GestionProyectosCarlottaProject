@@ -28,6 +28,11 @@
     <string name="taskValue">Value (ROI)</string>
     <string name="taskUser">User assigned to the task</string>
     <string name="saveTask">Save Task</string>
+    <string name="taskOpt">Task Options</string>
+    <string name="delTask">Delete task</string>
+    <string name="enroleTask">Reallocate</string>
+    <string name="sobrecoste">Overrun</string>
+    <string name="sobrecosteBtn">Save Overrun</string>
     <!-- Añadir tareas END-->
     <!-- Login -->
     <string name="mail">Mail</string>

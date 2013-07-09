@@ -124,6 +124,11 @@
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
+                name="lst_fav"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-xhdpi\lst_fav.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
                 name="ic_launcher"
                 path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\drawable-xxhdpi\ic_launcher.png"
                 qualifiers="xxhdpi"
@@ -217,9 +222,9 @@
                 </string>
                 <string name="hello_world" >Hello world!
                 </string>
-                <string name="serverOLD" >http://10.0.2.2/carlottalabs/api/
-                </string>
                 <string name="title_activity_projects" >MainActivity
+                </string>
+                <string name="serverOLD" >http://10.0.2.2/carlottalabs/api/
                 </string>
             </file>
             <file
@@ -249,31 +254,33 @@
                 qualifiers="en" >
                 <string name="usersProjects" >Users in this project
                 </string>
-                <string name="pass" >Password
-                </string>
                 <string name="add" >Add
+                </string>
+                <string name="pass" >Password
                 </string>
                 <string name="taskName" >Task name
                 </string>
-                <string name="Prjname" >Project name
-                </string>
                 <string name="fav" >To-Do
+                </string>
+                <string name="Prjname" >Project name
                 </string>
                 <string name="user" >Users
                 </string>
-                <string name="addUser" >Add user
-                </string>
                 <string name="login" >Acceder
                 </string>
-                <string name="tasks" >Tasks
+                <string name="addUser" >Add user
                 </string>
                 <string name="Prjdesc" >Project description
+                </string>
+                <string name="tasks" >Tasks
                 </string>
                 <string name="mail" >Mail
                 </string>
                 <string name="addProject" >Add new Project
                 </string>
                 <string name="userNombre" >Name
+                </string>
+                <string name="delTask" >Delete task
                 </string>
                 <string name="taskDesc" >Task description
                 </string>
@@ -293,17 +300,25 @@
                 </string>
                 <string name="PrjCreate" >Create Project
                 </string>
+                <string name="sobrecosteBtn" >Save Overrun
+                </string>
                 <string name="done" >Done
                 </string>
                 <string name="taskCoste" >Cost (inversion)
+                </string>
+                <string name="enroleTask" >Reallocate
                 </string>
                 <string name="logOff" >Log off
                 </string>
                 <string name="addTask" >Add Task
                 </string>
+                <string name="sobrecoste" >Overrun
+                </string>
                 <string name="app_name" >Carlotta Labs
                 </string>
                 <string name="sincro" >Synchronize
+                </string>
+                <string name="taskOpt" >Task Options
                 </string>
                 <string name="taskHours" >Work Hours
                 </string>
@@ -311,9 +326,9 @@
                 </string>
                 <string name="toDo" >Pending Tasks for You
                 </string>
-                <string name="userTelefono" >Telephone
-                </string>
                 <string name="enroledUsers" >Users in this company
+                </string>
+                <string name="userTelefono" >Telephone
                 </string>
                 <string name="completado" >Done
                 </string>
@@ -327,15 +342,17 @@
                 </string>
                 <string name="usersProjects" >Usuarios en este proyecto
                 </string>
-                <string name="userApellido" >Apellidos
-                </string>
                 <string name="enroledUsers" >Usuarios en esta empresa
                 </string>
-                <string name="mail" >Mail
+                <string name="userApellido" >Apellidos
                 </string>
                 <string name="user" >Usuarios
                 </string>
+                <string name="mail" >Mail
+                </string>
                 <string name="Prjname" >Nombre del proyecto
+                </string>
+                <string name="sobrecoste" >Sobrecoste
                 </string>
                 <string name="PrjCreate" >Crear Proyecto
                 </string>
@@ -371,6 +388,8 @@
                 </string>
                 <string name="loginIncorrect" >Nombre de usuario y Contresña erróneos
                 </string>
+                <string name="enroleTask" >Reasignar
+                </string>
                 <string name="sincro" >Sincronizar
                 </string>
                 <string name="Prjdesc" >Descripcion del Proyecto
@@ -378,6 +397,8 @@
                 <string name="taskDesc" >Descripcion de la tarea
                 </string>
                 <string name="horas" >Horas
+                </string>
+                <string name="sobrecosteBtn" >Guardar sobrecoste
                 </string>
                 <string name="userTelefono" >Telefono
                 </string>
@@ -389,11 +410,15 @@
                 </string>
                 <string name="userNombre" >Nombre
                 </string>
+                <string name="delTask" >Borrar tarea
+                </string>
                 <string name="saveTask" >Guardar tarea
                 </string>
                 <string name="toDo" >Sus tareas pendientes
                 </string>
                 <string name="projects" >Proyectos
+                </string>
+                <string name="taskOpt" >Opciones de tarea
                 </string>
             </file>
             <file
@@ -427,6 +452,11 @@
                     <!-- API 14 theme customizations can go here. -->
                 </style>
             </file>
+            <file
+                name="dialog_gest_task"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\layout\dialog_gest_task.xml"
+                qualifiers=""
+                type="layout" />
         </source>
         <source path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\build\res\rs\debug" />
     </dataSet>

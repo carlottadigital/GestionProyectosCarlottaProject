@@ -11,8 +11,10 @@
     <string name="addUser">Agregar usuario</string>
     <string name="app_name">Carlotta Labs</string>
     <string name="completado">Completado</string>
+    <string name="delTask">Borrar tarea</string>
     <string name="delete">Borrar</string>
     <string name="done">Completados</string>
+    <string name="enroleTask">Reasignar</string>
     <string name="enroledUsers">Usuarios en esta empresa</string>
     <string name="fav">Por hacer</string>
     <string name="horas">Horas</string>
@@ -24,10 +26,13 @@
     <string name="projects">Proyectos</string>
     <string name="saveTask">Guardar tarea</string>
     <string name="sincro">Sincronizar</string>
+    <string name="sobrecoste">Sobrecoste</string>
+    <string name="sobrecosteBtn">Guardar sobrecoste</string>
     <string name="taskCoste">Coste (inversion)</string>
     <string name="taskDesc">Descripcion de la tarea</string>
     <string name="taskHours">Horas de trabajo</string>
     <string name="taskName">Nombre de la tarea</string>
+    <string name="taskOpt">Opciones de tarea</string>
     <string name="taskUser">Usuario asignado a la tarea</string>
     <string name="taskValue">Valor (ROI)</string>
     <string name="tasks">Tareas</string>

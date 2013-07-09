@@ -28,6 +28,11 @@
     <string name="taskValue">Valor (ROI)</string>
     <string name="taskUser">Usuario asignado a la tarea</string>
     <string name="saveTask">Guardar tarea</string>
+    <string name="taskOpt">Opciones de tarea</string>
+    <string name="delTask">Borrar tarea</string>
+    <string name="enroleTask">Reasignar</string>
+    <string name="sobrecoste">Sobrecoste</string>
+    <string name="sobrecosteBtn">Guardar sobrecoste</string>
     <!-- Añadir tareas END-->
     <!-- Login -->
     <string name="mail">Mail</string>

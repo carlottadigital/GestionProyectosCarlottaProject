@@ -95,8 +95,8 @@ public class TareasWS {
             nameValuePairs.add(new BasicNameValuePair("nombre", nombre));
             nameValuePairs.add(new BasicNameValuePair("descripcion", descripcion));
             nameValuePairs.add(new BasicNameValuePair("valor", Integer.toString(valor)));
-            nameValuePairs.add(new BasicNameValuePair("coste", Integer.toString(horas)));
-            nameValuePairs.add(new BasicNameValuePair("horas", Integer.toString(horas)));
+            nameValuePairs.add(new BasicNameValuePair("coste", Integer.toString(coste)));
+            nameValuePairs.add(new BasicNameValuePair("horas", Integer.toString(coste)));
             nameValuePairs.add(new BasicNameValuePair("usuario", Integer.toString(usuario)));
             nameValuePairs.add(new BasicNameValuePair("proyecto", Integer.toString(proyecto)));
             httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));

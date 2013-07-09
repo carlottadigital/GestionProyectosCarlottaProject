@@ -44,7 +44,13 @@
                     android:id="@+id/textoProyecto"
                     android:layout_marginLeft="12dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="0.34"/>
+
+            <Button
+                    android:layout_width="32dp"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/proyecto_opt"
+                    android:id="@+id/optTask"/>
 
         </LinearLayout>
 

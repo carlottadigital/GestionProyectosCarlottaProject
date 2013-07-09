@@ -69,6 +69,8 @@ public class Projects extends Activity {
     int selectedItem, userID;
     boolean editando = false;
     SharedPreferences prefs;
+    //Booleano que indica si se está sincronizando
+    boolean sincronizando = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -170,6 +172,9 @@ public class Projects extends Activity {
     * Este Método adquiere los proyectos y los carga los datos en el navigation drawer
     * */
     public void getProjects(){
+        if(!sincronizando){
+            //Desactiva la sincronización para que no pueda ser iniciada de nuevo a mitad de progreso (excepción de punteros ya abiertos)
+            sincronizando = true;
         //Declarar el array list como final para poder ser accedido desde una inner class
 
         final Handler startLoadProgress = new Handler(){
@@ -177,6 +182,7 @@ public class Projects extends Activity {
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
                 setProgressBarIndeterminateVisibility(true);
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.sincro), Toast.LENGTH_SHORT).show();
             }
         };
         startLoadProgress.sendEmptyMessage(0);
@@ -334,9 +340,12 @@ public class Projects extends Activity {
                 printProjects.sendEmptyMessage(0);
                 db.close();
                 finishLoadProgress.sendEmptyMessage(0);
+                //Permitir de nuevo la sincronización
+                sincronizando = false;
 
             }
         }).start();
+    }
     }
     /*
     * Este médoto implementa el click listener en el listview
@@ -945,13 +954,16 @@ public class Projects extends Activity {
             @Override
             public void onClick(View view) {
                 try{
-                    db.execSQL("INSERT INTO USER_PROJ (id_usuario, id_proyecto) VALUES ("+users.get(spinner.getSelectedItemPosition()).getId()+", "+prj.get(selectedItem-2).getId()+")");
+                    SQLiteDatabase db2 = dbManager.getWritableDatabase();
+                    db2.execSQL("INSERT INTO USER_PROJ (id_usuario, id_proyecto) VALUES ("+users.get(spinner.getSelectedItemPosition()).getId()+", "+prj.get(selectedItem-2).getId()+")");
                     SQLiteDatabase finalDB = dbManager.getReadableDatabase();
                     Cursor last = finalDB.rawQuery("SELECT id FROM USER_PROJ", null);
                     if(last.moveToLast()){
-                        db.execSQL("INSERT INTO SYNCRO (tipo, id_dato) VALUES (7, "+last.getInt(0)+")");
+                        db2.execSQL("INSERT INTO SYNCRO (tipo, id_dato) VALUES (7, "+last.getInt(0)+")");
                         finalDB.close();
                         finalDB = null;
+                        db2.close();
+                        db2 = null;
                         Toast.makeText(getApplicationContext(), "Asignacion guardada",Toast.LENGTH_SHORT).show();
                     }
                 }catch (SQLiteException ex){

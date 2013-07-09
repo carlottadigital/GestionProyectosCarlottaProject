@@ -1,5 +1,6 @@
 package fragments;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,18 +9,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.ActionMode;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -192,6 +189,7 @@ public class ListProyectos extends Fragment {
 
 
             TextView text;
+            Button options;
 
             if (convertView == null) {
 
@@ -199,6 +197,7 @@ public class ListProyectos extends Fragment {
 
             }
             text = (TextView)convertView.findViewById(R.id.textoProyecto);
+            options = (Button)convertView.findViewById(R.id.optTask);
            final CheckBox chCompletado = (CheckBox) convertView.findViewById(R.id.chCompletado);
             text.setTextColor(Color.parseColor("#000000"));
 
@@ -246,7 +245,7 @@ public class ListProyectos extends Fragment {
                 }
             });
             //Listener de cambio del item END//
-
+            
             //Tapon anti bucle-incremental
             count++;
             if(count ==projects.size())canPinchar=true;
@@ -276,5 +275,13 @@ public class ListProyectos extends Fragment {
 
         }
 
+    }
+    public void showTaskOptions(int task){
+        LayoutInflater factory = LayoutInflater.from(getActivity().getApplicationContext());
+        final View view = factory.inflate(R.layout.dialog_gest_task, null);
+        final AlertDialog deleteDialog = new AlertDialog.Builder(getActivity().getApplicationContext()).create();
+        deleteDialog.setView(view);
+
+        deleteDialog.show();
     }
 }
