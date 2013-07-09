@@ -50,6 +50,7 @@ public class ListProyectos extends Fragment {
     int doneTask =0;
     int todoHour =0;
     int doneHour =0;
+    int overrun =0;
     int prjID;
     int userID;
     boolean canPinchar = false;
@@ -104,6 +105,7 @@ public class ListProyectos extends Fragment {
         doneTask=0;
         todoHour=0;
         todoTask=0;
+        overrun=0;
         Cursor data = null;
         SQLiteDatabase dbRead = dbManager.getReadableDatabase();
         if(getArguments().getBoolean("isHome")){
@@ -121,6 +123,7 @@ public class ListProyectos extends Fragment {
                 todoHour = todoHour + data.getInt(4);
                 todoTask++;
             }
+            overrun = overrun + data.getInt(5);
             tarea.setId(data.getInt(0));
             tarea.setProyecto(data.getInt(1));
             tarea.setNombre(data.getString(2));
@@ -133,19 +136,20 @@ public class ListProyectos extends Fragment {
             proyectos.add(tarea);
             while(data.moveToNext()){
                 if(data.getInt(8)!=0){
-                    doneHour = doneHour + data.getInt(4) + data.getInt(5) ;
+                    doneHour = doneHour + data.getInt(4) ;
                     doneTask++;
                 }else{
                     todoHour = todoHour + data.getInt(4);
                     todoTask++;
                 }
+                overrun = overrun + data.getInt(5);
                 Tareas tarea2 = new Tareas();
                 tarea2.setId(data.getInt(0));
                 tarea2.setProyecto(data.getInt(1));
                 tarea2.setNombre(data.getString(2));
                 tarea2.setDescripcion(data.getString(3));
                 tarea2.setCoste(data.getInt(4));
-                tarea.setCosteFinal(data.getInt(5));
+                tarea2.setCosteFinal(data.getInt(5));
                 tarea2.setValor(data.getInt(6));
                 tarea2.setUsuario(data.getInt(7));
                 tarea2.setCompletado(data.getInt(8));
@@ -153,19 +157,25 @@ public class ListProyectos extends Fragment {
             }
             //Establecer el maximo de tareas y horas (Barras de progreso
             tareas.setMax(todoTask+doneTask);
-            horas.setMax(todoHour+doneHour);
+            horas.setMax((todoHour+doneHour)-overrun);
             //Establecer el progreso total de horas y tareas
             tareas.setProgress(doneTask);
             horas.setProgress(doneHour);
             //Establecer el progreso total y maximo de los textviews
             textTask.setText(getResources().getString(R.string.tasks)+" ("+doneTask+"/"+(todoTask+doneTask)+")");
-            textHour.setText(getResources().getString(R.string.horas)+" ("+doneHour+"/"+(todoHour+doneHour)+")");
+            textHour.setText(getResources().getString(R.string.horas)+" ("+(doneHour+overrun)+"/"+(todoHour+doneHour)+")");
             //Verificar si el proyecto está completado o no
             if(doneTask >= (todoTask+doneTask)){
                 prjDone.setChecked(true);
                 prjDone.setText(getActivity().getResources().getString(R.string.completado));
             }else{
                 prjDone.setChecked(false);
+            }
+            //Verificar si hay overrun
+            if(doneHour>todoHour+(doneHour-overrun)){
+                textHour.setTextColor(Color.RED);
+            }else{
+                textHour.setTextColor(Color.BLACK);
             }
         }
     }

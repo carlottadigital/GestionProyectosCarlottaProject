@@ -39,8 +39,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4e10e2ed-1072-44a3-9d12-39ade7df4ba2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/fragments/ListProyectos.java" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/fragments/ListProyectos.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/carlotta/digital/gestionproyectoscarlotta/Projects.java" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/carlotta/digital/gestionproyectoscarlotta/Projects.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GestionProyectosCarlotta.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -162,13 +160,13 @@
       <file leaf-file-name="ListProyectos.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/fragments/ListProyectos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="135" column="72" selection-start="5338" selection-end="5338" vertical-scroll-proportion="0.4837278" vertical-offset="1407" max-vertical-offset="4403">
+            <state line="165" column="92" selection-start="6785" selection-end="6785" vertical-scroll-proportion="0.33333334" vertical-offset="2117" max-vertical-offset="4573">
               <folding>
-                <element signature="e#6475#6515#0" expanded="true" />
-                <element signature="e#6589#6629#0" expanded="true" />
-                <element signature="e#6857#6916#0" expanded="true" />
-                <element signature="e#10288#10869#0" expanded="true" />
-                <element signature="e#10854#10855#0" expanded="true" />
+                <element signature="e#6608#6648#0" expanded="true" />
+                <element signature="e#6722#6762#0" expanded="true" />
+                <element signature="e#7000#7059#0" expanded="true" />
+                <element signature="e#10659#11240#0" expanded="true" />
+                <element signature="e#11225#11226#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1271,13 +1269,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/fragments/ListProyectos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="135" column="72" selection-start="5338" selection-end="5338" vertical-scroll-proportion="0.4837278" vertical-offset="1407" max-vertical-offset="4403">
+        <state line="165" column="92" selection-start="6785" selection-end="6785" vertical-scroll-proportion="0.33333334" vertical-offset="2117" max-vertical-offset="4573">
           <folding>
-            <element signature="e#6475#6515#0" expanded="true" />
-            <element signature="e#6589#6629#0" expanded="true" />
-            <element signature="e#6857#6916#0" expanded="true" />
-            <element signature="e#10288#10869#0" expanded="true" />
-            <element signature="e#10854#10855#0" expanded="true" />
+            <element signature="e#6608#6648#0" expanded="true" />
+            <element signature="e#6722#6762#0" expanded="true" />
+            <element signature="e#7000#7059#0" expanded="true" />
+            <element signature="e#10659#11240#0" expanded="true" />
+            <element signature="e#11225#11226#0" expanded="true" />
           </folding>
         </state>
       </provider>
