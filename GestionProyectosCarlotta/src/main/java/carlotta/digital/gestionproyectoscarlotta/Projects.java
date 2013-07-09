@@ -35,6 +35,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.lang.reflect.Field;
@@ -1019,4 +1020,27 @@ public class Projects extends Activity {
             e.printStackTrace();
         }
     }
-  }
+    /*
+    * Mostrar las opciones de la tarea
+    * */
+    public void showTaskOptions(Tareas task){
+        LayoutInflater factory = LayoutInflater.from(this);
+        final View view = factory.inflate(R.layout.dialog_gest_task, null);
+        final AlertDialog deleteDialog = new AlertDialog.Builder(this).create();
+        deleteDialog.setView(view);
+        //Casteo de widgets
+        TextView taskName = (TextView)view.findViewById(R.id.taskName);
+        TextView taskHoras = (TextView)view.findViewById(R.id.taskHours);
+        TextView taskRoi = (TextView)view.findViewById(R.id.taskROI);
+        Button deleteTask = (Button)view.findViewById(R.id.delTaskBtn);
+        Button overHourBtn = (Button)view.findViewById(R.id.sobrecosteBtn);
+        EditText horas = (EditText)view.findViewById(R.id.overHours);
+        //Casteo de widgets END//
+        //Trabajo con los widgets
+        taskName.setText(task.getNombre());
+        taskHoras.setText(task.getCoste()+" Hrs");
+        taskRoi.setText(task.getValor());
+        //Trabajo con los widgets END//
+        deleteDialog.show();
+    }
+   }

@@ -1,8 +1,10 @@
 package fragments;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -25,6 +27,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import carlotta.digital.gestionproyectoscarlotta.Projects;
 import carlotta.digital.gestionproyectoscarlotta.R;
 import models.Tareas;
 import sqlite.DBManager;
@@ -245,7 +248,21 @@ public class ListProyectos extends Fragment {
                 }
             });
             //Listener de cambio del item END//
-            
+            //Listener del boton de opciones
+            options.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //Abirr el menú de opciones de la tarea
+                    /*
+                    * Realizar un casteo de la clase obteniendola a través del getActivity() para poder explotar sus métodos
+                    * */
+                    Activity parent = getActivity();
+                    if(parent instanceof Projects) {
+                        ((Projects) parent).showTaskOptions(projects.get(position));
+                    }
+                }
+            });
+            //Listener del boton de opciones END//
             //Tapon anti bucle-incremental
             count++;
             if(count ==projects.size())canPinchar=true;
@@ -276,12 +293,6 @@ public class ListProyectos extends Fragment {
         }
 
     }
-    public void showTaskOptions(int task){
-        LayoutInflater factory = LayoutInflater.from(getActivity().getApplicationContext());
-        final View view = factory.inflate(R.layout.dialog_gest_task, null);
-        final AlertDialog deleteDialog = new AlertDialog.Builder(getActivity().getApplicationContext()).create();
-        deleteDialog.setView(view);
 
-        deleteDialog.show();
-    }
+
 }
