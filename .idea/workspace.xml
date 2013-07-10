@@ -39,11 +39,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4e10e2ed-1072-44a3-9d12-39ade7df4ba2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/carlotta/digital/gestionproyectoscarlotta/Projects.java" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/carlotta/digital/gestionproyectoscarlotta/Projects.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/webservices/TareasWS.java" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/webservices/TareasWS.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/build/res/all/debug/layout/dialog_gest_task.xml" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/build/res/all/debug/layout/dialog_gest_task.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/layout/dialog_gest_task.xml" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/layout/dialog_gest_task.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GestionProyectosCarlotta/build/res/all/debug/values/values.xml" afterPath="$PROJECT_DIR$/GestionProyectosCarlotta/build/res/all/debug/values/values.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GestionProyectosCarlotta.iws" />
@@ -142,7 +137,7 @@
       <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/values-es/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="49" selection-start="1587" selection-end="1648" vertical-scroll-proportion="0.0" vertical-offset="267" max-vertical-offset="969">
+            <state line="33" column="49" selection-start="1587" selection-end="1648" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="969">
               <folding />
             </state>
           </provider>
@@ -151,7 +146,7 @@
       <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="46" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+            <state line="8" column="46" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="289">
               <folding />
             </state>
           </provider>
@@ -160,7 +155,7 @@
       <file leaf-file-name="ListProyectos.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/fragments/ListProyectos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="170" column="18" selection-start="7080" selection-end="7080" vertical-scroll-proportion="0.0" vertical-offset="2227" max-vertical-offset="4522">
+            <state line="170" column="18" selection-start="7080" selection-end="7080" vertical-scroll-proportion="0.0" vertical-offset="2873" max-vertical-offset="5236">
               <folding />
             </state>
           </provider>
@@ -169,7 +164,7 @@
       <file leaf-file-name="dialog_gest_task.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/layout/dialog_gest_task.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="41" selection-start="3637" selection-end="3637" vertical-scroll-proportion="-12.4" vertical-offset="1254" max-vertical-offset="2601">
+            <state line="92" column="41" selection-start="3637" selection-end="3637" vertical-scroll-proportion="0.0" vertical-offset="1254" max-vertical-offset="2601">
               <folding />
             </state>
           </provider>
@@ -181,7 +176,7 @@
       <file leaf-file-name="TareasWS.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/webservices/TareasWS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="153" column="73" selection-start="6517" selection-end="6517" vertical-scroll-proportion="0.0" vertical-offset="2092" max-vertical-offset="2669">
+            <state line="153" column="73" selection-start="6517" selection-end="6517" vertical-scroll-proportion="0.0" vertical-offset="2584" max-vertical-offset="2975">
               <folding />
             </state>
           </provider>
@@ -190,7 +185,7 @@
       <file leaf-file-name="DBManager.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/sqlite/DBManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="95" selection-start="1405" selection-end="1405" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1462">
+            <state line="30" column="95" selection-start="1405" selection-end="1405" vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="1513">
               <folding />
             </state>
           </provider>
@@ -199,31 +194,30 @@
       <file leaf-file-name="Projects.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/carlotta/digital/gestionproyectoscarlotta/Projects.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1098" column="51" selection-start="53235" selection-end="53235" vertical-scroll-proportion="0.6792453" vertical-offset="15784" max-vertical-offset="16490">
+            <state line="193" column="58" selection-start="7104" selection-end="7104" vertical-scroll-proportion="0.628447" vertical-offset="1879" max-vertical-offset="16558">
               <folding>
                 <element signature="e#5872#5915#0" expanded="true" />
-                <element signature="e#6667#6708#0" expanded="true" />
-                <element signature="e#7825#7863#0" expanded="true" />
-                <element signature="e#7895#7934#0" expanded="true" />
-                <element signature="e#11307#11348#0" expanded="true" />
-                <element signature="e#11402#11443#0" expanded="true" />
-                <element signature="e#11508#11549#0" expanded="true" />
-                <element signature="e#11600#11641#0" expanded="true" />
-                <element signature="e#16341#16380#0" expanded="true" />
-                <element signature="e#16506#16545#0" expanded="true" />
-                <element signature="e#18036#18075#0" expanded="true" />
-                <element signature="e#18838#18879#0" expanded="true" />
-                <element signature="e#19551#19592#0" expanded="true" />
-                <element signature="e#20876#20917#0" expanded="true" />
-                <element signature="e#21195#21236#0" expanded="true" />
-                <element signature="e#21674#21715#0" expanded="true" />
-                <element signature="e#26952#26993#0" expanded="true" />
-                <element signature="e#37157#37198#0" expanded="true" />
-                <element signature="e#39604#39645#0" expanded="true" />
-                <element signature="e#42203#42244#0" expanded="true" />
-                <element signature="e#49222#49261#0" expanded="true" />
-                <element signature="e#52460#53321#0" expanded="true" />
-                <element signature="e#53309#53310#0" expanded="true" />
+                <element signature="e#6666#6707#0" expanded="true" />
+                <element signature="e#8145#8183#0" expanded="true" />
+                <element signature="e#8215#8254#0" expanded="true" />
+                <element signature="e#11627#11668#0" expanded="true" />
+                <element signature="e#11722#11763#0" expanded="true" />
+                <element signature="e#11828#11869#0" expanded="true" />
+                <element signature="e#11920#11961#0" expanded="true" />
+                <element signature="e#16762#16801#0" expanded="true" />
+                <element signature="e#16927#16966#0" expanded="true" />
+                <element signature="e#18457#18496#0" expanded="true" />
+                <element signature="e#19259#19300#0" expanded="true" />
+                <element signature="e#19972#20013#0" expanded="true" />
+                <element signature="e#21297#21338#0" expanded="true" />
+                <element signature="e#21616#21657#0" expanded="true" />
+                <element signature="e#22095#22136#0" expanded="true" />
+                <element signature="e#22518#22559#0" expanded="true" />
+                <element signature="e#27373#27414#0" expanded="true" />
+                <element signature="e#37578#37619#0" expanded="true" />
+                <element signature="e#40025#40066#0" expanded="true" />
+                <element signature="e#42624#42665#0" expanded="true" />
+                <element signature="e#49643#49682#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -232,7 +226,7 @@
       <file leaf-file-name="ProyectosWS.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/webservices/ProyectosWS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="56" selection-start="3562" selection-end="3562" vertical-scroll-proportion="0.0" vertical-offset="998" max-vertical-offset="1700">
+            <state line="88" column="56" selection-start="3562" selection-end="3562" vertical-scroll-proportion="0.0" vertical-offset="1479" max-vertical-offset="2023">
               <folding />
             </state>
           </provider>
@@ -328,9 +322,9 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="334" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1274" />
+    <option name="width" value="1616" />
     <option name="height" value="886" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -817,19 +811,19 @@
     <property name="ExportedModule" value="GestionProyectosCarlotta" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteToolWindowManager.WIDTH" value="239" />
     <property name="last_opened_file_path" value="$USER_HOME$/Dropbox/Dabest/KEYSTORE/KeyStore" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="c0808682f67cfcf" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
     <property name="DEBUGGABLE_DEVICE" value="c0808682f67cfcf" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="DEBUGGABLE_PROCESS" value="carlotta.digital.gestionproyectoscarlotta" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="AndroidRunProguardForReleaseBuild" value="false" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="HTC_ONE" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -1006,13 +1000,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="334" y="-8" width="1274" height="886" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32396695" sideWeight="0.60027474" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4052198" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1032,6 +1025,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32396695" sideWeight="0.60027474" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1200,7 +1194,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/res/layout/dialog_gest_task.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="41" selection-start="3637" selection-end="3637" vertical-scroll-proportion="-12.4" vertical-offset="1254" max-vertical-offset="2601">
+        <state line="92" column="41" selection-start="3637" selection-end="3637" vertical-scroll-proportion="0.0" vertical-offset="1254" max-vertical-offset="2601">
           <folding />
         </state>
       </provider>
@@ -1217,31 +1211,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GestionProyectosCarlotta/src/main/java/carlotta/digital/gestionproyectoscarlotta/Projects.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1098" column="51" selection-start="53235" selection-end="53235" vertical-scroll-proportion="0.6792453" vertical-offset="15784" max-vertical-offset="16490">
+        <state line="193" column="58" selection-start="7104" selection-end="7104" vertical-scroll-proportion="0.628447" vertical-offset="1879" max-vertical-offset="16558">
           <folding>
             <element signature="e#5872#5915#0" expanded="true" />
-            <element signature="e#6667#6708#0" expanded="true" />
-            <element signature="e#7825#7863#0" expanded="true" />
-            <element signature="e#7895#7934#0" expanded="true" />
-            <element signature="e#11307#11348#0" expanded="true" />
-            <element signature="e#11402#11443#0" expanded="true" />
-            <element signature="e#11508#11549#0" expanded="true" />
-            <element signature="e#11600#11641#0" expanded="true" />
-            <element signature="e#16341#16380#0" expanded="true" />
-            <element signature="e#16506#16545#0" expanded="true" />
-            <element signature="e#18036#18075#0" expanded="true" />
-            <element signature="e#18838#18879#0" expanded="true" />
-            <element signature="e#19551#19592#0" expanded="true" />
-            <element signature="e#20876#20917#0" expanded="true" />
-            <element signature="e#21195#21236#0" expanded="true" />
-            <element signature="e#21674#21715#0" expanded="true" />
-            <element signature="e#26952#26993#0" expanded="true" />
-            <element signature="e#37157#37198#0" expanded="true" />
-            <element signature="e#39604#39645#0" expanded="true" />
-            <element signature="e#42203#42244#0" expanded="true" />
-            <element signature="e#49222#49261#0" expanded="true" />
-            <element signature="e#52460#53321#0" expanded="true" />
-            <element signature="e#53309#53310#0" expanded="true" />
+            <element signature="e#6666#6707#0" expanded="true" />
+            <element signature="e#8145#8183#0" expanded="true" />
+            <element signature="e#8215#8254#0" expanded="true" />
+            <element signature="e#11627#11668#0" expanded="true" />
+            <element signature="e#11722#11763#0" expanded="true" />
+            <element signature="e#11828#11869#0" expanded="true" />
+            <element signature="e#11920#11961#0" expanded="true" />
+            <element signature="e#16762#16801#0" expanded="true" />
+            <element signature="e#16927#16966#0" expanded="true" />
+            <element signature="e#18457#18496#0" expanded="true" />
+            <element signature="e#19259#19300#0" expanded="true" />
+            <element signature="e#19972#20013#0" expanded="true" />
+            <element signature="e#21297#21338#0" expanded="true" />
+            <element signature="e#21616#21657#0" expanded="true" />
+            <element signature="e#22095#22136#0" expanded="true" />
+            <element signature="e#22518#22559#0" expanded="true" />
+            <element signature="e#27373#27414#0" expanded="true" />
+            <element signature="e#37578#37619#0" expanded="true" />
+            <element signature="e#40025#40066#0" expanded="true" />
+            <element signature="e#42624#42665#0" expanded="true" />
+            <element signature="e#49643#49682#0" expanded="true" />
           </folding>
         </state>
       </provider>

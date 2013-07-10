@@ -177,7 +177,6 @@ public class Projects extends Activity {
             //Desactiva la sincronización para que no pueda ser iniciada de nuevo a mitad de progreso (excepción de punteros ya abiertos)
             sincronizando = true;
         //Declarar el array list como final para poder ser accedido desde una inner class
-
         final Handler startLoadProgress = new Handler(){
             @Override
             public void handleMessage(Message msg) {
@@ -192,6 +191,12 @@ public class Projects extends Activity {
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
                 setProgressBarIndeterminateVisibility(false);
+                //Recargar la vista tras la sincronización
+                ListProyectos detalle = (ListProyectos) getFragmentManager().findFragmentByTag("vistaProyectos");
+                if(detalle !=null){
+                    detalle.getProjects();
+                    detalle.updateProjectStatus();
+                }
             }
         };
         final Handler errorAllowed = new Handler(){
@@ -343,6 +348,8 @@ public class Projects extends Activity {
                 finishLoadProgress.sendEmptyMessage(0);
                 //Permitir de nuevo la sincronización
                 sincronizando = false;
+                //Re-cargar los datos de la vista
+                //Actualizar la vista del fragment
 
             }
         }).start();
