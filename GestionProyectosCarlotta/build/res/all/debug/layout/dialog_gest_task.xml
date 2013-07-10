@@ -90,7 +90,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/delTask"
                     android:id="@+id/delTaskBtn"
-                    android:enabled="false"
+                    android:enabled="true"
                     android:layout_gravity="left|center_vertical"/>
 
             <Button

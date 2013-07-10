@@ -141,4 +141,29 @@ public class TareasWS {
         }
         return result;
     }
+    public boolean deleteTask(int taskID){
+        boolean result = false;
+        // Create a new HttpClient and Post Header
+        HttpClient httpclient = new DefaultHttpClient();
+        HttpPost httppost = new HttpPost(urlServer+"gestProyectos.php?func=9");
+
+        try {
+            // Add your data
+            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(1);
+            nameValuePairs.add(new BasicNameValuePair("taskID", Integer.toString(taskID)));
+            httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+            // Execute HTTP Post Request
+            HttpResponse response = httpclient.execute(httppost);
+            result = true;
+        } catch (ClientProtocolException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            result = false;
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            result = false;
+        }
+        return result;
+    }
 }

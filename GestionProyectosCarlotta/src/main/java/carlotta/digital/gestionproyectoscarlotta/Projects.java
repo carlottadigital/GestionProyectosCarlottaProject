@@ -408,9 +408,9 @@ public class Projects extends Activity {
         switch (tipo){
             case 6:
                 //Obtener instancia del webservice de Tareas
-                SQLiteDatabase db3 = dbManager.getWritableDatabase();
+                SQLiteDatabase db6 = dbManager.getWritableDatabase();
                 TareasWS tareasDAO = new TareasWS(getResources().getString(R.string.server));
-                Cursor tasks = db3.rawQuery("SELECT * FROM TASK_PROJ WHERE id="+idCambio,null);
+                Cursor tasks = db6.rawQuery("SELECT * FROM TASK_PROJ WHERE id="+idCambio,null);
                 if(tasks.moveToFirst()){
                     tareasDAO.addTask(tasks.getString(2),tasks.getString(3),tasks.getInt(5),tasks.getInt(4),tasks.getInt(5),tasks.getInt(6), tasks.getInt(1));
                     while (tasks.moveToNext()){
@@ -468,6 +468,10 @@ public class Projects extends Activity {
                 if(c8.moveToFirst()){
                     tareasDAO.addOverCost(c8.getInt(0), idCambio);
                 }
+                break;
+            case 3:
+                tareasDAO = new TareasWS(getResources().getString(R.string.server));
+                tareasDAO.deleteTask(idCambio);
                 break;
         }
         return result;
@@ -1051,6 +1055,9 @@ public class Projects extends Activity {
         taskRoi.setText(task.getValor()+"");
         //Trabajo con los widgets END//
         //Funcion de los botones
+        /*
+        * Funcion de overrun
+        * */
         overHourBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -1074,7 +1081,27 @@ public class Projects extends Activity {
                 }
             }
         });
-        //Funcion de los botones END//
+        /**
+         * Funcion borrar tarea
+         * */
+         deleteTask.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 SQLiteDatabase db = dbManager.getWritableDatabase();
+                 //Borrar el dato de la tabla de tareas
+                 db.execSQL("DELETE FROM TASK_PROJ WHERE id="+task.getId());
+                 //Establecer su correspondiente entrada en la tabla de sincro
+                 db.execSQL("INSERT INTO SYNCRO (tipo, id_dato) VALUES (3, "+task.getId()+")");
+                 //Actualizar la vista del fragment
+                 ListProyectos detalle = (ListProyectos) getFragmentManager().findFragmentByTag("vistaProyectos");
+                 if(detalle !=null){
+                     detalle.getProjects();
+                     detalle.updateProjectStatus();
+                 }
+                 deleteDialog.dismiss();
+             }
+         });
+         //Funcion de los botones END//
         deleteDialog.show();
     }
    }
