@@ -144,6 +144,11 @@
                 qualifiers=""
                 type="layout" />
             <file
+                name="dialog_about"
+                path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\layout\dialog_about.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="dialog_add_project"
                 path="C:\Users\Borja\AndroidStudioProjects\GestionProyectosCarlottaProject\GestionProyectosCarlotta\src\main\res\layout\dialog_add_project.xml"
                 qualifiers=""
@@ -305,6 +310,8 @@
                 </string>
                 <string name="PrjCreate" >Create Project
                 </string>
+                <string name="aboutLong" >Carlotta digital Labs it\'s an integran project manager by courtesy of Carlotta Digital
+                </string>
                 <string name="sobrecosteBtn" >Save Overrun
                 </string>
                 <string name="done" >Done
@@ -392,6 +399,8 @@
                 <string name="pass" >Contraseña
                 </string>
                 <string name="loginIncorrect" >Nombre de usuario y Contresña erróneos
+                </string>
+                <string name="aboutLong" >Carlotta digital Labs es un proyecto de gestión integral de proyectos, fruto de la ilusión de Carlotta Digital
                 </string>
                 <string name="enroleTask" >Reasignar
                 </string>

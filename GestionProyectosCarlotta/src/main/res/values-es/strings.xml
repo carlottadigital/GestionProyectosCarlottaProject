@@ -48,4 +48,6 @@
     <string name="userApellido">Apellidos</string>
     <string name="userTelefono">Telefono</string>
     <!-- gestion de usuarios END -->
+    <!-- acerca de -->
+    <string name="aboutLong">Carlotta digital Labs es un proyecto de gestión integral de proyectos, fruto de la ilusión de Carlotta Digital</string>
 </resources>

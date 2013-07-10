@@ -48,4 +48,6 @@
     <string name="userApellido">Last Name</string>
     <string name="userTelefono">Telephone</string>
     <!-- gestion de usuarios END -->
+    <!-- acerca de -->
+    <string name="aboutLong">Carlotta digital Labs it\'s an integral project manager by courtesy of Carlotta Digital</string>
 </resources>

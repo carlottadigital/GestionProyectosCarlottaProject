@@ -5,6 +5,7 @@
     <string name="Prjdesc">Project description</string>
     <string name="Prjname">Project name</string>
     <string name="about">About</string>
+    <string name="aboutLong">Carlotta digital Labs it\'s an integran project manager by courtesy of Carlotta Digital</string>
     <string name="add">Add</string>
     <string name="addProject">Add new Project</string>
     <string name="addTask">Add Task</string>

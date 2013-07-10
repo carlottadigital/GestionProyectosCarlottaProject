@@ -155,7 +155,7 @@ public class Projects extends Activity {
                 finish();
                 break;
             case R.id.about:
-
+                showAboutdialog();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -1111,4 +1111,15 @@ public class Projects extends Activity {
          //Funcion de los botones END//
         deleteDialog.show();
     }
-   }
+    /*
+    * Dialogo "Acerca De"
+    * */
+    public void showAboutdialog(){
+        LayoutInflater factory = LayoutInflater.from(this);
+        final View view = factory.inflate(R.layout.dialog_about, null);
+        final AlertDialog deleteDialog = new AlertDialog.Builder(this).create();
+        deleteDialog.setView(view);
+
+        deleteDialog.show();
+    }
+}

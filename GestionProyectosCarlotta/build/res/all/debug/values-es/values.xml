@@ -5,6 +5,7 @@
     <string name="Prjdesc">Descripcion del Proyecto</string>
     <string name="Prjname">Nombre del proyecto</string>
     <string name="about">Acerca de</string>
+    <string name="aboutLong">Carlotta digital Labs es un proyecto de gestión integral de proyectos, fruto de la ilusión de Carlotta Digital</string>
     <string name="add">Agregar</string>
     <string name="addProject">Agregar un proyecto</string>
     <string name="addTask">Añadir tarea</string>
