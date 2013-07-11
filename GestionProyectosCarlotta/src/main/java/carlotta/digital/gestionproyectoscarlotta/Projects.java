@@ -726,8 +726,10 @@ public class Projects extends Activity {
         Button addUserBtn = (Button)deleteDialogView.findViewById(R.id.addUserBtn);
         //Cargar los nombres de los usuarios en un array para evitar construir un custom adapter
         ArrayList<String>usuariosNames = new ArrayList<String>();
-        for (int a=0;a<users.size();a++){
-            usuariosNames.add(users.get(a).getNombre());
+        if(users !=null){
+            for (int a=0;a<users.size();a++){
+                usuariosNames.add(users.get(a).getNombre());
+            }
         }
         //Establecer el adaptador al listview
         listaUsuarios.setAdapter(new UserListAdapter(getApplicationContext(), usuariosNames));
