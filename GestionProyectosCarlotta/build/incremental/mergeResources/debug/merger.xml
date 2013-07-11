@@ -228,7 +228,7 @@
                 </string>
                 <string name="app_name" >Carlotta Labs
                 </string>
-                <string name="server" >http://192.168.1.135/carlottalabs/api/
+                <string name="server" >http://www.carlottadigitallabs.com/carlottalabs/api/
                 </string>
                 <string name="hello_world" >Hello world!
                 </string>
@@ -310,7 +310,7 @@
                 </string>
                 <string name="PrjCreate" >Create Project
                 </string>
-                <string name="aboutLong" >Carlotta digital Labs it\'s an integran project manager by courtesy of Carlotta Digital
+                <string name="aboutLong" >Carlotta digital Labs it\'s an integral project manager by courtesy of Carlotta Digital
                 </string>
                 <string name="sobrecosteBtn" >Save Overrun
                 </string>
